@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humrah - Find Your Companion for Life's Moments | Social Connection App</title>
+    <meta name="description" content="Humrah helps introverts and lonely people find real-world companions for outings, events, and daily experiences. Join the movement to end loneliness.">
+    <meta name="keywords" content="Humrah, loneliness, friendship app, social connection, introverts, companionship, mental wellness, startup India, human connection">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Gen Z Design System */
+        :root {
+            --dark-bg: #0A0E27;
+            --dark-surface: #151932;
+            --dark-card: rgba(255, 255, 255, 0.05);
+            --neon-pink: #FF006E;
+            --neon-purple: #8338EC;
+            --neon-blue: #3A86FF;
+            --neon-orange: #FB5607;
+            --cyan: #00F5FF;
+            --white: #FFFFFF;
+            --text-primary: #FFFFFF;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --gradient-1: linear-gradient(135deg, #8338EC 0%, #FF006E 100%);
+            --gradient-2: linear-gradient(135deg, #3A86FF 0%, #00F5FF 100%);
+            --gradient-3: linear-gradient(135deg, #FB5607 0%, #FF006E 100%);
+            --gradient-4: linear-gradient(135deg, rgba(131, 56, 236, 0.2) 0%, rgba(255, 0, 110, 0.2) 100%);
+            --gradient-animated: linear-gradient(270deg, #8338EC, #FF006E, #3A86FF, #00F5FF);
+            --shadow-neon: 0 0 20px rgba(131, 56, 236, 0.5);
+            --shadow-glow: 0 0 30px rgba(255, 0, 110, 0.6);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 0, 110, 0.4), 0 0 40px rgba(131, 56, 236, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(255, 0, 110, 0.6), 0 0 60px rgba(131, 56, 236, 0.5); }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes blob {
+            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Hero Section - Gen Z Vibes */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--dark-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(131, 56, 236, 0.4) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite, blob 10s ease-in-out infinite;
+            filter: blur(60px);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 0, 110, 0.4) 0%, transparent 70%);
+            animation: float 10s ease-in-out infinite reverse, blob 12s ease-in-out infinite reverse;
+            filter: blur(60px);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .logo-heart {
+            font-size: 40px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subheadline {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: var(--white);
+            box-shadow: var(--shadow-neon);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            color: var(--text-primary);
+            border: 2px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: var(--glass-border);
+            border-color: var(--neon-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(131, 56, 236, 0.4);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Problem Section - Gen Z Real Talk */
+        .problem {
+            background: var(--dark-surface);
+            position: relative;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .problem-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--neon-purple);
+            box-shadow: 0 10px 40px rgba(131, 56, 236, 0.3);
+        }
+
+        .problem-emoji {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .problem-text {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Solution Section */
+        .solution {
+            background: var(--dark-bg);
+        }
+
+        .solution-tagline {
+            font-size: 1.3rem;
+            color: var(--neon-blue);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .solution-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 60px;
+            line-height: 1.8;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Carousel Section */
+        .carousel {
+            background: var(--dark-surface);
+        }
+
+        .carousel-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .carousel-placeholder {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 80px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .carousel-placeholder-text {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--dark-bg);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-quote {
+            font-size: 1.6rem;
+            font-style: italic;
+            color: var(--neon-pink);
+            margin: 40px 0;
+            font-weight: 600;
+            padding: 35px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border-left: 5px solid var(--neon-pink);
+            box-shadow: 0 0 30px rgba(255, 0, 110, 0.2);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--dark-surface);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            border-color: var(--neon-blue);
+            box-shadow: 0 10px 50px rgba(58, 134, 255, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Vision & Mission Section */
+        .vision-mission {
+            background: var(--dark-bg);
+        }
+
+        .vm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .vm-card {
+            padding: 50px 40px;
+            border-radius: 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .vm-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-purple);
+            box-shadow: 0 10px 40px rgba(131, 56, 236, 0.3);
+        }
+
+        .vm-label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--neon-blue);
+            margin-bottom: 20px;
+        }
+
+        .vm-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--dark-surface);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 35px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-pink);
+            box-shadow: 0 10px 40px rgba(255, 0, 110, 0.2);
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Founder Section */
+        .founder {
+            background: var(--dark-bg);
+        }
+
+        .founder-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 50px;
+            border-radius: 20px;
+        }
+
+        .founder-story {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .founder-quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--neon-orange);
+            margin: 30px 0;
+            padding: 30px;
+            background: rgba(251, 86, 7, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border-left: 5px solid var(--neon-orange);
+            font-weight: 600;
+            box-shadow: 0 0 30px rgba(251, 86, 7, 0.2);
+        }
+
+        .founder-badge {
+            display: inline-block;
+            background: var(--gradient-2);
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            box-shadow: 0 0 25px rgba(58, 134, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .founder-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(58, 134, 255, 0.6);
+        }
+
+        /* Instagram Section */
+        .instagram {
+            background: var(--dark-surface);
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .instagram-card {
+            aspect-ratio: 1;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .instagram-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .instagram-card:hover::before {
+            opacity: 0.2;
+        }
+
+        .instagram-card:hover {
+            transform: scale(1.08) rotate(2deg);
+            border-color: var(--neon-pink);
+            box-shadow: 0 10px 40px rgba(255, 0, 110, 0.3);
+        }
+
+        .instagram-handle {
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            padding: 16px 35px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--neon-pink);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .instagram-handle:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: var(--gradient-1);
+            box-shadow: 0 10px 40px rgba(255, 0, 110, 0.4);
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: var(--dark-bg);
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-animated);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            opacity: 0.1;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta-description {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-surface);
+            color: var(--text-primary);
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .footer-tagline {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 20px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-link {
+            color: var(--neon-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .footer-link:hover {
+            color: var(--neon-pink);
+            text-decoration: underline;
+        }
+
+        /* Scroll Reveal */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subheadline {
+                font-size: 1rem;
+            }
+
+            .logo {
+                font-size: 36px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid,
+            .vm-grid,
+            .instagram-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-content {
+                padding: 30px 20px;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .final-cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo">
+                <span>Humrah</span>
+                <span class="logo-heart">💙</span>
+            </div>
+            <h1>NO ONE DESERVES TO SCROLL ALONE 💙</h1>
+            <p class="hero-subheadline">Humrah → Your real-world companion app</p>
+            <p class="hero-description">Find someone to share a walk, coffee, or conversation. No dating. No pressure. Just real connection.</p>
+            <div class="hero-buttons">
+                <a href="#waitlist" class="btn btn-primary">JOIN THE WAITLIST</a>
+                <a href="https://instagram.com/official_humrah_2025" target="_blank" class="btn btn-secondary">FOLLOW @official_humrah_2025</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section problem scroll-reveal">
+        <h2 class="section-title">LET'S BE REAL 🤔</h2>
+        <p class="section-subtitle">We know these feelings hit different</p>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <span class="problem-emoji">🤔</span>
+                <p class="problem-text">Wanted to go out but felt weird going alone?</p>
+            </div>
+            <div class="problem-card">
+                <span class="problem-emoji">😰</span>
+                <p class="problem-text">New city, zero friends, infinite anxiety?</p>
+            </div>
+            <div class="problem-card">
+                <span class="problem-emoji">👀</span>
+                <p class="problem-text">Your friends are busy but you're NOT</p>
+            </div>
+            <div class="problem-card">
+                <span class="problem-emoji">💔</span>
+                <p class="problem-text">That coffee shop looks amazing but... alone?</p>
+            </div>
+            <div class="problem-card">
+                <span class="problem-emoji">🎬</span>
+                <p class="problem-text">Movie dropped but no one's free to watch it</p>
+            </div>
+            <div class="problem-card">
+                <span class="problem-emoji">🚶</span>
+                <p class="problem-text">Just wanna walk around the city, talk to SOMEONE</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section solution scroll-reveal">
+        <h2 class="section-title">MEET HUMRAH 💙</h2>
+        <p class="solution-tagline">Your companion for the moment</p>
+        <p class="solution-description">Not a dating app. Not a networking thing. Just two people deciding to step into the world together.</p>
+        <div class="solution-grid">
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3 class="feature-title">Real People, Real Vibes</h3>
+                <p class="feature-description">Connect with humans who get it. No algorithms, no bs.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title">Zero Judgment Zone</h3>
+                <p class="feature-description">Safe, respectful, judgment-free. Always.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💜</div>
+                <h3 class="feature-title">Built For Introverts</h3>
+                <p class="feature-description">Anxious? Shy? Lonely? This is for you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="section carousel scroll-reveal">
+        <h2 class="section-title">OUR FOUNDER'S JOURNEY ✨</h2>
+        <p class="section-subtitle">From idea to reality — swipe to see how Humrah was born</p>
+        <div class="carousel-container">
+            <div class="carousel-placeholder">
+                <p class="carousel-placeholder-text">📸 Carousel coming soon</p>
+                <p class="carousel-placeholder-text" style="font-size: 1rem; margin-top: 15px;">5-slide story showcasing the journey from loneliness to building a movement</p>
+                <a href="https://instagram.com/official_humrah_2025" target="_blank" class="btn btn-primary" style="margin-top: 25px;">See Full Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features scroll-reveal">
+        <h2 class="section-title">WHY HUMRAH HITS DIFFERENT 🎯</h2>
+        <p class="section-subtitle">no cap, we built this for real people with real feelings</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3 class="feature-title">Zero Judgment Zone</h3>
+                <p class="feature-description">Your anxiety, your shyness, your loneliness — we get it. No judgment, ever.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Real People, Real Vibes</h3>
+                <p class="feature-description">Actual humans who want connection. Not bots, not creeps, not weirdos.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💜</div>
+                <h3 class="feature-title">For Introverts, By Introverts</h3>
+                <p class="feature-description">We understand the anxiety of going out alone. This is built for us.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💙</div>
+                <h3 class="feature-title">Anxiety? We Get It</h3>
+                <p class="feature-description">No cap, we designed this with mental health in mind.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section class="section vision-mission scroll-reveal">
+        <h2 class="section-title">THE VISION 🌍</h2>
+        <div class="vm-grid">
+            <div class="vm-card">
+                <div class="vm-label">VISION</div>
+                <p class="vm-text">A WORLD WHERE LONELINESS IS OPTIONAL 🌍</p>
+            </div>
+            <div class="vm-card">
+                <div class="vm-label">MISSION</div>
+                <p class="vm-text">MAKING REAL COMPANIONSHIP ACCESSIBLE TO EVERYONE</p>
+            </div>
+        </div>
+        <p class="section-subtitle" style="margin-top: 40px;">No one should miss out on life because they're afraid to ask for company.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials scroll-reveal">
+        <h2 class="section-title">REAL PEOPLE, REAL STORIES 💬</h2>
+        <p class="section-subtitle">These are the voices we're building for</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"I moved to a new city and felt so alone. Humrah helped me step out."</p>
+                <p class="testimonial-author">— Someone who needed this</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"As an introvert, going out solo was my biggest fear. Not anymore."</p>
+                <p class="testimonial-author">— A shy soul who found courage</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"This isn't just an app, it's a lifeline for people like me."</p>
+                <p class="testimonial-author">— Someone carrying anxiety</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder's Journey Section -->
+    <section class="section founder scroll-reveal">
+        <h2 class="section-title">WHY WE BUILT THIS 💭</h2>
+        <div class="founder-content">
+            <div class="founder-quote">
+                "I was tired of seeing people scroll through life instead of LIVING it."
+            </div>
+            <p class="founder-story">Humrah started late one night. Code, coffee, and a thought: what if loneliness wasn't inevitable? What if every person who felt too nervous to go out alone had someone in their corner? This isn't just an app — it's a mission to prove that real human connection can be as accessible as a tap on your phone.</p>
+            <div style="text-align: center;">
+                <span class="founder-badge">Made in India 🇮🇳</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="section instagram scroll-reveal">
+        <h2 class="section-title">WHAT WE'RE POSTING RN 🔥</h2>
+        <p class="section-subtitle">Real updates, real mission, real vibes</p>
+        <div class="instagram-grid">
+            <div class="instagram-card">📸</div>
+            <div class="instagram-card">💙</div>
+            <div class="instagram-card">✨</div>
+            <div class="instagram-card">🚀</div>
+            <div class="instagram-card">💭</div>
+            <div class="instagram-card">🌟</div>
+        </div>
+        <div style="text-align: center;">
+            <a href="https://instagram.com/official_humrah_2025" target="_blank" class="instagram-handle">FOLLOW FOR MORE</a>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta scroll-reveal" id="waitlist">
+        <h2>BE PART OF THE MOVEMENT</h2>
+        <p class="final-cta-description">We're building something real. And we want you in it.</p>
+        <div class="final-cta-buttons">
+            <a href="https://instagram.com/official_humrah_2025" target="_blank" class="btn btn-primary">🎬 JOIN WAITLIST</a>
+            <a href="https://instagram.com/official_humrah_2025" target="_blank" class="btn btn-secondary">📱 FOLLOW US</a>
+            <a href="https://instagram.com/official_humrah_2025" target="_blank" class="btn btn-secondary">❤️ SUPPORT MISSION</a>
+            <a href="https://instagram.com/official_humrah_2025" target="_blank" class="btn btn-secondary">🔗 SHARE WITH A FRIEND</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-tagline">no cap, we're building something real 💙</p>
+            <p class="footer-text" style="margin-top: 15px;">© 2025 Humrah | Made with ❤️ in India</p>
+            <p style="margin-top: 15px;">
+                <a href="https://instagram.com/official_humrah_2025" target="_blank" class="footer-link">Follow: @official_humrah_2025</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-reveal elements
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
