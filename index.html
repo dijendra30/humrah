@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Humrah - Find Your Companion for Life's Moments | Social Connection App</title>
     <link rel="icon" href="Logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lexend:wght@100..900&family=Lobster&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet" />
     <meta name="description" content="Humrah helps introverts and lonely people find real-world companions for outings, events, and daily experiences. Join the movement to end loneliness.">
     <meta name="keywords" content="Humrah, loneliness, friendship app, social connection, introverts, companionship, mental wellness, startup India, human connection">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +36,28 @@
             --shadow-glow: 0 0 30px rgba(255, 0, 110, 0.6);
             --glass-bg: rgba(255, 255, 255, 0.1);
             --glass-border: rgba(255, 255, 255, 0.2);
+            
         }
+         :root {
+             --text-color: #000000;   /* Black text for light mode */
+             --bg-color: #ffffff;     /* White background for light mode */
+               }
+  
+            @media (prefers-color-scheme: dark) {
+         :root {
+             --text-color: #ffffff; /* White text for dark mode */
+             --bg-color: #0A0E27;   /* Dark background for dark mode */
+               }
+        }
+
+  body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+  }
+
+  h1, h2, h3, p, a {
+    color: var(--text-color);
+  }
 
         * {
             margin: 0;
@@ -972,19 +996,32 @@
     </section>
 
     <!-- Instagram Section -->
-    <section class="section instagram scroll-reveal">
-        <h2 class="section-title">WHAT WE'RE POSTING RN 🔥</h2>
-        <p class="section-subtitle">Real updates, real mission, real vibes</p>
-        <div class="instagram-grid">
-        <!-- LightWidget Instagram Embed -->
-        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-        <iframe src="//lightwidget.com/widgets/8176536e02045cde9c5e359e8c034766.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-        </div>
-
-        <div style="text-align: center;">
-            <a href="https://instagram.com/official_humrah_2025" target="_blank" class="instagram-handle">FOLLOW FOR MORE</a>
-        </div>
-    </section>
+    <!-- Instagram Section -->
+<section class="section instagram scroll-reveal">
+    <h2 class="section-title">WHAT WE'RE POSTING RN 🔥</h2>
+    <p class="section-subtitle">Real updates, real mission, real vibes</p>
+    
+    <div class="instagram-grid">
+        <!-- Instaplug Widget Script -->
+        <script async src="https://app.instaplug.app/platform/instaplug.js" onload='
+        window.renderApp({
+          "containerId": "7673a09c-5dc4-42dc-95bd-62c70e3927c4",
+          "domain": "https://app.instaplug.app/",
+          "widgetClass": "",
+          "fontFamily": "",
+          "color": "",
+          "colorLink": "",
+          "colorLinkActive": "",
+          "colorLinkHover": ""
+        });
+        '></script>
+        <div id="7673a09c-5dc4-42dc-95bd-62c70e3927c4"></div>
+    </div>
+    
+    <div style="text-align: center;">
+        <a href="https://instagram.com/official_humrah_2025" target="_blank" class="instagram-handle">FOLLOW FOR MORE</a>
+    </div>
+</section>
 
     <!-- Final CTA Section -->
     <section class="final-cta scroll-reveal" id="waitlist">
