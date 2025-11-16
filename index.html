@@ -7,7 +7,8 @@
     <meta name="keywords" content="Humrah, real world connection, loneliness, companionship, human connection, startup, social app">
     <meta name="author" content="Humrah Team"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="Logo.png" type="image/png" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lexend:wght@100..900&family=Lobster&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet" />
@@ -217,6 +218,57 @@
 .ai-btn:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 0 28px rgba(0, 170, 255, 0.8);
+}
+.hidden {
+  display: none !important;
+}
+.btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  margin-top: 20px;
+  /* Optional subtle neon shadow for group */
+  box-shadow: 0 0 28px #00f2ea33;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  width: 210px; /* Set to largest needed width */
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  min-width: 180px; /* Adjust as needed for your design */
+  justify-content: center;
+  text-align: center;
+  margin: 0 14px 20px 0;
+  padding: 16px 32px;
+  font-size: 1.13rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #8338ec, #3a86ff, #00f2ea);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(58,134,255,.28), 0 2px 30px #8338ec80;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  transition: transform 0.18s cubic-bezier(.34,1.56,.64,1), box-shadow 0.34s;
+  outline: none;
+  position: relative;
+}
+.action-btn:hover,
+.action-btn:focus {
+  transform: scale(1.085);
+  box-shadow: 0 0 38px #00f2ea80, 0 4px 38px #8338ec99;
+  background: linear-gradient(90deg, #00f2ea, #3a86ff, #8338ec);
+}
+.action-btn > .btn-icon {
+  font-size: 1.27em;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
 /* Output box */
@@ -1054,7 +1106,17 @@
 
     <button onclick="generateStory()" class="ai-btn">✨ Generate Story</button>
 
-    <div id="outputBox" class="ai-output"></div>
+    <div id="outputBox" class="ai-output hidden"></div>
+    <!-- The image will appear here dynamically -->
+ <div id="shareDownloadContainer" class="btn-group" style="margin-top: 20px; display: none;">
+  <a id="downloadBtn" href="#" download="HumrahStory.png" class="action-btn">
+    <span class="btn-icon">⬇️</span> Download
+  </a>
+  <!--<button id="shareBtn" class="action-btn">
+    <span class="btn-icon">📤</span> Share
+  </button>-->
+</div>
+
   </div>
 </section>
 
@@ -1211,34 +1273,103 @@
                 }
             });
         });
-    
-   function generateStory() {
+const funnyLoadingMessages = [
+  "Juicing up your imagination...",
+  "Cooking up Humrah magic ✨",
+  "Assembling pixels with extra love...",
+  "Hacking the matrix for cool vibes...",
+  "Petting unicorns in the cloud...",
+  "Manifesting your moment... 🦄",
+  "Summoning good energy (and coffee)...",
+  "Making your story Insta-ready...",
+  "Loading... but like, in a chill way 😎",
+];
+function generateStory() {
   const input1 = document.getElementById('input1').value.trim();
   const input2 = document.getElementById('input2').value.trim();
   const outputBox = document.getElementById('outputBox');
+  const shareDownloadContainer = document.getElementById('shareDownloadContainer');
+  const downloadBtn = document.getElementById('downloadBtn');
 
+  // Validate inputs
   if (!input1 || !input2) {
-    outputBox.innerHTML = '<p style="color: red;">Please enter both moments!</p>';
+    outputBox.classList.remove('hidden');
+    outputBox.innerHTML = '<p style="color: #ff6e6e; text-align:center;">Please enter both moments!</p>';
+    shareDownloadContainer.style.display = 'none';
     return;
   }
 
+  // Setup rotating loading messages
+  let loadingIndex = Math.floor(Math.random() * funnyLoadingMessages.length);
+  let loadingInterval;
+
+  outputBox.classList.remove('hidden');
+  outputBox.innerHTML = `<p style="text-align:center; font-size: 1.1rem;">${funnyLoadingMessages[loadingIndex]}</p>`;
+
+  loadingInterval = setInterval(() => {
+    loadingIndex = (loadingIndex + 1) % funnyLoadingMessages.length;
+    outputBox.innerHTML = `<p style="text-align:center; font-size: 1.1rem;">${funnyLoadingMessages[loadingIndex]}</p>`;
+  }, 2500);
+
+  shareDownloadContainer.style.display = 'none';
+
+  // Generate image
   const prompt = `${input1} ${input2}`;
   const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}`;
-
-  outputBox.innerHTML = '<p>Loading your story image...</p>';
-
   const img = new Image();
+
   img.onload = function () {
-    outputBox.innerHTML = '';  // Clear loading text
+    // CRITICAL: Stop loading messages FIRST
+    clearInterval(loadingInterval);
+    
+    // Clear the container
+    outputBox.innerHTML = '';
+    
+    // Style the image
     img.style.maxWidth = '100%';
     img.style.borderRadius = '16px';
+    img.style.display = 'block';
+    
+    // Add image to container
     outputBox.appendChild(img);
+    
+    // Show download button
+    shareDownloadContainer.style.display = 'flex';
+
+    // Download button handler
+    downloadBtn.onclick = async function(e) {
+      e.preventDefault();
+      try {
+        const response = await fetch(img.src, { mode: 'cors' });
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = url;
+        a.download = 'HumrahStory.png';
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        a.remove();
+      } catch (err) {
+        console.error('Download error:', err);
+        alert('Download failed. Please try again.');
+      }
+    };
   };
+
   img.onerror = function () {
-    outputBox.innerHTML = '<p style="color: red;">Failed to generate image. Please try again.</p>';
+    // CRITICAL: Stop loading messages FIRST
+    clearInterval(loadingInterval);
+    
+    outputBox.innerHTML = '<p style="color: #ff6e6e; text-align:center; font-size: 1.1rem;">Failed to generate image. Please try again.</p>';
+    shareDownloadContainer.style.display = 'none';
   };
+
+  // Start loading the image
   img.src = imageUrl;
 }
+
 
 
 </script>
