@@ -114,6 +114,134 @@
         .fade-in {
             animation: fadeInUp 0.8s ease-out forwards;
         }
+        /* ---------------------------------------------------
+   HUMRAH AI HYBRID DESIGN — Neon + Pastel + GenZ + Premium
+--------------------------------------------------- */
+
+.ai-hybrid-box {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 35px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 35px rgba(0, 140, 255, 0.35);
+    animation: fadeInUp 1s ease-out;
+    overflow: hidden;
+}
+
+/* Floating neon blobs */
+.ai-floating {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.5;
+    z-index: -1;
+    animation: float 6s ease-in-out infinite;
+}
+.aif1 { background: #3A86FF; top: -40px; left: -40px; }
+.aif2 { background: #00F5FF; bottom: -40px; right: -40px; }
+
+/* Headings */
+.ai-heading {
+    font-size: 2.2rem;
+    font-weight: 800;
+
+    /* gradient text (works in WebKit/Blink) */
+    background: linear-gradient(135deg, #3A86FF, #00F5FF);
+
+    /* for Chrome/Safari/Edge */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* graceful fallback for other browsers */
+    background-clip: text;
+    color: transparent; /* some browsers will use this, others will show the fallback color below */
+
+    /* fallback plain color if gradient unsupported */
+    /* if you want a visible color even on unsupported browsers, replace 'transparent' with '#3A86FF' */
+    /* color: #3A86FF; */
+}
+
+
+.ai-subtext {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* Inputs */
+.ai-input-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ai-input {
+    padding: 15px 18px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
+    color: #fff;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.ai-input:focus {
+    outline: none;
+    border-color: #3A86FF;
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.6);
+    transform: scale(1.02);
+}
+
+/* Button */
+.ai-btn {
+    margin-top: 20px;
+    padding: 14px 35px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #3A86FF, #00F5FF);
+    color: #fff;
+    box-shadow: 0 0 18px rgba(0, 170, 255, 0.6);
+    transition: 0.25s;
+}
+
+.ai-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 0 28px rgba(0, 170, 255, 0.8);
+}
+
+/* Output box */
+.ai-output {
+    margin-top: 30px;
+    display: block;
+    padding: 22px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 0 25px rgba(0, 140, 255, 0.25);
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: #fff;
+    white-space: pre-wrap;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Floating animation */
+@keyframes aiFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-18px); }
+    100% { transform: translateY(0px); }
+}
+
 
         /* Hero Section - Gen Z Vibes */
         .hero {
@@ -845,8 +973,10 @@
             <p class="hero-subheadline">Humrah → Your real-world companion app</p>
             <p class="hero-description">Find someone to share a walk, coffee, or conversation. No dating. No pressure. Just real connection.</p>
             <div class="hero-buttons">
-                <a href="https://forms.gle/gRbyZyoQBuAfMkoT9" class="btn btn-primary">JOIN THE WAITLIST</a>
+                <a href="https://forms.gle/gRbyZyoQBuAfMkoT9" class="btn btn-primary">JOIN THE WAITLIST</a> 
+                <a href="#imageGeneratorSection" class="btn btn-primary">Generate Your Story</a>
                 <a href="https://instagram.com/official_humrah_2025" target="_blank" class="btn btn-secondary">FOLLOW @official_humrah_2025</a>
+                
             </div>
         </div>
     </section>
@@ -886,7 +1016,7 @@
     <!-- Solution Section -->
     <section class="section solution scroll-reveal">
         <h2 class="section-title">MEET HUMRAH 💙</h2>
-        <p class="solution-tagline">Your companion for the moment</p>
+        <!--<p class="solution-tagline">Your companion for the moment</p> -->
         <p class="solution-description">Not a dating app. Not a networking thing. Just two people deciding to step into the world together.</p>
         <div class="solution-grid">
             <div class="feature-card">
@@ -907,18 +1037,28 @@
         </div>
     </section>
 
-    <!-- Carousel Section -->
-    <section class="section carousel scroll-reveal">
-        <h2 class="section-title">OUR FOUNDER'S JOURNEY ✨</h2>
-        <p class="section-subtitle">From idea to reality — swipe to see how Humrah was born</p>
-        <div class="carousel-container">
-            <div class="carousel-placeholder">
-                <p class="carousel-placeholder-text">📸 Carousel coming soon</p>
-                <p class="carousel-placeholder-text" style="font-size: 1rem; margin-top: 15px;">5-slide story showcasing the journey from loneliness to building a movement</p>
-                <a href="https://instagram.com/official_humrah_2025" target="_blank" class="btn btn-primary" style="margin-top: 25px;">See Full Story</a>
-            </div>
-        </div>
-    </section>
+    
+<!-- AI Story Generator – Humrah Signature Edition -->
+<section class="section carousel scroll-reveal"id="imageGeneratorSection">
+  <h2 class="section-title">CREATE YOUR HUMRAH STORY ✨</h2>
+  <p class="section-subtitle">Blend two moments. Let AI turn them into something beautiful.</p>
+
+  <div class="ai-hybrid-box">
+    <h3 class="ai-heading">💙 Humrah AI Moment Creator</h3>
+    <p class="ai-subtext">Give two moments from your life — AI will craft an emotional, cinematic story.</p>
+
+    <div class="ai-input-wrap">
+      <input id="input1" class="ai-input" type="text" placeholder="First moment (e.g., ‘I moved to Delhi’)" />
+      <input id="input2" class="ai-input" type="text" placeholder="Second moment (e.g., ‘Didn’t know anyone’)" />
+    </div>
+
+    <button onclick="generateStory()" class="ai-btn">✨ Generate Story</button>
+
+    <div id="outputBox" class="ai-output"></div>
+  </div>
+</section>
+
+
 
     <!-- Features Section -->
     <section class="section features scroll-reveal">
@@ -1071,6 +1211,37 @@
                 }
             });
         });
-    </script>
+    
+   function generateStory() {
+  const input1 = document.getElementById('input1').value.trim();
+  const input2 = document.getElementById('input2').value.trim();
+  const outputBox = document.getElementById('outputBox');
+
+  if (!input1 || !input2) {
+    outputBox.innerHTML = '<p style="color: red;">Please enter both moments!</p>';
+    return;
+  }
+
+  const prompt = `${input1} ${input2}`;
+  const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}`;
+
+  outputBox.innerHTML = '<p>Loading your story image...</p>';
+
+  const img = new Image();
+  img.onload = function () {
+    outputBox.innerHTML = '';  // Clear loading text
+    img.style.maxWidth = '100%';
+    img.style.borderRadius = '16px';
+    outputBox.appendChild(img);
+  };
+  img.onerror = function () {
+    outputBox.innerHTML = '<p style="color: red;">Failed to generate image. Please try again.</p>';
+  };
+  img.src = imageUrl;
+}
+
+
+</script>
+
 </body>
 </html>
