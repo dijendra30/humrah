@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Humrah Terms of Service - User agreements, responsibilities, and legal terms for using our platform">
+    <meta name="robots" content="index, follow">
+    <title>Terms of Service | Humrah</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #3A86FF;
+            --primary-purple: #8338EC;
+            --dark-bg: #0A0E27;
+            --dark-surface: #151932;
+            --text-primary: #FFFFFF;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --accent-cyan: #00F5FF;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --dark-bg: #F8F9FA;
+                --dark-surface: #FFFFFF;
+                --text-primary: #1A1A1A;
+                --text-secondary: #4A4A4A;
+                --text-muted: #6B6B6B;
+                --glass-bg: rgba(0, 0, 0, 0.02);
+                --glass-border: rgba(0, 0, 0, 0.08);
+            }
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: var(--dark-surface);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-heart {
+            font-size: 28px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .toc {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .toc h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+        }
+
+        .toc li {
+            counter-increment: toc-counter;
+            margin-bottom: 12px;
+        }
+
+        .toc a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+        }
+
+        .toc a:hover {
+            color: var(--accent-cyan);
+            padding-left: 10px;
+        }
+
+        .toc a::before {
+            content: counter(toc-counter) ". ";
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .section {
+            margin: 60px 0;
+            scroll-margin-top: 20px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--glass-border);
+            counter-increment: section-counter;
+        }
+
+        .section h2::before {
+            content: counter(section-counter) ". ";
+            color: var(--primary-blue);
+            font-weight: 800;
+        }
+
+        .section {
+            counter-reset: subsection-counter;
+        }
+
+        .section h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 30px 0 15px;
+            counter-increment: subsection-counter;
+        }
+
+        .section h3::before {
+            content: counter(section-counter) "." counter(subsection-counter) " ";
+            color: var(--primary-purple);
+            font-weight: 700;
+        }
+
+        .section p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .section ul, .section ol {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .section li {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(131, 56, 236, 0.1), rgba(58, 134, 255, 0.1));
+            border-left: 4px solid var(--primary-blue);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .highlight-box strong {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .warning-box {
+            background: rgba(255, 107, 107, 0.1);
+            border-left: 4px solid #FF6B6B;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .warning-box strong {
+            color: #FF6B6B;
+            font-weight: 700;
+        }
+
+        .danger-box {
+            background: rgba(255, 50, 50, 0.15);
+            border: 2px solid #FF3232;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .danger-box strong {
+            color: #FF3232;
+            font-weight: 700;
+        }
+
+        .contact-section {
+            background: var(--dark-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            border: none;
+            padding-bottom: 0;
+            margin-bottom: 20px;
+        }
+
+        .contact-section h2::before {
+            content: "";
+        }
+
+        .contact-email {
+            display: inline-block;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 15px 30px;
+            border: 2px solid var(--primary-blue);
+            border-radius: 50px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-email:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(58, 134, 255, 0.3);
+        }
+
+        footer {
+            background: var(--dark-surface);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 60px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 5px 20px rgba(58, 134, 255, 0.4);
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(58, 134, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .section h3 {
+                font-size: 1.2rem;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            header {
+                padding: 40px 20px 30px;
+            }
+
+            .toc {
+                padding: 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        body {
+            counter-reset: section-counter;
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        code {
+            background: var(--glass-bg);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--accent-cyan);
+        }
+
+        .acceptance-box {
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(58, 134, 255, 0.1));
+            border: 2px solid var(--accent-cyan);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .acceptance-box strong {
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-link">
+            <span>Humrah</span>
+            <span class="logo-heart">💙</span>
+        </a>
+        <h1>Terms of Service</h1>
+        <p class="last-updated">Last Updated: February 15, 2025</p>
+    </header>
+
+    <div class="container">
+        <div class="acceptance-box">
+            <p><strong>⚠️ IMPORTANT: READ CAREFULLY BEFORE USING HUMRAH</strong></p>
+            <p style="margin-top: 15px; color: var(--text-secondary);">These Terms constitute a legally binding agreement between you and Humrah. By creating an account or using our services, you accept these Terms in full.</p>
+        </div>
+
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="#acceptance">Acceptance of Terms</a></li>
+                <li><a href="#eligibility">Eligibility & Age Restrictions</a></li>
+                <li><a href="#account">Account Registration & Verification</a></li>
+                <li><a href="#service-description">Service Description</a></li>
+                <li><a href="#user-conduct">User Conduct & Responsibilities</a></li>
+                <li><a href="#meetup-disclaimer">Meetup Safety & Disclaimer</a></li>
+                <li><a href="#prohibited-activities">Prohibited Activities</a></li>
+                <li><a href="#content-policy">User-Generated Content</a></li>
+                <li><a href="#privacy">Privacy & Data Protection</a></li>
+                <li><a href="#intellectual-property">Intellectual Property</a></li>
+                <li><a href="#termination">Account Suspension & Termination</a></li>
+                <li><a href="#liability">Limitation of Liability</a></li>
+                <li><a href="#disclaimers">Disclaimers & Warranties</a></li>
+                <li><a href="#indemnification">Indemnification</a></li>
+                <li><a href="#dispute-resolution">Dispute Resolution</a></li>
+                <li><a href="#governing-law">Governing Law & Jurisdiction</a></li>
+                <li><a href="#changes">Changes to Terms</a></li>
+                <li><a href="#contact">Contact Information</a></li>
+            </ol>
+        </div>
+
+        <section id="acceptance" class="section">
+            <h2>Acceptance of Terms</h2>
+            <p>Welcome to Humrah. These Terms of Service ("Terms") govern your access to and use of the Humrah mobile application, website, and related services (collectively, the "Service").</p>
+
+            <div class="highlight-box">
+                <p><strong>By using Humrah, you agree to:</strong></p>
+                <ul style="margin-top: 15px;">
+                    <li>Be bound by these Terms of Service</li>
+                    <li>Comply with our <a href="privacy.html" style="color: var(--primary-blue);">Privacy Policy</a></li>
+                    <li>Follow our Community Guidelines</li>
+                    <li>Accept all risks associated with in-person meetups</li>
+                </ul>
+            </div>
+
+            <p>If you do not agree to these Terms, you must not access or use the Service. Your continued use of Humrah constitutes acceptance of any modifications to these Terms.</p>
+
+            <h3>Agreement to Arbitration</h3>
+            <p>These Terms include an agreement to resolve disputes through arbitration rather than court litigation. Please read Section 15 (Dispute Resolution) carefully.</p>
+
+            <h3>Electronic Acceptance</h3>
+            <p>You acknowledge that:</p>
+            <ul>
+                <li>These Terms are provided in electronic form</li>
+                <li>Your electronic acceptance has the same legal effect as a handwritten signature</li>
+                <li>You have the ability to store and print these Terms for your records</li>
+            </ul>
+        </section>
+
+        <section id="eligibility" class="section">
+            <h2>Eligibility & Age Restrictions</h2>
+
+            <div class="danger-box">
+                <p><strong>AGE REQUIREMENT:</strong> You must be at least 18 years old to use Humrah. This is a strict, non-negotiable requirement.</p>
+            </div>
+
+            <h3>Minimum Age Requirement</h3>
+            <p>To create a Humrah account and use our Service, you must:</p>
+            <ul>
+                <li>Be at least 18 years of age</li>
+                <li>Have the legal capacity to enter into binding contracts under Indian law</li>
+                <li>Not be prohibited from using the Service under any applicable laws</li>
+                <li>Reside in a location where the Service is available</li>
+            </ul>
+
+            <h3>Age Verification</h3>
+            <p>We implement multiple measures to verify age:</p>
+            <ul>
+                <li>Self-declaration during registration</li>
+                <li>Face verification to assess apparent age</li>
+                <li>Profile review by moderation team</li>
+                <li>User reports of suspected underage accounts</li>
+            </ul>
+
+            <h3>Consequences of Misrepresentation</h3>
+            <p>If you misrepresent your age:</p>
+            <ul>
+                <li>Your account will be immediately terminated</li>
+                <li>All personal data will be deleted</li>
+                <li>You will be permanently banned from creating future accounts</li>
+                <li>We may report to law enforcement if required</li>
+            </ul>
+
+            <h3>Additional Eligibility Requirements</h3>
+            <p>You must also:</p>
+            <ul>
+                <li>Not be a registered sex offender</li>
+                <li>Not have been previously banned from Humrah</li>
+                <li>Not be using the Service for illegal purposes</li>
+                <li>Not be impersonating another person</li>
+            </ul>
+
+            <div class="warning-box">
+                <p><strong>Parental Responsibility:</strong> If you are a parent or guardian and believe your child has created an account, contact us immediately at <a href="mailto:support@humrah.com" style="color: #FF6B6B;">support@humrah.com</a>.</p>
+            </div>
+        </section>
+
+        <section id="account" class="section">
+            <h2>Account Registration & Verification</h2>
+
+            <h3>Account Creation</h3>
+            <p>To use Humrah, you must create an account by providing:</p>
+            <ul>
+                <li><strong>Valid Email Address:</strong> Must be accessible to receive OTP codes</li>
+                <li><strong>Profile Information:</strong> Name, age, gender, bio, and interests</li>
+                <li><strong>Profile Photos:</strong> At least one clear photo of yourself</li>
+                <li><strong>Location Information:</strong> Approximate location for matching purposes</li>
+            </ul>
+
+            <h3>Mandatory Video Verification</h3>
+            <p>All users must complete video verification before accessing core features:</p>
+            <ul>
+                <li><strong>Purpose:</strong> Confirm you are a real person and prevent fake accounts</li>
+                <li><strong>Process:</strong> Record a short video following liveness detection instructions</li>
+                <li><strong>Face Embedding:</strong> A mathematical representation of your face is stored for duplicate detection</li>
+                <li><strong>Video Deletion:</strong> The original video is deleted within 48 hours</li>
+            </ul>
+
+            <p>See our <a href="privacy.html#face-verification" style="color: var(--primary-blue);">Privacy Policy</a> for detailed information about face verification.</p>
+
+            <h3>Account Accuracy</h3>
+            <p>You agree to:</p>
+            <ul>
+                <li>Provide accurate, current, and complete information</li>
+                <li>Maintain and update your information to keep it accurate</li>
+                <li>Use your real name (not pseudonyms or fake names)</li>
+                <li>Upload photos that accurately represent your current appearance</li>
+                <li>Not impersonate any person or entity</li>
+            </ul>
+
+            <h3>Account Security</h3>
+            <p>You are responsible for:</p>
+            <ul>
+                <li>Maintaining the confidentiality of your account credentials</li>
+                <li>All activities that occur under your account</li>
+                <li>Notifying us immediately of any unauthorized use</li>
+                <li>Not sharing your OTP codes with anyone (including Humrah staff)</li>
+            </ul>
+
+            <h3>One Account Per Person</h3>
+            <p>You may only create and maintain one Humrah account. Creating multiple accounts is prohibited and may result in permanent ban.</p>
+
+            <div class="warning-box">
+                <p><strong>Account Sharing Prohibited:</strong> You may not share your account with any other person. Each individual must create and use their own account.</p>
+            </div>
+        </section>
+
+        <section id="service-description" class="section">
+            <h2>Service Description</h2>
+
+            <h3>What Humrah Provides</h3>
+            <p>Humrah is a platform that facilitates connections between users for real-world companionship. Our Service includes:</p>
+            <ul>
+                <li><strong>Companion Matching:</strong> Connect with nearby users based on location and interests</li>
+                <li><strong>In-App Messaging:</strong> Communicate with matched companions</li>
+                <li><strong>Booking System:</strong> Plan and confirm meetups at public places</li>
+                <li><strong>Safety Features:</strong> Report abuse, block users, and access safety resources</li>
+                <li><strong>Profile Verification:</strong> Verified badge system for authentic accounts</li>
+            </ul>
+
+            <h3>What Humrah Is NOT</h3>
+            <p>Humrah is explicitly NOT:</p>
+            <ul>
+                <li>❌ A dating or romantic matchmaking service</li>
+                <li>❌ An escort or adult services platform</li>
+                <li>❌ A professional networking or business platform</li>
+                <li>❌ A background check or screening service</li>
+                <li>❌ A guarantee of safety, compatibility, or positive experiences</li>
+            </ul>
+
+            <h3>Service Availability</h3>
+            <p>We strive to provide reliable service, but:</p>
+            <ul>
+                <li>Service may be interrupted for maintenance, updates, or technical issues</li>
+                <li>Features may be added, modified, or removed at our discretion</li>
+                <li>Service availability may vary by location</li>
+                <li>We do not guarantee 100% uptime</li>
+            </ul>
+
+            <h3>Beta Features</h3>
+            <p>Some features may be marked as "beta" or "experimental":</p>
+            <ul>
+                <li>These features may be incomplete or unstable</li>
+                <li>They may be modified or discontinued without notice</li>
+                <li>Your feedback helps us improve these features</li>
+            </ul>
+
+            <h3>Geographic Restrictions</h3>
+            <p>Humrah is currently available in select cities and regions. Service availability may be limited based on:</p>
+            <ul>
+                <li>Your location</li>
+                <li>Local laws and regulations</li>
+                <li>User density in your area</li>
+                <li>Technical infrastructure</li>
+            </ul>
+        </section>
+
+        <section id="user-conduct" class="section">
+            <h2>User Conduct & Responsibilities</h2>
+
+            <h3>Expected Behavior</h3>
+            <p>As a Humrah user, you agree to:</p>
+            <ul>
+                <li>Treat all users with respect, kindness, and dignity</li>
+                <li>Communicate honestly and authentically</li>
+                <li>Honor commitments and show up to confirmed bookings</li>
+                <li>Respect boundaries and consent at all times</li>
+                <li>Follow all applicable laws during meetups</li>
+                <li>Report suspicious or inappropriate behavior</li>
+                <li>Use the Service only for its intended purpose (companionship)</li>
+            </ul>
+
+            <h3>Communication Standards</h3>
+            <p>When messaging other users:</p>
+            <ul>
+                <li>Be respectful and courteous</li>
+                <li>Do not send unsolicited sexual or romantic content</li>
+                <li>Do not harass, threaten, or intimidate</li>
+                <li>Do not spam or send excessive messages</li>
+                <li>Respond reasonably to messages in a timely manner</li>
+            </ul>
+
+            <h3>Meetup Etiquette</h3>
+            <p>For in-person meetups:</p>
+            <ul>
+                <li><strong>Be Punctual:</strong> Arrive on time or communicate delays</li>
+                <li><strong>Public Places Only:</strong> Meet only in public, well-populated locations</li>
+                <li><strong>Confirm Completion:</strong> Mark booking as complete in the app</li>
+                <li><strong>Leave Feedback:</strong> Rate your experience to help the community</li>
+                <li><strong>Respect Boundaries:</strong> Honor the agreed-upon activity and duration</li>
+            </ul>
+
+            <h3>Safety Responsibilities</h3>
+            <p>You are responsible for your own safety:</p>
+            <ul>
+                <li>Research public places before meetups</li>
+                <li>Inform trusted friends or family of your plans</li>
+                <li>Trust your instincts and leave if uncomfortable</li>
+                <li>Keep personal belongings secure</li>
+                <li>Do not share sensitive personal information prematurely</li>
+            </ul>
+
+            <h3>Reporting Obligations</h3>
+            <p>You must report:</p>
+            <ul>
+                <li>Any illegal activity</li>
+                <li>Harassment, threats, or abuse</li>
+                <li>Suspected underage users</li>
+                <li>Impersonation or fake accounts</li>
+                <li>Safety concerns or violations of Terms</li>
+            </ul>
+        </section>
+
+        <section id="meetup-disclaimer" class="section">
+            <h2>Meetup Safety & Disclaimer</h2>
+
+            <div class="danger-box">
+                <p><strong>⚠️ CRITICAL SAFETY NOTICE:</strong> Humrah facilitates connections but does NOT guarantee the safety, suitability, or intentions of any user. You assume ALL RISKS associated with in-person meetups.</p>
+            </div>
+
+            <h3>Assumption of Risk</h3>
+            <p>By using Humrah and meeting with other users, you acknowledge and accept that:</p>
+            <ul>
+                <li>Humrah does not conduct criminal background checks</li>
+                <li>We do not verify employment, education, or other credentials</li>
+                <li>Profile information may be incomplete, inaccurate, or false</li>
+                <li>Other users may misrepresent their identity or intentions</li>
+                <li>In-person interactions carry inherent risks</li>
+                <li>We cannot guarantee the behavior of other users</li>
+            </ul>
+
+            <h3>Public Places Requirement</h3>
+            <p><strong>YOU MUST ONLY MEET IN PUBLIC PLACES.</strong> Humrah:</p>
+            <ul>
+                <li>Prohibits bookings at private residences</li>
+                <li>Requires meetups in public, well-populated locations</li>
+                <li>Recommends daylight hours for first meetups</li>
+                <li>Suggests busy cafes, parks, malls, or community spaces</li>
+            </ul>
+
+            <p><strong>Examples of ALLOWED public places:</strong> Coffee shops, restaurants, shopping malls, public parks, libraries, community centers, movie theaters.</p>
+
+            <p><strong>Examples of PROHIBITED private places:</strong> Private homes, apartments, hotel rooms, cars, secluded areas, private offices.</p>
+
+            <h3>Safety Recommendations</h3>
+            <p>We strongly recommend:</p>
+            <ul>
+                <li><strong>Tell Someone:</strong> Inform a trusted friend or family member of your plans</li>
+                <li><strong>Share Location:</strong> Use your phone's location sharing feature</li>
+                <li><strong>Stay Public:</strong> Never move to a private location</li>
+                <li><strong>Stay Sober:</strong> Avoid excessive alcohol or substances</li>
+                <li><strong>Trust Instincts:</strong> Leave immediately if you feel uncomfortable</li>
+                <li><strong>Phone Charged:</strong> Keep your phone charged and accessible</li>
+                <li><strong>Emergency Contacts:</strong> Have emergency numbers saved</li>
+            </ul>
+
+            <h3>What to Do If You Feel Unsafe</h3>
+            <p>If you experience an emergency or feel threatened:</p>
+            <ol>
+                <li><strong>Immediate Danger:</strong> Call local emergency services (100 in India) immediately</li>
+                <li><strong>Leave the Area:</strong> Go to a safe, public location</li>
+                <li><strong>Report in App:</strong> Use the "Report User" feature to flag the account</li>
+                <li><strong>Block User:</strong> Prevent further contact</li>
+                <li><strong>Contact Humrah:</strong> Email <a href="mailto:safety@humrah.com" style="color: #FF3232;">safety@humrah.com</a> with details</li>
+            </ol>
+
+            <h3>Humrah's Role & Limitations</h3>
+            <p>Humrah is a platform facilitator only. We:</p>
+            <ul>
+                <li>✅ Provide tools to connect users</li>
+                <li>✅ Implement verification and safety features</li>
+                <li>✅ Investigate reports and take action against violators</li>
+                <li>❌ Do NOT screen users beyond face verification</li>
+                <li>❌ Do NOT supervise or monitor meetups</li>
+                <li>❌ Do NOT guarantee safety or compatibility</li>
+                <li>❌ Are NOT responsible for users' offline behavior</li>
+            </ul>
+
+            <div class="warning-box">
+                <p><strong>You Meetup at Your Own Risk:</strong> Humrah is not liable for any harm, injury, loss, or damage arising from in-person meetups. See Section 12 (Limitation of Liability) for full details.</p>
+            </div>
+        </section>
+
+        <section id="prohibited-activities" class="section">
+            <h2>Prohibited Activities</h2>
+
+            <h3>Strictly Prohibited Conduct</h3>
+            <p>The following activities are absolutely prohibited and will result in immediate account termination:</p>
+
+            <h3>Sexual or Adult Services</h3>
+            <ul>
+                <li>❌ Offering or soliciting sexual services, escort services, or prostitution</li>
+                <li>❌ Requesting or providing "happy endings" or sexual favors</li>
+                <li>❌ Using the platform for hookups or casual sex</li>
+                <li>❌ Sending unsolicited sexual content (messages, photos, videos)</li>
+            </ul>
+
+            <h3>Illegal Activities</h3>
+            <ul>
+                <li>❌ Drug dealing or substance abuse</li>
+                <li>❌ Human trafficking or exploitation</li>
+                <li>❌ Fraud, scams, or financial crimes</li>
+                <li>❌ Theft or property crimes</li>
+                <li>❌ Violence, assault, or threats</li>
+                <li>❌ Any activity prohibited by Indian law</li>
+            </ul>
+
+            <h3>Platform Abuse</h3>
+            <ul>
+                <li>❌ Creating multiple or fake accounts</li>
+                <li>❌ Impersonating other people or entities</li>
+                <li>❌ Using automated bots or scripts</li>
+                <li>❌ Scraping or harvesting user data</li>
+                <li>❌ Reverse engineering the app</li>
+                <li>❌ Circumventing security measures</li>
+            </ul>
+
+            <h3>Harassment & Abuse</h3>
+            <ul>
+                <li>❌ Stalking, doxxing, or threatening users</li>
+                <li>❌ Hate speech or discrimination</li>
+                <li>❌ Bullying or targeted harassment</li>
+                <li>❌ Sharing private information without consent</li>
+                <li>❌ Revenge porn or non-consensual intimate images</li>
+            </ul>
+
+            <h3>Commercial Misuse</h3>
+            <ul>
+                <li>❌ Using Humrah for business solicitation</li>
+                <li>❌ Advertising products or services</li>
+                <li>❌ Multi-level marketing or pyramid schemes</li>
+                <li>❌ Recruiting for jobs or business opportunities</li>
+            </ul>
+
+            <h3>Dating & Romantic Relationships</h3>
+            <p>While not illegal, Humrah is NOT a dating app:</p>
+            <ul>
+                <li>⚠️ Do not use Humrah to find romantic partners or dates</li>
+                <li>⚠️ Do not pressure companions for romantic/sexual relationships</li>
+                <li>⚠️ Repeated romantic solicitation may result in account suspension</li>
+            </ul>
+
+            <h3>Financial Exploitation</h3>
+            <ul>
+                <li>❌ Requesting money, loans, or financial assistance</li>
+                <li>❌ Charging fees for companionship beyond platform rates (if applicable)</li>
+                <li>❌ Cryptocurrency scams or investment fraud</li>
+                <li>❌ Gift card scams or money laundering</li>
+            </ul>
+
+            <h3>Consequences</h3>
+            <p>Violation of these prohibitions will result in:</p>
+            <ul>
+                <li>Immediate account suspension or permanent ban</li>
+                <li>Deletion of all user data</li>
+                <li>Blacklisting via face embedding to prevent re-registration</li>
+                <li>Referral to law enforcement if criminal activity is suspected</li>
+                <li>Cooperation with legal authorities in investigations</li>
+            </ul>
+        </section>
+
+        <section id="content-policy" class="section">
+            <h2>User-Generated Content</h2>
+
+            <h3>Your Content</h3>
+            <p>"User Content" includes all information, photos, messages, and materials you post or upload to Humrah:</p>
+            <ul>
+                <li>Profile photos and information</li>
+                <li>Chat messages</li>
+                <li>Reviews and ratings</li>
+                <li>Feedback and reports</li>
+            </ul>
+
+            <h3>License Grant</h3>
+            <p>By posting User Content, you grant Humrah a:</p>
+            <ul>
+                <li>Non-exclusive, worldwide, royalty-free license</li>
+                <li>To use, display, reproduce, and distribute your content</li>
+                <li>For the purpose of operating and improving the Service</li>
+                <li>Subject to our Privacy Policy</li>
+            </ul>
+
+            <h3>Content Ownership</h3>
+            <p>You retain ownership of your User Content. However:</p>
+            <ul>
+                <li>You are responsible for all content you post</li>
+                <li>You represent that you have the right to post such content</li>
+                <li>You do not violate any third-party rights (copyright, privacy, etc.)</li>
+            </ul>
+
+            <h3>Content Standards</h3>
+            <p>Your User Content must NOT:</p>
+            <ul>
+                <li>Be false, misleading, or deceptive</li>
+                <li>Violate any laws or regulations</li>
+                <li>Infringe on intellectual property rights</li>
+                <li>Contain viruses or malicious code</li>
+                <li>Be sexually explicit or pornographic</li>
+                <li>Promote violence, discrimination, or hate</li>
+                <li>Violate anyone's privacy or publicity rights</li>
+            </ul>
+
+            <h3>Moderation Rights</h3>
+            <p>Humrah reserves the right to:</p>
+            <ul>
+                <li>Review, monitor, and moderate User Content</li>
+                <li>Remove content that violates these Terms</li>
+                <li>Suspend accounts posting inappropriate content</li>
+                <li>Use automated tools to detect violations</li>
+            </ul>
+
+            <h3>Reporting Violations</h3>
+            <p>If you see content that violates these standards:</p>
+            <ul>
+                <li>Use the in-app "Report" feature</li>
+                <li>Email <a href="mailto:report@humrah.com" style="color: var(--primary-blue);">report@humrah.com</a> with details</li>
+                <li>Include screenshots if helpful (but respect privacy)</li>
+            </ul>
+        </section>
+
+        <section id="privacy" class="section">
+            <h2>Privacy & Data Protection</h2>
+
+            <p>Your privacy is important to us. Please review our comprehensive <a href="privacy.html" style="color: var(--primary-blue); font-weight: 600;">Privacy Policy</a> to understand how we collect, use, and protect your personal information.</p>
+
+            <h3>Key Privacy Points</h3>
+            <ul>
+                <li><strong>We do NOT sell your data</strong> to third parties</li>
+                <li><strong>Face verification videos</strong> are deleted within 48 hours</li>
+                <li><strong>Face embeddings</strong> are stored for security purposes</li>
+                <li><strong>Location data</strong> is used only for matching</li>
+                <li><strong>Chat messages</strong> are encrypted and stored for dispute resolution</li>
+            </ul>
+
+            <h3>Data Collection</h3>
+            <p>By using Humrah, you consent to:</p>
+            <ul>
+                <li>Collection of personal information as described in our Privacy Policy</li>
+                <li>Processing of face verification data for security purposes</li>
+                <li>Use of location data for matching functionality</li>
+                <li>Storage of chat messages for safety and moderation</li>
+            </ul>
+
+            <h3>Third-Party Services</h3>
+            <p>We use third-party services for:</p>
+            <ul>
+                <li>Cloud storage (Cloudinary) for photos</li>
+                <li>Backend infrastructure (Firebase)</li>
+                <li>Analytics and performance monitoring</li>
+            </ul>
+            <p>These services have their own privacy policies and may collect data independently.</p>
+
+            <h3>Your Privacy Rights</h3>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access your personal data</li>
+                <li>Correct inaccurate information</li>
+                <li>Request deletion of your account and data</li>
+                <li>Opt out of non-essential communications</li>
+                <li>File complaints with data protection authorities</li>
+            </ul>
+
+            <p>See our <a href="privacy.html#your-rights" style="color: var(--primary-blue);">Privacy Policy</a> for detailed information about your rights.</p>
+        </section>
+
+        <section id="intellectual-property" class="section">
+            <h2>Intellectual Property</h2>
+
+            <h3>Humrah's Rights</h3>
+            <p>All intellectual property in the Service is owned by Humrah, including:</p>
+            <ul>
+                <li>The Humrah name, logo, and trademarks</li>
+                <li>App design, interface, and user experience</li>
+                <li>Source code and algorithms</li>
+                <li>Content, graphics, and visual elements</li>
+                <li>Marketing materials and documentation</li>
+            </ul>
+
+            <h3>Restrictions</h3>
+            <p>You may NOT:</p>
+            <ul>
+                <li>Copy, modify, or distribute the app or its content</li>
+                <li>Reverse engineer or decompile the app</li>
+                <li>Use Humrah's trademarks or branding</li>
+                <li>Create derivative works based on the Service</li>
+                <li>Remove or obscure copyright notices</li>
+            </ul>
+
+            <h3>Trademarks</h3>
+            <p>"Humrah," the Humrah logo (💙), and related marks are trademarks of Humrah. Unauthorized use is prohibited.</p>
+
+            <h3>Copyright Infringement</h3>
+            <p>If you believe content on Humrah infringes your copyright:</p>
+            <ul>
+                <li>Email <a href="mailto:legal@humrah.com" style="color: var(--primary-blue);">legal@humrah.com</a></li>
+                <li>Include: Your contact information, description of copyrighted work, location of infringing content</li>
+                <li>We will investigate and take appropriate action</li>
+            </ul>
+
+            <h3>Feedback & Suggestions</h3>
+            <p>If you provide feedback or suggestions about the Service:</p>
+            <ul>
+                <li>Such feedback becomes the property of Humrah</li>
+                <li>We may use it without compensation or attribution</li>
+                <li>You waive any rights to such feedback</li>
+            </ul>
+        </section>
+
+        <section id="termination" class="section">
+            <h2>Account Suspension & Termination</h2>
+
+            <h3>Termination by You</h3>
+            <p>You may terminate your account at any time:</p>
+            <ul>
+                <li>Through in-app settings ("Delete Account")</li>
+                <li>By emailing <a href="mailto:support@humrah.com" style="color: var(--primary-blue);">support@humrah.com</a></li>
+                <li>See our <a href="privacy.html#data-deletion" style="color: var(--primary-blue);">Privacy Policy</a> for data deletion timeline</li>
+            </ul>
+
+            <h3>Termination by Humrah</h3>
+            <p>We may suspend or terminate your account:</p>
+            <ul>
+                <li><strong>Immediately</strong> for violations of these Terms</li>
+                <li><strong>Without warning</strong> for illegal activity or safety concerns</li>
+                <li><strong>At our discretion</strong> for any reason with notice</li>
+            </ul>
+
+            <h3>Grounds for Termination</h3>
+            <p>We may terminate your account if you:</p>
+            <ul>
+                <li>Violate these Terms of Service</li>
+                <li>Engage in prohibited activities (see Section 7)</li>
+                <li>Pose a safety risk to other users</li>
+                <li>Provide false information</li>
+                <li>Are under 18 years old</li>
+                <li>Create multiple accounts</li>
+                <li>Abuse or harass other users or staff</li>
+            </ul>
+
+            <h3>Effects of Termination</h3>
+            <p>When your account is terminated:</p>
+            <ul>
+                <li>You lose access to the Service immediately</li>
+                <li>Your profile becomes invisible to other users</li>
+                <li>Your data will be deleted per our retention schedule</li>
+                <li>You must cease all use of the Service</li>
+                <li>Sections of these Terms that should survive (liability, indemnification) remain in effect</li>
+            </ul>
+
+            <h3>Appeals</h3>
+            <p>If your account is suspended or terminated:</p>
+            <ul>
+                <li>You may appeal by emailing <a href="mailto:appeals@humrah.com" style="color: var(--primary-blue);">appeals@humrah.com</a></li>
+                <li>Include your registered email and reason for appeal</li>
+                <li>We will review within 7 business days</li>
+                <li>Our decision is final and binding</li>
+            </ul>
+
+            <h3>No Refunds</h3>
+            <p>If we introduce paid features in the future:</p>
+            <ul>
+                <li>No refunds will be provided for account termination due to violations</li>
+                <li>Unused subscription time will not be refunded</li>
+            </ul>
+        </section>
+
+        <section id="liability" class="section">
+            <h2>Limitation of Liability</h2>
+
+            <div class="danger-box">
+                <p><strong>⚠️ READ CAREFULLY:</strong> This section limits Humrah's legal liability. By using the Service, you agree to these limitations.</p>
+            </div>
+
+            <h3>Disclaimer of Liability</h3>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY INDIAN LAW, HUMRAH, ITS FOUNDERS, EMPLOYEES, AGENTS, AND SERVICE PROVIDERS SHALL NOT BE LIABLE FOR:</p>
+
+            <h3>Personal Safety & Physical Harm</h3>
+            <ul>
+                <li>Any injury, assault, theft, or harm occurring during in-person meetups</li>
+                <li>Actions or behavior of other users offline</li>
+                <li>Failure of users to follow safety recommendations</li>
+                <li>Criminal acts committed by other users</li>
+            </ul>
+
+            <h3>Indirect & Consequential Damages</h3>
+            <ul>
+                <li>Loss of profits or business opportunities</li>
+                <li>Emotional distress or mental harm</li>
+                <li>Loss of data or information</li>
+                <li>Loss of reputation or goodwill</li>
+                <li>Consequential, incidental, or punitive damages</li>
+            </ul>
+
+            <h3>Service-Related Issues</h3>
+            <ul>
+                <li>Interruptions, errors, or downtime</li>
+                <li>Loss of matches or connections</li>
+                <li>Inaccurate profile information</li>
+                <li>Deleted or lost content</li>
+                <li>Technical glitches or bugs</li>
+            </ul>
+
+            <h3>Third-Party Actions</h3>
+            <ul>
+                <li>Actions of other users</li>
+                <li>Content posted by users</li>
+                <li>Failures of third-party services (Cloudinary, Firebase, etc.)</li>
+                <li>Unauthorized access or data breaches beyond our control</li>
+            </ul>
+
+            <h3>Maximum Liability Cap</h3>
+            <p>IF HUMRAH IS FOUND LIABLE DESPITE THESE LIMITATIONS:</p>
+            <ul>
+                <li>Our total liability is limited to ₹10,000 (ten thousand rupees) OR</li>
+                <li>The amount you paid to Humrah in the past 12 months (if applicable)</li>
+                <li>Whichever is LOWER</li>
+            </ul>
+
+            <h3>Exceptions</h3>
+            <p>These limitations do NOT apply to:</p>
+            <ul>
+                <li>Gross negligence or willful misconduct by Humrah</li>
+                <li>Death or personal injury caused by our negligence</li>
+                <li>Liability that cannot be excluded under Indian law</li>
+            </ul>
+
+            <h3>Acknowledgment</h3>
+            <p>You acknowledge and agree that:</p>
+            <ul>
+                <li>These limitations are fair and reasonable</li>
+                <li>You assume all risks of using the Service</li>
+                <li>The Service would not be viable without these limitations</li>
+                <li>These limitations apply even if remedies fail their essential purpose</li>
+            </ul>
+        </section>
+
+        <section id="disclaimers" class="section">
+            <h2>Disclaimers & Warranties</h2>
+
+            <div class="warning-box">
+                <p><strong>Important:</strong> The Service is provided "AS IS" and "AS AVAILABLE" without warranties of any kind.</p>
+            </div>
+
+            <h3>No Warranties</h3>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, HUMRAH DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING:</p>
+            <ul>
+                <li><strong>Merchantability:</strong> No guarantee the Service is fit for your purposes</li>
+                <li><strong>Fitness for Purpose:</strong> No guarantee it will meet your needs</li>
+                <li><strong>Non-Infringement:</strong> No guarantee it won't infringe third-party rights</li>
+                <li><strong>Accuracy:</strong> No guarantee of accurate or complete information</li>
+                <li><strong>Availability:</strong> No guarantee of uninterrupted or error-free service</li>
+            </ul>
+
+            <h3>User Verification</h3>
+            <p>While we implement face verification:</p>
+            <ul>
+                <li>We do NOT guarantee user identities are accurate</li>
+                <li>We do NOT conduct background checks</li>
+                <li>We do NOT verify employment, education, or credentials</li>
+                <li>Verification only confirms a real person created the account</li>
+            </ul>
+
+            <h3>Safety & Security</h3>
+            <p>We implement security measures, but:</p>
+            <ul>
+                <li>We cannot guarantee absolute security</li>
+                <li>We cannot prevent all unauthorized access</li>
+                <li>We cannot guarantee other users' behavior</li>
+                <li>You use the Service at your own risk</li>
+            </ul>
+
+            <h3>Compatibility & Outcomes</h3>
+            <p>Humrah does NOT guarantee:</p>
+            <ul>
+                <li>You will find compatible companions</li>
+                <li>Meetups will be enjoyable or successful</li>
+                <li>Other users will behave appropriately</li>
+                <li>You will form lasting friendships</li>
+            </ul>
+
+            <h3>Third-Party Content</h3>
+            <p>Humrah is not responsible for:</p>
+            <ul>
+                <li>Content posted by users</li>
+                <li>Accuracy of user profiles</li>
+                <li>Third-party websites linked from the app</li>
+                <li>Actions of third-party service providers</li>
+            </ul>
+
+            <h3>Legal Advice</h3>
+            <p>Nothing in the Service constitutes:</p>
+            <ul>
+                <li>Legal, medical, or professional advice</li>
+                <li>Recommendations or endorsements</li>
+                <li>Guarantees or promises of results</li>
+            </ul>
+        </section>
+
+        <section id="indemnification" class="section">
+            <h2>Indemnification</h2>
+
+            <h3>Your Indemnification Obligation</h3>
+            <p>You agree to indemnify, defend, and hold harmless Humrah, its founders, employees, agents, and service providers from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from:</p>
+
+            <h3>Your Use of the Service</h3>
+            <ul>
+                <li>Your violation of these Terms</li>
+                <li>Your violation of any laws or regulations</li>
+                <li>Your User Content</li>
+                <li>Your interactions with other users</li>
+                <li>Your in-person meetups</li>
+            </ul>
+
+            <h3>Third-Party Claims</h3>
+            <ul>
+                <li>Claims by other users related to your conduct</li>
+                <li>Infringement of intellectual property rights</li>
+                <li>Privacy violations or defamation</li>
+                <li>Personal injury or property damage</li>
+            </ul>
+
+            <h3>Scope of Indemnification</h3>
+            <p>This indemnification includes:</p>
+            <ul>
+                <li>Legal fees and costs</li>
+                <li>Settlement amounts</li>
+                <li>Judgments and awards</li>
+                <li>Investigation costs</li>
+            </ul>
+
+            <h3>Defense of Claims</h3>
+            <p>If a claim is made:</p>
+            <ul>
+                <li>Humrah will notify you of the claim</li>
+                <li>You must cooperate in the defense</li>
+                <li>Humrah may participate in the defense at its expense</li>
+                <li>You may not settle without Humrah's consent</li>
+            </ul>
+        </section>
+
+        <section id="dispute-resolution" class="section">
+            <h2>Dispute Resolution</h2>
+
+            <h3>Informal Resolution</h3>
+            <p>Before filing any legal claim, you agree to:</p>
+            <ul>
+                <li>Contact us at <a href="mailto:legal@humrah.com" style="color: var(--primary-blue);">legal@humrah.com</a> describing the issue</li>
+                <li>Attempt to resolve the dispute informally for 30 days</li>
+                <li>Provide all relevant information and documentation</li>
+            </ul>
+
+            <h3>Arbitration Agreement</h3>
+            <p>If informal resolution fails, you agree that:</p>
+            <ul>
+                <li>All disputes will be resolved through binding arbitration</li>
+                <li>Arbitration will be conducted in Delhi, India</li>
+                <li>Arbitration will be under the Indian Arbitration and Conciliation Act, 1996</li>
+                <li>The arbitrator's decision is final and binding</li>
+            </ul>
+
+            <h3>Class Action Waiver</h3>
+            <p>You agree that:</p>
+            <ul>
+                <li>You may only bring claims in your individual capacity</li>
+                <li>You waive the right to participate in class actions</li>
+                <li>You cannot bring consolidated claims with other users</li>
+                <li>Each claim must be arbitrated separately</li>
+            </ul>
+
+            <h3>Exceptions to Arbitration</h3>
+            <p>The following disputes are NOT subject to arbitration:</p>
+            <ul>
+                <li>Claims for injunctive relief</li>
+                <li>Intellectual property disputes</li>
+                <li>Small claims court matters (below ₹20 lakhs)</li>
+            </ul>
+
+            <h3>Costs of Arbitration</h3>
+            <ul>
+                <li>Each party bears their own costs</li>
+                <li>Arbitration fees will be split equally</li>
+                <li>The prevailing party may be awarded costs at arbitrator's discretion</li>
+            </ul>
+
+            <h3>Severability</h3>
+            <p>If any part of this arbitration agreement is found unenforceable, the remainder shall continue to apply.</p>
+        </section>
+
+        <section id="governing-law" class="section">
+            <h2>Governing Law & Jurisdiction</h2>
+
+            <h3>Governing Law</h3>
+            <p>These Terms are governed by:</p>
+            <ul>
+                <li>The laws of India</li>
+                <li>The Information Technology Act, 2000</li>
+                <li>The Digital Personal Data Protection Act, 2023</li>
+                <li>Other applicable Indian legislation</li>
+            </ul>
+
+            <h3>Jurisdiction</h3>
+            <p>Subject to the arbitration provisions:</p>
+            <ul>
+                <li>Exclusive jurisdiction lies with courts in Delhi, India</li>
+                <li>You consent to personal jurisdiction in Delhi</li>
+                <li>You waive any objections to venue or jurisdiction</li>
+            </ul>
+
+            <h3>Language</h3>
+            <p>These Terms are drafted in English. Any translations are for convenience only. In case of conflict, the English version prevails.</p>
+
+            <h3>Compliance</h3>
+            <p>You agree to comply with:</p>
+            <ul>
+                <li>All applicable Indian laws and regulations</li>
+                <li>Local laws in your jurisdiction</li>
+                <li>Export control and sanctions laws</li>
+            </ul>
+        </section>
+
+        <section id="changes" class="section">
+            <h2>Changes to Terms</h2>
+
+            <h3>Right to Modify</h3>
+            <p>Humrah reserves the right to modify these Terms at any time. When we make changes:</p>
+            <ul>
+                <li>We will update the "Last Updated" date</li>
+                <li>We will notify you via email or in-app notification</li>
+                <li>Material changes may require your acceptance before continued use</li>
+            </ul>
+
+            <h3>Notification of Changes</h3>
+            <p>For significant changes:</p>
+            <ul>
+                <li>We will provide at least 30 days' notice</li>
+                <li>We will highlight key changes</li>
+                <li>You may terminate your account if you disagree</li>
+            </ul>
+
+            <h3>Acceptance of Changes</h3>
+            <p>By continuing to use Humrah after changes take effect:</p>
+            <ul>
+                <li>You accept the modified Terms</li>
+                <li>The new Terms become binding</li>
+                <li>If you disagree, you must stop using the Service</li>
+            </ul>
+
+            <h3>Version History</h3>
+            <p>You can request previous versions by emailing <a href="mailto:legal@humrah.com" style="color: var(--primary-blue);">legal@humrah.com</a>.</p>
+        </section>
+
+        <section id="miscellaneous" class="section">
+            <h2>Miscellaneous Provisions</h2>
+
+            <h3>Entire Agreement</h3>
+            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and Humrah, superseding any prior agreements.</p>
+
+            <h3>Severability</h3>
+            <p>If any provision is found invalid or unenforceable:</p>
+            <ul>
+                <li>That provision will be modified to the minimum extent necessary</li>
+                <li>The remaining provisions remain in full force</li>
+            </ul>
+
+            <h3>Waiver</h3>
+            <p>Failure to enforce any provision does not constitute a waiver of our rights to enforce it later.</p>
+
+            <h3>Assignment</h3>
+            <ul>
+                <li>You may not assign these Terms without our consent</li>
+                <li>Humrah may assign these Terms to an affiliated entity or successor</li>
+            </ul>
+
+            <h3>Force Majeure</h3>
+            <p>Humrah is not liable for delays or failures due to events beyond our reasonable control (natural disasters, wars, pandemics, government actions, etc.).</p>
+
+            <h3>Relationship</h3>
+            <p>These Terms do not create:</p>
+            <ul>
+                <li>A partnership, joint venture, or employment relationship</li>
+                <li>An agency or fiduciary relationship</li>
+                <li>Third-party beneficiary rights</li>
+            </ul>
+
+            <h3>Survival</h3>
+            <p>Provisions that should survive termination include: Liability limitations, indemnification, dispute resolution, intellectual property, and governing law.</p>
+        </section>
+
+        <div class="contact-section" id="contact">
+            <h2>Contact Information</h2>
+            <p>For questions about these Terms:</p>
+            <a href="mailto:legal@humrah.com" class="contact-email">legal@humrah.com</a>
+            <p style="margin-top: 25px; color: var(--text-secondary);">
+                <strong>Humrah Legal Team</strong><br>
+                Registered Address: [Your Registered Address]<br>
+                Delhi, India<br>
+                <br>
+                For other inquiries:<br>
+                General Support: <a href="mailto:support@humrah.com" style="color: var(--primary-blue);">support@humrah.com</a><br>
+                Safety Concerns: <a href="mailto:safety@humrah.com" style="color: var(--primary-blue);">safety@humrah.com</a><br>
+                Privacy Matters: <a href="mailto:privacy@humrah.com" style="color: var(--primary-blue);">privacy@humrah.com</a>
+            </p>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 60px;">
+            <p style="text-align: center; margin: 0;"><strong>Thank you for reading our Terms of Service.</strong><br>By using Humrah responsibly, you help us create a safe, welcoming community for everyone. 💙</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="https://instagram.com/humrah.app" target="_blank">Instagram</a>
+        </div>
+        <p class="footer-text">© 2025 Humrah | Made with ❤️ in India</p>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
