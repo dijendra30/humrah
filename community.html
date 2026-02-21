@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Humrah Community Guidelines - Rules and standards for keeping our platform safe, respectful, and welcoming">
-    <meta name="robots" content="index, follow">
     <title>Community Guidelines | Humrah</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,202 +16,150 @@
         }
 
         :root {
-            --bg-gradient-start: #0B0F1A;
-            --bg-gradient-end: #121B2F;
-            --card-bg: rgba(255, 255, 255, 0.04);
-            --card-border: rgba(255, 255, 255, 0.08);
+            --bg-dark: #1A1F2E;
+            --card-bg: rgba(255, 255, 255, 0.06);
+            --card-border: rgba(255, 255, 255, 0.12);
             --accent-purple: #6A5CFF;
             --accent-blue: #9D6CFF;
-            --text-primary: #EAEAEA;
-            --text-secondary: #B0B7C3;
-            --text-muted: rgba(234, 234, 234, 0.6);
-            --warning-bg: rgba(255, 107, 107, 0.12);
+            --text-primary: #FFFFFF;
+            --text-secondary: #D0D5DD;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --warning-bg: rgba(255, 107, 107, 0.15);
             --warning-border: #FF6B6B;
-            --emphasis-bg: rgba(106, 92, 255, 0.1);
+            --emphasis-bg: rgba(106, 92, 255, 0.15);
             --emphasis-border: #6A5CFF;
-            --success-color: #4CAF50;
         }
 
         body {
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            background: var(--bg-dark);
             color: var(--text-primary);
-            line-height: 1.7;
-            scroll-behavior: smooth;
+            line-height: 1.8;
+            padding: 0;
+            margin: 0;
             min-height: 100vh;
         }
 
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
+            max-width: 100%;
+            padding: 20px 16px 80px;
         }
 
-        header {
+        .hero {
             text-align: center;
-            padding: 80px 20px 60px;
-            position: relative;
-            overflow: hidden;
+            padding: 20px 0 30px;
+            background: var(--bg-dark);
         }
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(106, 92, 255, 0.15) 0%, transparent 70%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-        }
-
-        .logo-link {
-            display: inline-flex;
+        .logo-section {
+            display: flex;
             align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 30px;
-            transition: transform 0.3s ease;
-            position: relative;
-            z-index: 1;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
         }
 
-        .logo-link:hover {
-            transform: scale(1.05);
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
         }
 
         .logo-heart {
-            font-size: 28px;
-            animation: heartbeat 2s ease-in-out infinite;
-        }
-
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.15); }
+            font-size: 20px;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 800;
             background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 12px;
             line-height: 1.2;
         }
 
         .hero-subtext {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--text-secondary);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-weight: 500;
-            position: relative;
-            z-index: 1;
         }
 
         .meta-info {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
-            position: relative;
-            z-index: 1;
-        }
-
-        .meta-info span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .section-card {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
             border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .section-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .section-card:hover {
-            border-color: rgba(106, 92, 255, 0.3);
-            box-shadow: 0 10px 40px rgba(106, 92, 255, 0.15);
-            transform: translateY(-5px);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
         }
 
         .section-header {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-            padding-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
             border-bottom: 2px solid rgba(106, 92, 255, 0.2);
         }
 
         .section-icon {
-            font-size: 2rem;
+            font-size: 1.8rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 60px;
-            height: 60px;
+            min-width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, rgba(106, 92, 255, 0.2), rgba(157, 108, 255, 0.2));
-            border-radius: 15px;
+            border-radius: 12px;
             border: 1px solid rgba(106, 92, 255, 0.3);
         }
 
         .section-card h2 {
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--text-primary);
             margin: 0;
             flex: 1;
+            line-height: 1.3;
         }
 
         .section-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin: 25px 0 15px;
+            margin: 20px 0 12px;
         }
 
         .section-card p {
             color: var(--text-secondary);
-            margin-bottom: 20px;
-            font-size: 1rem;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         .section-card ul,
         .section-card ol {
-            margin: 20px 0;
-            padding-left: 25px;
+            margin: 16px 0;
+            padding-left: 20px;
         }
 
         .section-card li {
             color: var(--text-secondary);
-            margin-bottom: 12px;
-            line-height: 1.8;
+            margin-bottom: 10px;
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
         .section-card strong {
@@ -224,30 +170,35 @@
         .emphasis-box {
             background: var(--emphasis-bg);
             border-left: 4px solid var(--emphasis-border);
-            padding: 25px;
-            border-radius: 12px;
-            margin: 25px 0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .emphasis-box p {
+            color: var(--text-primary);
+            margin: 0;
         }
 
         .emphasis-box.public-meetups {
-            background: linear-gradient(135deg, rgba(106, 92, 255, 0.15), rgba(157, 108, 255, 0.15));
+            background: linear-gradient(135deg, rgba(106, 92, 255, 0.18), rgba(157, 108, 255, 0.18));
             border: 2px solid var(--emphasis-border);
-            box-shadow: 0 0 30px rgba(106, 92, 255, 0.2);
+            box-shadow: 0 0 20px rgba(106, 92, 255, 0.15);
         }
 
         .warning-box {
             background: var(--warning-bg);
             border-left: 4px solid var(--warning-border);
-            padding: 25px;
-            border-radius: 12px;
-            margin: 25px 0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
             display: flex;
             align-items: flex-start;
-            gap: 15px;
+            gap: 12px;
         }
 
         .warning-icon {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--warning-border);
             flex-shrink: 0;
             margin-top: 2px;
@@ -255,6 +206,7 @@
 
         .warning-box p {
             margin: 0;
+            color: var(--text-primary);
         }
 
         .warning-box strong {
@@ -265,34 +217,34 @@
             background: var(--card-bg);
             backdrop-filter: blur(10px);
             border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 50px 40px;
-            margin: 60px 0;
+            border-radius: 16px;
+            padding: 30px 24px;
+            margin: 40px 0;
             text-align: center;
         }
 
         .contact-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
             color: var(--text-primary);
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
         }
 
         .contact-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .contact-label {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
             font-weight: 500;
         }
@@ -301,59 +253,20 @@
             color: var(--accent-purple);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
-            padding: 10px 20px;
+            font-size: 0.9rem;
+            padding: 8px 16px;
             border: 2px solid var(--accent-purple);
-            border-radius: 25px;
+            border-radius: 20px;
             transition: all 0.3s ease;
             display: inline-block;
         }
 
-        .contact-email:hover {
-            background: var(--accent-purple);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(106, 92, 255, 0.4);
-        }
-
-        footer {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 50px 20px;
-            margin-top: 80px;
-            text-align: center;
-            border-top: 1px solid var(--card-border);
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
-        }
-
-        .footer-links a {
-            color: var(--accent-purple);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-blue);
-        }
-
-        .footer-text {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
         .back-to-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
+            bottom: 80px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
             background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
             color: white;
             border-radius: 50%;
@@ -361,12 +274,12 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            font-size: 24px;
-            box-shadow: 0 5px 20px rgba(106, 92, 255, 0.4);
-            transition: all 0.3s ease;
+            font-size: 20px;
+            box-shadow: 0 4px 16px rgba(106, 92, 255, 0.4);
             opacity: 0;
             pointer-events: none;
             z-index: 1000;
+            transition: all 0.3s ease;
         }
 
         .back-to-top.visible {
@@ -374,78 +287,44 @@
             pointer-events: all;
         }
 
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(106, 92, 255, 0.6);
-        }
-
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
-            }
-
-            .hero-subtext {
-                font-size: 1rem;
+                font-size: 1.6rem;
             }
 
             .section-card {
-                padding: 25px;
+                padding: 20px;
             }
 
             .section-card h2 {
-                font-size: 1.4rem;
+                font-size: 1.15rem;
             }
 
             .section-header {
-                flex-direction: column;
-                align-items: flex-start;
+                gap: 10px;
             }
 
             .section-icon {
-                width: 50px;
-                height: 50px;
+                min-width: 44px;
+                height: 44px;
                 font-size: 1.5rem;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <a href="index.html" class="logo-link">
-            <span>Humrah</span>
+    <div class="hero">
+        <div class="logo-section">
+            <span class="logo-text">Humrah</span>
             <span class="logo-heart">💙</span>
-        </a>
+        </div>
         <h1>Community Guidelines</h1>
         <p class="hero-subtext">Keeping Humrah safe, respectful, and real.</p>
         <div class="meta-info">
             <span>📅 <strong>Last Updated:</strong> February 16, 2026</span>
             <span>📌 <strong>Version:</strong> 1.0</span>
         </div>
-    </header>
+    </div>
 
     <div class="container">
         <section class="section-card">
@@ -777,12 +656,11 @@
                 <li>Posting of updated guidelines on the Humrah website</li>
             </ul>
             <p>Continued use of Humrah following notification of changes constitutes acceptance of the updated Community Guidelines. Users who do not agree with revised guidelines must discontinue use of the platform.</p>
-            <p>The current version of these Community Guidelines is always available at <strong>https://humrah.in/community.html</strong></p>
         </section>
 
         <section class="contact-section">
             <h2>📬 Contact Information</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 30px;">For questions, concerns, or reports regarding these Community Guidelines, please contact:</p>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">For questions, concerns, or reports regarding these Community Guidelines, please contact:</p>
             
             <div class="contact-grid">
                 <div class="contact-item">
@@ -805,17 +683,6 @@
         </section>
     </div>
 
-    <footer>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="terms.html">Terms of Service</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="community.html">Community Guidelines</a>
-            <a href="https://instagram.com/humrah.app" target="_blank">Follow @Humrah</a>
-        </div>
-        <p class="footer-text">© 2026 Humrah. All rights reserved. | Made with ❤️ in India</p>
-    </footer>
-
     <a href="#" class="back-to-top" id="backToTop">↑</a>
 
     <script>
@@ -832,36 +699,6 @@
         backToTop.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.section-card').forEach(card => {
-            observer.observe(card);
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                }
-            });
         });
     </script>
 </body>
