@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Humrah Privacy Policy - How we collect, use, and protect your personal data">
-    <meta name="robots" content="index, follow">
     <title>Privacy Policy | Humrah</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -18,106 +16,88 @@
         }
 
         :root {
-            --primary-blue: #3A86FF;
-            --primary-purple: #8338EC;
-            --dark-bg: #0A0E27;
-            --dark-surface: #151932;
+            --bg-dark: #1A1F2E;
+            --card-bg: rgba(255, 255, 255, 0.06);
+            --card-border: rgba(255, 255, 255, 0.12);
+            --accent-purple: #6A5CFF;
+            --accent-blue: #9D6CFF;
             --text-primary: #FFFFFF;
-            --text-secondary: rgba(255, 255, 255, 0.7);
-            --text-muted: rgba(255, 255, 255, 0.5);
-            --accent-cyan: #00F5FF;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
-
-        @media (prefers-color-scheme: light) {
-            :root {
-                --dark-bg: #F8F9FA;
-                --dark-surface: #FFFFFF;
-                --text-primary: #1A1A1A;
-                --text-secondary: #4A4A4A;
-                --text-muted: #6B6B6B;
-                --glass-bg: rgba(0, 0, 0, 0.02);
-                --glass-border: rgba(0, 0, 0, 0.08);
-            }
+            --text-secondary: #D0D5DD;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --warning-bg: rgba(255, 107, 107, 0.15);
+            --warning-border: #FF6B6B;
+            --emphasis-bg: rgba(106, 92, 255, 0.15);
+            --emphasis-border: #6A5CFF;
         }
 
         body {
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--dark-bg);
+            background: var(--bg-dark);
             color: var(--text-primary);
-            line-height: 1.7;
-            scroll-behavior: smooth;
+            line-height: 1.8;
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            max-width: 100%;
+            padding: 20px 16px 80px;
         }
 
-        header {
+        .hero {
             text-align: center;
-            padding: 60px 20px 40px;
-            background: var(--dark-surface);
-            border-bottom: 1px solid var(--glass-border);
+            padding: 20px 0 30px;
+            background: var(--bg-dark);
         }
 
-        .logo-link {
-            display: inline-flex;
+        .logo-section {
+            display: flex;
             align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-size: 32px;
-            font-weight: 700;
+            justify-content: center;
+            gap: 8px;
             margin-bottom: 20px;
-            transition: transform 0.3s ease;
         }
 
-        .logo-link:hover {
-            transform: scale(1.05);
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
         }
 
         .logo-heart {
-            font-size: 28px;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            font-size: 20px;
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             line-height: 1.2;
         }
 
         .last-updated {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            font-size: 0.95rem;
             font-weight: 500;
         }
 
         .toc {
-            background: var(--glass-bg);
+            background: var(--card-bg);
             backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px 0;
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 30px 0;
         }
 
         .toc h2 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 16px;
             color: var(--text-primary);
         }
 
@@ -128,201 +108,158 @@
 
         .toc li {
             counter-increment: toc-counter;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .toc a {
-            color: var(--primary-blue);
+            color: var(--accent-purple);
             text-decoration: none;
             font-weight: 500;
-            display: flex;
-            align-items: center;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
-            padding: 8px 0;
-        }
-
-        .toc a:hover {
-            color: var(--accent-cyan);
-            padding-left: 10px;
+            padding: 6px 0;
+            display: block;
         }
 
         .toc a::before {
             content: counter(toc-counter) ". ";
             font-weight: 700;
-            margin-right: 8px;
+            margin-right: 6px;
         }
 
         .section {
-            margin: 60px 0;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
             scroll-margin-top: 20px;
         }
 
         .section h2 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--glass-border);
-            counter-increment: section-counter;
-        }
-
-        .section h2::before {
-            content: counter(section-counter) ". ";
-            color: var(--primary-blue);
-            font-weight: 800;
-        }
-
-        .section {
-            counter-reset: subsection-counter;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(106, 92, 255, 0.2);
         }
 
         .section h3 {
-            font-size: 1.4rem;
+            font-size: 1.15rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin: 30px 0 15px;
-            counter-increment: subsection-counter;
-        }
-
-        .section h3::before {
-            content: counter(section-counter) "." counter(subsection-counter) " ";
-            color: var(--primary-purple);
-            font-weight: 700;
+            margin: 20px 0 12px;
         }
 
         .section p {
             color: var(--text-secondary);
-            margin-bottom: 20px;
-            line-height: 1.8;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         .section ul, .section ol {
-            margin: 20px 0;
-            padding-left: 30px;
+            margin: 16px 0;
+            padding-left: 20px;
         }
 
         .section li {
             color: var(--text-secondary);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .section strong {
+            color: var(--text-primary);
+            font-weight: 600;
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, rgba(131, 56, 236, 0.1), rgba(58, 134, 255, 0.1));
-            border-left: 4px solid var(--primary-blue);
-            padding: 25px;
+            background: var(--emphasis-bg);
+            border-left: 4px solid var(--emphasis-border);
+            padding: 20px;
             border-radius: 10px;
-            margin: 30px 0;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            color: var(--text-primary);
+            margin: 0;
         }
 
         .highlight-box strong {
-            color: var(--primary-blue);
-            font-weight: 700;
+            color: var(--accent-purple);
         }
 
         .warning-box {
-            background: rgba(255, 107, 107, 0.1);
-            border-left: 4px solid #FF6B6B;
-            padding: 25px;
+            background: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 20px;
             border-radius: 10px;
-            margin: 30px 0;
+            margin: 20px 0;
+        }
+
+        .warning-box p {
+            color: var(--text-primary);
+            margin: 0;
         }
 
         .warning-box strong {
-            color: #FF6B6B;
-            font-weight: 700;
+            color: var(--warning-border);
         }
 
         .contact-section {
-            background: var(--dark-surface);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 40px;
-            margin: 60px 0;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 30px 24px;
+            margin: 40px 0;
             text-align: center;
         }
 
         .contact-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
             border: none;
-            padding-bottom: 0;
-            margin-bottom: 20px;
-        }
-
-        .contact-section h2::before {
-            content: "";
+            padding: 0;
         }
 
         .contact-email {
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 12px 24px;
+            border: 2px solid var(--accent-purple);
+            border-radius: 25px;
             display: inline-block;
-            color: var(--primary-blue);
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-decoration: none;
-            padding: 15px 30px;
-            border: 2px solid var(--primary-blue);
-            border-radius: 50px;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-email:hover {
-            background: var(--primary-blue);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(58, 134, 255, 0.3);
-        }
-
-        footer {
-            background: var(--dark-surface);
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid var(--glass-border);
-            margin-top: 60px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .footer-links a {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-cyan);
-        }
-
-        .footer-text {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+            margin-top: 12px;
         }
 
         .back-to-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--primary-blue);
+            bottom: 80px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
             color: white;
-            width: 50px;
-            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            font-size: 24px;
-            box-shadow: 0 5px 20px rgba(58, 134, 255, 0.4);
-            transition: all 0.3s ease;
+            font-size: 20px;
+            box-shadow: 0 4px 16px rgba(106, 92, 255, 0.4);
             opacity: 0;
             pointer-events: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
 
         .back-to-top.visible {
@@ -330,70 +267,30 @@
             pointer-events: all;
         }
 
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(58, 134, 255, 0.6);
-        }
-
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 1.6rem;
             }
 
             .section h2 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
 
             .section h3 {
-                font-size: 1.2rem;
+                font-size: 1.05rem;
             }
-
-            .container {
-                padding: 20px 15px;
-            }
-
-            header {
-                padding: 40px 20px 30px;
-            }
-
-            .toc {
-                padding: 20px;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-
-        body {
-            counter-reset: section-counter;
-        }
-
-        strong {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        code {
-            background: var(--glass-bg);
-            padding: 3px 8px;
-            border-radius: 5px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            color: var(--accent-cyan);
         }
     </style>
 </head>
 <body>
-    <header>
-        <a href="index.html" class="logo-link">
-            <span>Humrah</span>
+    <div class="hero">
+        <div class="logo-section">
+            <span class="logo-text">Humrah</span>
             <span class="logo-heart">💙</span>
-        </a>
+        </div>
         <h1>Privacy Policy</h1>
         <p class="last-updated">Last Updated: February 15, 2025</p>
-    </header>
+    </div>
 
     <div class="container">
         <div class="toc">
@@ -410,518 +307,332 @@
                 <li><a href="#data-deletion">Data Deletion Requests</a></li>
                 <li><a href="#security">Data Security</a></li>
                 <li><a href="#childrens-privacy">Children's Privacy</a></li>
-                <li><a href="#international-transfers">International Data Transfers</a></li>
                 <li><a href="#changes">Changes to This Policy</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ol>
         </div>
 
         <section id="introduction" class="section">
-            <h2>Introduction</h2>
+            <h2>1. Introduction</h2>
             <p>Welcome to Humrah. We are committed to protecting your privacy and ensuring transparency about how we collect, use, and safeguard your personal information.</p>
-            <p>Humrah ("we," "us," "our") operates a real-world companion booking platform that connects users for in-person meetups in public places. This Privacy Policy explains our data practices and your rights under Indian law, including the Information Technology Act, 2000, and the Digital Personal Data Protection Act, 2023.</p>
+            <p>Humrah operates a real-world companion booking platform that connects users for in-person meetups in public places. This Privacy Policy explains our data practices and your rights under Indian law.</p>
             <div class="highlight-box">
-                <p><strong>Important:</strong> By using Humrah, you acknowledge that you have read, understood, and agree to this Privacy Policy. If you do not agree, please discontinue use of our services immediately.</p>
+                <p><strong>Important:</strong> By using Humrah, you acknowledge that you have read, understood, and agree to this Privacy Policy.</p>
             </div>
         </section>
 
         <section id="information-we-collect" class="section">
-            <h2>Information We Collect</h2>
+            <h2>2. Information We Collect</h2>
             <p>We collect various types of information to provide, maintain, and improve our services:</p>
 
             <h3>Account Information</h3>
             <ul>
-                <li><strong>Email Address:</strong> Required for account creation, login via OTP verification, and service communications</li>
-                <li><strong>Profile Information:</strong> Name, age (must be 18+), gender, bio, and interests</li>
-                <li><strong>Profile Photos:</strong> Images you upload to represent yourself on the platform</li>
-                <li><strong>Phone Number:</strong> Optional, for enhanced account security</li>
+                <li><strong>Email Address:</strong> Required for account creation and login</li>
+                <li><strong>Profile Information:</strong> Name, age (18+), gender, bio, and interests</li>
+                <li><strong>Profile Photos:</strong> Images you upload</li>
+                <li><strong>Phone Number:</strong> Optional, for enhanced security</li>
             </ul>
 
             <h3>Verification Data</h3>
             <ul>
-                <li><strong>Video Verification:</strong> Short video recording for identity verification with liveness detection</li>
-                <li><strong>Face Embeddings:</strong> Mathematical representations (vectors) derived from your face for duplicate account detection and security</li>
-                <li><strong>Verification Status:</strong> Records of completed verification attempts and results</li>
+                <li><strong>Video Verification:</strong> Short video for identity verification</li>
+                <li><strong>Face Embeddings:</strong> Mathematical representations for duplicate detection</li>
+                <li><strong>Verification Status:</strong> Records of verification attempts</li>
             </ul>
 
             <h3>Location Information</h3>
             <ul>
-                <li><strong>Approximate Location:</strong> City-level or neighborhood-level location data for matching you with nearby users</li>
-                <li><strong>Booking Location:</strong> Public place names and addresses where meetups are planned</li>
-                <li><strong>GPS Coordinates:</strong> Precise location data only when you actively use location-based features (optional and permissions-based)</li>
+                <li><strong>Approximate Location:</strong> City-level for matching</li>
+                <li><strong>Booking Location:</strong> Public place addresses</li>
+                <li><strong>GPS Coordinates:</strong> Only when using location features (optional)</li>
             </ul>
 
             <h3>Usage & Technical Data</h3>
             <ul>
-                <li><strong>Device Information:</strong> Device model, operating system, app version, device identifiers</li>
-                <li><strong>IP Address:</strong> For fraud prevention, security, and compliance purposes</li>
-                <li><strong>Log Data:</strong> App interactions, timestamps, feature usage, crash reports</li>
-                <li><strong>Cookies & Similar Technologies:</strong> Session identifiers and preferences</li>
+                <li><strong>Device Information:</strong> Model, OS, app version</li>
+                <li><strong>IP Address:</strong> For fraud prevention</li>
+                <li><strong>Log Data:</strong> App interactions, timestamps</li>
             </ul>
 
             <h3>Communication Data</h3>
             <ul>
-                <li><strong>Chat Messages:</strong> In-app messages between matched users</li>
-                <li><strong>Support Communications:</strong> Emails or messages sent to our customer support team</li>
-                <li><strong>Feedback & Ratings:</strong> Reviews and feedback about other users after meetups</li>
-            </ul>
-
-            <h3>Safety & Moderation Data</h3>
-            <ul>
-                <li><strong>Reports:</strong> Abuse reports, safety concerns, and violation reports</li>
-                <li><strong>Moderation Actions:</strong> Records of warnings, suspensions, or bans</li>
-                <li><strong>Dispute Resolution Data:</strong> Information related to conflicts or complaints</li>
+                <li><strong>Chat Messages:</strong> In-app messages between users</li>
+                <li><strong>Support Communications:</strong> Customer support interactions</li>
+                <li><strong>Feedback & Ratings:</strong> Reviews about other users</li>
             </ul>
         </section>
 
         <section id="how-we-use" class="section">
-            <h2>How We Use Your Information</h2>
-            <p>We use the collected information for the following purposes:</p>
+            <h2>3. How We Use Your Information</h2>
 
             <h3>Core Service Delivery</h3>
             <ul>
-                <li>Create and manage your Humrah account</li>
+                <li>Create and manage your account</li>
                 <li>Verify your identity and prevent fake accounts</li>
-                <li>Match you with compatible companions based on location and preferences</li>
-                <li>Facilitate in-app messaging between matched users</li>
-                <li>Process and confirm booking completions</li>
+                <li>Match you with compatible companions</li>
+                <li>Facilitate in-app messaging</li>
+                <li>Process and confirm bookings</li>
             </ul>
 
             <h3>Safety & Security</h3>
             <ul>
-                <li>Detect and prevent duplicate accounts using face embeddings</li>
+                <li>Detect and prevent duplicate accounts</li>
                 <li>Identify and prevent fraud, spam, and abuse</li>
-                <li>Enforce our Terms of Service and Community Guidelines</li>
-                <li>Investigate reports of misconduct or violations</li>
-                <li>Maintain platform integrity and user safety</li>
+                <li>Enforce our Terms and Community Guidelines</li>
+                <li>Investigate reports of misconduct</li>
             </ul>
 
             <h3>Service Improvement</h3>
             <ul>
-                <li>Analyze usage patterns to improve features</li>
-                <li>Develop new features and functionality</li>
+                <li>Analyze usage patterns</li>
+                <li>Develop new features</li>
                 <li>Optimize matching algorithms</li>
-                <li>Conduct internal research and analytics</li>
                 <li>Fix bugs and technical issues</li>
-            </ul>
-
-            <h3>Communication</h3>
-            <ul>
-                <li>Send booking confirmations and updates</li>
-                <li>Provide customer support</li>
-                <li>Send important service announcements</li>
-                <li>Request feedback and ratings (optional)</li>
-                <li>Notify you of policy changes</li>
-            </ul>
-
-            <h3>Legal Compliance</h3>
-            <ul>
-                <li>Comply with applicable Indian laws and regulations</li>
-                <li>Respond to law enforcement requests and legal processes</li>
-                <li>Protect our legal rights and interests</li>
-                <li>Enforce our agreements and policies</li>
             </ul>
         </section>
 
         <section id="face-verification" class="section">
-            <h2>Face Verification & Biometric Data</h2>
+            <h2>4. Face Verification & Biometric Data</h2>
             
             <div class="highlight-box">
-                <p><strong>Critical Information:</strong> Humrah uses facial recognition technology for security purposes. Please read this section carefully to understand how your biometric data is processed.</p>
+                <p><strong>Critical Information:</strong> Humrah uses facial recognition technology for security purposes. Please read this section carefully.</p>
             </div>
 
             <h3>What We Collect</h3>
-            <p>When you complete video verification, we collect:</p>
+            <p>When you complete video verification:</p>
             <ul>
-                <li><strong>Short Video Recording:</strong> A brief video of your face performing liveness detection actions (e.g., turning head, blinking)</li>
-                <li><strong>Face Embeddings:</strong> Mathematical representations (numerical vectors) derived from your facial features</li>
+                <li><strong>Short Video Recording:</strong> Brief video performing liveness detection</li>
+                <li><strong>Face Embeddings:</strong> Mathematical representations of facial features</li>
             </ul>
 
             <h3>How Face Verification Works</h3>
             <ol>
-                <li>You record a short verification video following on-screen instructions</li>
-                <li>Our system analyzes the video to confirm you are a real person (liveness detection)</li>
-                <li>A unique face embedding is generated from your facial features</li>
-                <li>The face embedding is compared against our database to detect duplicate accounts</li>
-                <li><strong>The original video is permanently deleted within 48 hours after processing</strong></li>
+                <li>You record a short verification video</li>
+                <li>System analyzes video to confirm you're a real person</li>
+                <li>Unique face embedding is generated</li>
+                <li>Embedding compared against database to detect duplicates</li>
+                <li><strong>Original video deleted within 48 hours</strong></li>
             </ol>
 
             <h3>What Are Face Embeddings?</h3>
-            <p>Face embeddings are NOT images or photographs. They are:</p>
+            <p>Face embeddings are NOT images. They are:</p>
             <ul>
-                <li>Mathematical representations (arrays of numbers) that describe facial features</li>
-                <li>Irreversible – they cannot be converted back into an image of your face</li>
-                <li>Used solely for comparing similarity between faces (duplicate detection)</li>
-                <li>Stored in encrypted format in secure databases</li>
+                <li>Mathematical representations (arrays of numbers)</li>
+                <li>Irreversible – cannot be converted back to an image</li>
+                <li>Used solely for comparing similarity between faces</li>
+                <li>Stored in encrypted format</li>
             </ul>
 
             <h3>Why We Use This Technology</h3>
             <ul>
                 <li><strong>Safety:</strong> Prevents banned users from creating new accounts</li>
-                <li><strong>Authenticity:</strong> Ensures all users are real people, not bots or catfish accounts</li>
-                <li><strong>Trust:</strong> Builds confidence in the platform's community</li>
-                <li><strong>Fraud Prevention:</strong> Detects and prevents abuse of the platform</li>
-            </ul>
-
-            <h3>Your Rights Regarding Biometric Data</h3>
-            <p>You have the right to:</p>
-            <ul>
-                <li>Know when your biometric data is being collected and why</li>
-                <li>Request deletion of your face embedding (by deleting your account)</li>
-                <li>Opt out by not using the service (face verification is mandatory for Humrah)</li>
-                <li>Access information about how your biometric data is stored and used</li>
+                <li><strong>Authenticity:</strong> Ensures users are real people</li>
+                <li><strong>Trust:</strong> Builds confidence in the community</li>
+                <li><strong>Fraud Prevention:</strong> Detects platform abuse</li>
             </ul>
 
             <div class="warning-box">
-                <p><strong>Important Notice:</strong> Face verification is mandatory to use Humrah. If you do not consent to this processing, you cannot create an account. Your face embedding will be permanently deleted when you delete your account.</p>
+                <p><strong>Important:</strong> Face verification is mandatory to use Humrah. Your face embedding will be permanently deleted when you delete your account.</p>
             </div>
         </section>
 
         <section id="location-data" class="section">
-            <h2>Location Data</h2>
+            <h2>5. Location Data</h2>
 
             <h3>Types of Location Data</h3>
-            <p>Humrah collects and uses different types of location information:</p>
 
             <h3>Approximate Location (Required)</h3>
             <ul>
-                <li><strong>What We Collect:</strong> City-level or neighborhood-level location</li>
-                <li><strong>How:</strong> Derived from IP address or coarse location permission</li>
+                <li><strong>What:</strong> City-level or neighborhood-level location</li>
+                <li><strong>How:</strong> Derived from IP address or coarse permission</li>
                 <li><strong>Why:</strong> To match you with nearby companions</li>
-                <li><strong>Precision:</strong> Not precise enough to identify your exact address</li>
+                <li><strong>Precision:</strong> Not precise enough to identify exact address</li>
             </ul>
 
             <h3>Precise Location (Optional)</h3>
             <ul>
-                <li><strong>What We Collect:</strong> GPS coordinates when you use location-based features</li>
+                <li><strong>What:</strong> GPS coordinates when using location features</li>
                 <li><strong>How:</strong> Only when you grant precise location permission</li>
-                <li><strong>Why:</strong> To help you find nearby public places for meetups</li>
-                <li><strong>Control:</strong> You can revoke this permission in device settings anytime</li>
-            </ul>
-
-            <h3>Booking Location</h3>
-            <ul>
-                <li><strong>What We Collect:</strong> Public place names and addresses where meetups occur</li>
-                <li><strong>Why:</strong> For booking records, dispute resolution, and safety</li>
-                <li><strong>Visibility:</strong> Shared only with your matched companion</li>
+                <li><strong>Why:</strong> To help find nearby public places</li>
+                <li><strong>Control:</strong> Revoke in device settings anytime</li>
             </ul>
 
             <h3>How We Use Location Data</h3>
             <ul>
-                <li>Match you with nearby users within a reasonable distance</li>
+                <li>Match you with nearby users</li>
                 <li>Suggest public places for meetups</li>
-                <li>Show distance estimates between you and potential companions</li>
-                <li>Prevent misuse by detecting unusual location patterns</li>
-                <li>Improve service quality in different geographic areas</li>
-            </ul>
-
-            <h3>Location Privacy Controls</h3>
-            <p>You can control location sharing:</p>
-            <ul>
-                <li>Adjust location permissions in your device settings</li>
-                <li>Choose to share only approximate location</li>
-                <li>Manually enter your city instead of using GPS</li>
-                <li>Turn off location services when not actively using the app</li>
+                <li>Show distance estimates</li>
+                <li>Prevent misuse by detecting unusual patterns</li>
             </ul>
 
             <div class="highlight-box">
-                <p><strong>We Never:</strong> Track your location continuously in the background, share your precise location publicly, or use location data for advertising purposes.</p>
+                <p><strong>We Never:</strong> Track your location continuously in the background, share your precise location publicly, or use location data for advertising.</p>
             </div>
         </section>
 
         <section id="data-sharing" class="section">
-            <h2>Data Sharing & Third Parties</h2>
+            <h2>6. Data Sharing & Third Parties</h2>
 
             <h3>We Do NOT Sell Your Data</h3>
             <p>Humrah does not sell, rent, or trade your personal information to third parties for marketing or advertising purposes. Period.</p>
 
-            <h3>When We Share Your Information</h3>
-
             <h3>With Other Users (Limited)</h3>
             <ul>
-                <li><strong>Profile Information:</strong> Name, age, photos, bio visible to potential matches</li>
-                <li><strong>Approximate Location:</strong> General area (e.g., "South Delhi") for matching</li>
-                <li><strong>Booking Details:</strong> Meetup location shared with matched companion</li>
-                <li><strong>Ratings & Reviews:</strong> Feedback you leave may be visible to that user</li>
+                <li><strong>Profile Information:</strong> Name, age, photos, bio visible to matches</li>
+                <li><strong>Approximate Location:</strong> General area for matching</li>
+                <li><strong>Booking Details:</strong> Meetup location with matched companion</li>
             </ul>
-            <p><strong>NOT Shared:</strong> Email address, phone number, precise GPS coordinates, face embeddings, IP address, or device information.</p>
+            <p><strong>NOT Shared:</strong> Email, phone, precise GPS, face embeddings, IP address, device info</p>
 
             <h3>With Service Providers</h3>
-            <p>We share data with trusted third-party providers who help us operate Humrah:</p>
             <ul>
-                <li><strong>Cloud Storage (Cloudinary):</strong> Stores profile photos and images securely</li>
-                <li><strong>Backend Infrastructure (Firebase):</strong> Authentication, database, and app analytics</li>
-                <li><strong>Email Service:</strong> Sends OTP codes and account notifications</li>
-                <li><strong>Analytics Tools:</strong> Helps us understand app usage and improve features (anonymized data)</li>
-                <li><strong>Payment Processors:</strong> If we introduce paid features in the future</li>
+                <li><strong>Cloud Storage (Cloudinary):</strong> Stores profile photos securely</li>
+                <li><strong>Backend Infrastructure (Firebase):</strong> Authentication, database, analytics</li>
+                <li><strong>Email Service:</strong> Sends OTP codes and notifications</li>
             </ul>
-            <p>All service providers are bound by strict data protection agreements and can only use your data to provide services to Humrah.</p>
 
             <h3>For Legal Reasons</h3>
-            <p>We may disclose your information when required by law:</p>
+            <p>We may disclose information when required by law:</p>
             <ul>
-                <li>To comply with court orders, subpoenas, or legal processes</li>
-                <li>To respond to lawful requests from law enforcement or government authorities</li>
-                <li>To investigate fraud, security breaches, or illegal activity</li>
-                <li>To protect the rights, safety, or property of Humrah, our users, or the public</li>
-                <li>To enforce our Terms of Service or Community Guidelines</li>
+                <li>To comply with court orders or legal processes</li>
+                <li>To respond to law enforcement requests</li>
+                <li>To investigate fraud or illegal activity</li>
+                <li>To protect rights and safety</li>
             </ul>
-
-            <h3>Business Transfers</h3>
-            <p>If Humrah is acquired by or merged with another company, your information may be transferred as part of that transaction. We will notify you via email and/or prominent notice in the app before your data is transferred.</p>
-
-            <h3>With Your Consent</h3>
-            <p>We may share your information with third parties when you explicitly consent to such sharing.</p>
         </section>
 
         <section id="data-retention" class="section">
-            <h2>Data Retention & Storage</h2>
-
-            <h3>How Long We Keep Your Data</h3>
+            <h2>7. Data Retention & Storage</h2>
 
             <h3>Active Account Data</h3>
             <ul>
-                <li><strong>Profile Information:</strong> Retained as long as your account is active</li>
-                <li><strong>Face Embeddings:</strong> Retained for security purposes while your account exists</li>
-                <li><strong>Chat Messages:</strong> Retained for 90 days after a conversation ends (for dispute resolution)</li>
-                <li><strong>Booking History:</strong> Retained for 1 year for record-keeping and safety</li>
+                <li><strong>Profile Information:</strong> Retained while account is active</li>
+                <li><strong>Face Embeddings:</strong> Retained for security purposes</li>
+                <li><strong>Chat Messages:</strong> Retained for 90 days</li>
+                <li><strong>Booking History:</strong> Retained for 1 year</li>
             </ul>
 
             <h3>Deleted Account Data</h3>
             <p>When you delete your account:</p>
             <ul>
-                <li><strong>Immediate Deletion:</strong> Profile photos, profile information, chat messages</li>
-                <li><strong>30-Day Retention:</strong> Face embeddings (to prevent immediate re-registration after ban)</li>
-                <li><strong>Longer Retention:</strong> Abuse reports, moderation records (for safety and legal compliance)</li>
-                <li><strong>Permanent Deletion:</strong> Email address and device identifiers after 90 days</li>
+                <li><strong>Immediate:</strong> Profile photos, profile info, chat messages</li>
+                <li><strong>30 Days:</strong> Face embeddings</li>
+                <li><strong>90 Days:</strong> Email address and device identifiers</li>
             </ul>
 
             <h3>Temporary Data</h3>
             <ul>
-                <li><strong>Verification Videos:</strong> Deleted within 48 hours after face embedding extraction</li>
-                <li><strong>Log Files:</strong> Deleted after 180 days unless needed for security investigation</li>
-                <li><strong>Session Data:</strong> Deleted when you log out or after 30 days of inactivity</li>
-            </ul>
-
-            <h3>Legal Retention Requirements</h3>
-            <p>Some data may be retained longer to comply with:</p>
-            <ul>
-                <li>Indian tax and accounting laws</li>
-                <li>Court orders or legal holds</li>
-                <li>Ongoing investigations or disputes</li>
-                <li>Regulatory requirements</li>
-            </ul>
-
-            <h3>Data Storage Location</h3>
-            <p>Your data is stored on secure servers:</p>
-            <ul>
-                <li>Primarily in India and Asia-Pacific regions</li>
-                <li>Backups may be stored in multiple geographic locations for redundancy</li>
-                <li>All data is encrypted in transit and at rest</li>
-                <li>Access is restricted to authorized personnel only</li>
+                <li><strong>Verification Videos:</strong> Deleted within 48 hours</li>
+                <li><strong>Log Files:</strong> Deleted after 180 days</li>
+                <li><strong>Session Data:</strong> Deleted on logout or after 30 days</li>
             </ul>
         </section>
 
         <section id="your-rights" class="section">
-            <h2>Your Privacy Rights</h2>
+            <h2>8. Your Privacy Rights</h2>
             <p>Under Indian data protection law, you have the following rights:</p>
 
             <h3>Right to Access</h3>
-            <p>You can request a copy of the personal data we hold about you. This includes:</p>
-            <ul>
-                <li>Profile information</li>
-                <li>Booking history</li>
-                <li>Chat messages (limited to 90-day retention period)</li>
-                <li>Verification status</li>
-                <li>Account activity logs</li>
-            </ul>
+            <p>Request a copy of the personal data we hold about you</p>
 
             <h3>Right to Correction</h3>
-            <p>You can update or correct your personal information anytime:</p>
-            <ul>
-                <li>Profile details (name, bio, interests)</li>
-                <li>Profile photos</li>
-                <li>Email address (requires re-verification)</li>
-                <li>Location preferences</li>
-            </ul>
+            <p>Update or correct your personal information anytime</p>
 
             <h3>Right to Deletion</h3>
-            <p>You can request deletion of your account and associated data. See the <a href="#data-deletion">Data Deletion</a> section below for details.</p>
+            <p>Request deletion of your account and associated data</p>
 
             <h3>Right to Restriction</h3>
-            <p>You can request limitation of data processing in certain circumstances:</p>
-            <ul>
-                <li>Temporarily disable your account instead of deleting it</li>
-                <li>Opt out of non-essential communications</li>
-                <li>Limit location data collection (may affect matching)</li>
-            </ul>
+            <p>Request limitation of data processing in certain circumstances</p>
 
             <h3>Right to Data Portability</h3>
-            <p>You can request your data in a machine-readable format (JSON or CSV) to transfer to another service.</p>
+            <p>Request your data in machine-readable format (JSON or CSV)</p>
 
             <h3>Right to Object</h3>
-            <p>You can object to certain types of data processing:</p>
-            <ul>
-                <li>Analytics and usage tracking (may affect service quality)</li>
-                <li>Non-essential communications</li>
-                <li>Precise location tracking (approximate location still required for matching)</li>
-            </ul>
-
-            <h3>Right to Withdraw Consent</h3>
-            <p>Where processing is based on consent, you can withdraw it anytime:</p>
-            <ul>
-                <li>Revoke location permissions in device settings</li>
-                <li>Opt out of marketing emails</li>
-                <li>Note: Some processing is necessary for core service functionality</li>
-            </ul>
-
-            <h3>Right to Complain</h3>
-            <p>If you believe your privacy rights have been violated, you can:</p>
-            <ul>
-                <li>Contact us directly at <a href="mailto:support@humrah.in">support@humrah.in</a></li>
-                <li>File a complaint with the relevant data protection authority in India</li>
-            </ul>
+            <p>Object to certain types of data processing</p>
 
             <h3>How to Exercise Your Rights</h3>
-            <p>To exercise any of these rights:</p>
             <ol>
-                <li>Email us at <a href="mailto:support@humrah.in">support@humrah.in</a> with your request</li>
-                <li>Include your registered email address for verification</li>
+                <li>Email us at support@humrah.in with your request</li>
+                <li>Include your registered email for verification</li>
                 <li>Specify which right(s) you wish to exercise</li>
-                <li>We will respond within 30 days of verification</li>
+                <li>We will respond within 30 days</li>
             </ol>
         </section>
 
         <section id="data-deletion" class="section">
-            <h2>Data Deletion Requests</h2>
+            <h2>9. Data Deletion Requests</h2>
 
             <h3>How to Delete Your Account</h3>
-            <p>You can permanently delete your Humrah account through:</p>
 
             <h3>In-App Deletion</h3>
             <ol>
-                <li>Open the Humrah app</li>
+                <li>Open Humrah app</li>
                 <li>Go to Settings → Account Settings</li>
                 <li>Select "Delete Account"</li>
-                <li>Read the deletion warning carefully</li>
-                <li>Confirm deletion by entering your password or OTP</li>
-                <li>Your account will be deleted immediately</li>
+                <li>Read the deletion warning</li>
+                <li>Confirm deletion by entering password or OTP</li>
             </ol>
 
             <h3>Email Request</h3>
             <p>If you cannot access the app:</p>
             <ol>
-                <li>Email <a href="mailto:support@humrah.in">support@humrah.in</a> from your registered email</li>
+                <li>Email support@humrah.in from your registered email</li>
                 <li>Subject: "Account Deletion Request"</li>
-                <li>Include: Full name and reason for deletion (optional)</li>
-                <li>We will verify your identity and process deletion within 7 business days</li>
+                <li>Include your full name</li>
+                <li>We will process within 7 business days</li>
             </ol>
 
             <h3>What Gets Deleted</h3>
-            <p>When you delete your account:</p>
             <ul>
-                <li>✅ Profile information (name, bio, interests)</li>
+                <li>✅ Profile information</li>
                 <li>✅ Profile photos</li>
-                <li>✅ Chat messages (after 30-day retention for dispute resolution)</li>
-                <li>✅ Booking history (after 90-day retention for safety)</li>
-                <li>✅ Face embeddings (after 30-day security retention)</li>
+                <li>✅ Chat messages (after 30-day retention)</li>
+                <li>✅ Booking history (after 90-day retention)</li>
+                <li>✅ Face embeddings (after 30-day retention)</li>
                 <li>✅ Email address (after 90-day retention)</li>
-                <li>✅ Device identifiers</li>
-            </ul>
-
-            <h3>What May Be Retained</h3>
-            <p>Some data may be retained for legal or safety reasons:</p>
-            <ul>
-                <li>⚠️ Abuse reports you filed or reports filed against you</li>
-                <li>⚠️ Moderation actions (bans, warnings)</li>
-                <li>⚠️ Transaction records (if paid features exist)</li>
-                <li>⚠️ Anonymized analytics data (cannot identify you)</li>
-                <li>⚠️ Data required for ongoing legal proceedings</li>
             </ul>
 
             <h3>Deletion Timeline</h3>
             <ul>
-                <li><strong>Immediate:</strong> Account deactivated, profile no longer visible</li>
-                <li><strong>24-48 hours:</strong> Profile photos deleted from CDN</li>
+                <li><strong>Immediate:</strong> Account deactivated, profile invisible</li>
+                <li><strong>24-48 hours:</strong> Profile photos deleted</li>
                 <li><strong>7 days:</strong> Chat messages deleted</li>
                 <li><strong>30 days:</strong> Face embeddings deleted</li>
-                <li><strong>90 days:</strong> Booking history and personal identifiers deleted</li>
+                <li><strong>90 days:</strong> Booking history and identifiers deleted</li>
             </ul>
 
             <div class="warning-box">
-                <p><strong>Important:</strong> Account deletion is permanent and irreversible. You will lose access to all data, matches, and booking history. If you were banned for safety violations, your face embedding may be retained longer to prevent re-registration.</p>
+                <p><strong>Important:</strong> Account deletion is permanent and irreversible. You will lose access to all data, matches, and booking history.</p>
             </div>
-
-            <h3>Alternatives to Full Deletion</h3>
-            <p>If you're not ready for permanent deletion, consider:</p>
-            <ul>
-                <li><strong>Deactivation:</strong> Temporarily disable your account (can be reactivated)</li>
-                <li><strong>Clear Chat History:</strong> Delete specific conversations without deleting account</li>
-                <li><strong>Remove Photos:</strong> Delete photos while keeping your profile</li>
-            </ul>
         </section>
 
         <section id="security" class="section">
-            <h2>Data Security</h2>
-
-            <h3>How We Protect Your Data</h3>
-            <p>Humrah implements industry-standard security measures:</p>
+            <h2>10. Data Security</h2>
 
             <h3>Technical Safeguards</h3>
             <ul>
                 <li><strong>Encryption:</strong> All data encrypted in transit (TLS/SSL) and at rest (AES-256)</li>
-                <li><strong>Secure Storage:</strong> Databases protected by firewalls and access controls</li>
-                <li><strong>Face Embeddings:</strong> Stored in encrypted format, separate from other user data</li>
-                <li><strong>Authentication:</strong> OTP-based login, no passwords to be compromised</li>
-                <li><strong>Regular Audits:</strong> Security reviews and penetration testing</li>
-            </ul>
-
-            <h3>Operational Safeguards</h3>
-            <ul>
-                <li>Access to user data limited to essential personnel only</li>
-                <li>Employees bound by confidentiality agreements</li>
-                <li>Multi-factor authentication for internal systems</li>
-                <li>Regular security training for team members</li>
-                <li>Incident response plan for potential breaches</li>
-            </ul>
-
-            <h3>Application Security</h3>
-            <ul>
-                <li>Regular app updates to patch vulnerabilities</li>
-                <li>Secure coding practices and code reviews</li>
-                <li>Protection against common attacks (SQL injection, XSS, CSRF)</li>
-                <li>Rate limiting to prevent abuse</li>
-                <li>Fraud detection and prevention systems</li>
+                <li><strong>Secure Storage:</strong> Databases protected by firewalls</li>
+                <li><strong>Face Embeddings:</strong> Stored in encrypted format</li>
+                <li><strong>Authentication:</strong> OTP-based login</li>
+                <li><strong>Regular Audits:</strong> Security reviews and testing</li>
             </ul>
 
             <h3>Your Role in Security</h3>
-            <p>You can help protect your account:</p>
             <ul>
                 <li>Keep your device and app updated</li>
-                <li>Don't share OTP codes with anyone (including Humrah staff)</li>
+                <li>Don't share OTP codes with anyone</li>
                 <li>Use a secure email account</li>
                 <li>Report suspicious activity immediately</li>
-                <li>Log out from shared devices</li>
-                <li>Enable device-level security (PIN, biometrics)</li>
-            </ul>
-
-            <h3>In Case of a Breach</h3>
-            <p>If a data breach occurs:</p>
-            <ul>
-                <li>We will notify affected users within 72 hours</li>
-                <li>We will notify relevant authorities as required by law</li>
-                <li>We will provide details about what data was affected</li>
-                <li>We will offer guidance on protecting yourself</li>
-                <li>We will take immediate steps to secure systems</li>
             </ul>
 
             <div class="highlight-box">
-                <p><strong>No System Is 100% Secure:</strong> While we implement strong security measures, no system is completely immune to risks. You acknowledge this by using Humrah.</p>
+                <p><strong>No System Is 100% Secure:</strong> While we implement strong security measures, no system is completely immune to risks.</p>
             </div>
         </section>
 
         <section id="childrens-privacy" class="section">
-            <h2>Children's Privacy</h2>
+            <h2>11. Children's Privacy</h2>
 
             <div class="warning-box">
                 <p><strong>Age Restriction:</strong> Humrah is strictly for users aged 18 years and older. We do not knowingly collect data from minors.</p>
@@ -930,70 +641,24 @@
             <h3>Our Policy</h3>
             <ul>
                 <li>Users must confirm they are 18+ during registration</li>
-                <li>We verify age through profile information and face verification</li>
+                <li>We verify age through profile info and face verification</li>
                 <li>We do not target or market to individuals under 18</li>
-                <li>We comply with international child protection standards</li>
             </ul>
 
             <h3>If We Discover Underage Users</h3>
-            <p>If we become aware that someone under 18 has created an account:</p>
+            <p>If we learn someone under 18 has created an account:</p>
             <ul>
                 <li>We will immediately suspend the account</li>
                 <li>We will delete all associated data within 7 days</li>
-                <li>We will prevent re-registration using the same face embedding</li>
-                <li>We may report to authorities if required by law</li>
-            </ul>
-
-            <h3>Reporting Underage Users</h3>
-            <p>If you suspect a user is under 18:</p>
-            <ul>
-                <li>Use the in-app "Report User" feature</li>
-                <li>Select reason: "Underage User"</li>
-                <li>Provide any supporting information</li>
-                <li>We will investigate within 24 hours</li>
+                <li>We will prevent re-registration</li>
             </ul>
 
             <h3>Parental Rights</h3>
-            <p>If you are a parent or guardian and believe your child has created an account:</p>
-            <ul>
-                <li>Email us immediately at <a href="mailto:support@humrah.in">@humrah.in</a></li>
-                <li>Provide proof of guardianship</li>
-                <li>We will delete the account and all data promptly</li>
-            </ul>
-        </section>
-
-        <section id="international-transfers" class="section">
-            <h2>International Data Transfers</h2>
-
-            <h3>Data Storage Locations</h3>
-            <p>Humrah primarily stores data in India. However, some data may be processed or stored internationally:</p>
-            <ul>
-                <li><strong>Primary Storage:</strong> India (Mumbai region)</li>
-                <li><strong>Backup Storage:</strong> Singapore, Ireland (for redundancy)</li>
-                <li><strong>Third-Party Services:</strong> Cloudinary (global CDN), Firebase (Google servers)</li>
-            </ul>
-
-            <h3>Legal Safeguards</h3>
-            <p>When data is transferred internationally:</p>
-            <ul>
-                <li>We ensure adequate data protection through contractual clauses</li>
-                <li>We comply with Indian data localization requirements</li>
-                <li>We use services that provide equivalent data protection</li>
-                <li>Sensitive data (face embeddings) remain in India unless legally required otherwise</li>
-            </ul>
-
-            <h3>Cross-Border Requests</h3>
-            <p>If foreign authorities request user data:</p>
-            <ul>
-                <li>We will verify the request's legality under Indian law</li>
-                <li>We will notify affected users unless legally prohibited</li>
-                <li>We will provide only the minimum data necessary</li>
-                <li>We will challenge overly broad requests</li>
-            </ul>
+            <p>If you are a parent/guardian and believe your child has created an account, email us immediately at support@humrah.in with proof of guardianship.</p>
         </section>
 
         <section id="changes" class="section">
-            <h2>Changes to This Policy</h2>
+            <h2>12. Changes to This Policy</h2>
 
             <h3>How We Update This Policy</h3>
             <p>We may update this Privacy Policy periodically to reflect:</p>
@@ -1001,63 +666,45 @@
                 <li>Changes in legal requirements</li>
                 <li>New features or services</li>
                 <li>Improvements to data practices</li>
-                <li>Feedback from users or regulators</li>
             </ul>
 
             <h3>Notification of Changes</h3>
             <p>When we make material changes:</p>
             <ul>
-                <li>We will update the "Last Updated" date at the top</li>
-                <li>We will notify you via email to your registered address</li>
+                <li>We will update the "Last Updated" date</li>
+                <li>We will notify you via email</li>
                 <li>We will display an in-app notification</li>
-                <li>We may require you to review and accept changes before continuing</li>
             </ul>
 
             <h3>Your Options</h3>
             <p>If you disagree with changes:</p>
             <ul>
-                <li>Contact us with concerns at <a href="mailto:support@humrah.in">support@humrah.in</a></li>
+                <li>Contact us with concerns</li>
                 <li>Delete your account before changes take effect</li>
-                <li>Continuing to use Humrah after changes means you accept the updated policy</li>
             </ul>
-
-            <h3>Version History</h3>
-            <p>You can request previous versions of this policy by emailing <a href="mailto:support@humrah.in">support@humrah.in</a>.</p>
         </section>
 
         <div class="contact-section" id="contact">
-            <h2>Contact Us</h2>
-            <p>For privacy-related questions, concerns, or requests:</p>
+            <h2>📬 Contact Us</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 16px;">For privacy-related questions, concerns, or requests:</p>
             <a href="mailto:support@humrah.in" class="contact-email">support@humrah.in</a>
-            <p style="margin-top: 25px; color: var(--text-secondary);">
+            <p style="margin-top: 20px; color: var(--text-secondary); font-size: 0.9rem;">
                 <strong>Humrah Privacy Team</strong><br>
-                Registered Address: [Your Registered Address]<br>
-                Delhi, India<br>
-                <br>
+                Delhi, India<br><br>
                 We aim to respond to all inquiries within 7 business days.
             </p>
         </div>
 
-        <div class="highlight-box" style="margin-top: 60px;">
+        <div class="highlight-box" style="margin-top: 40px;">
             <p style="text-align: center; margin: 0;"><strong>Thank you for trusting Humrah with your information.</strong><br>We're committed to protecting your privacy while helping you build real-world connections. 💙</p>
         </div>
     </div>
 
-    <footer>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="terms.html">Terms of Service</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="https://instagram.com/humrah.app" target="_blank">Instagram</a>
-        </div>
-        <p class="footer-text">© 2025 Humrah | Made with ❤️ in India</p>
-    </footer>
-
     <a href="#" class="back-to-top" id="backToTop">↑</a>
 
     <script>
-        // Back to top button
         const backToTop = document.getElementById('backToTop');
+        
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
                 backToTop.classList.add('visible');
@@ -1071,7 +718,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
