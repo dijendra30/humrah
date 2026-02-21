@@ -3,31 +3,482 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Guidelines - Humrah</title>
+    <meta name="description" content="Humrah Community Guidelines - Rules and standards for keeping our platform safe, respectful, and welcoming">
+    <meta name="robots" content="index, follow">
+    <title>Community Guidelines | Humrah</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-gradient-start: #0B0F1A;
+            --bg-gradient-end: #121B2F;
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent-purple: #6A5CFF;
+            --accent-blue: #9D6CFF;
+            --text-primary: #EAEAEA;
+            --text-secondary: #B0B7C3;
+            --text-muted: rgba(234, 234, 234, 0.6);
+            --warning-bg: rgba(255, 107, 107, 0.12);
+            --warning-border: #FF6B6B;
+            --emphasis-bg: rgba(106, 92, 255, 0.1);
+            --emphasis-border: #6A5CFF;
+            --success-color: #4CAF50;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            color: var(--text-primary);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(106, 92, 255, 0.15) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-heart {
+            font-size: 28px;
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.2;
+        }
+
+        .hero-subtext {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 1;
+        }
+
+        .meta-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .section-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-card:hover {
+            border-color: rgba(106, 92, 255, 0.3);
+            box-shadow: 0 10px 40px rgba(106, 92, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(106, 92, 255, 0.2);
+        }
+
+        .section-icon {
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(106, 92, 255, 0.2), rgba(157, 108, 255, 0.2));
+            border-radius: 15px;
+            border: 1px solid rgba(106, 92, 255, 0.3);
+        }
+
+        .section-card h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+            flex: 1;
+        }
+
+        .section-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 25px 0 15px;
+        }
+
+        .section-card p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .section-card ul,
+        .section-card ol {
+            margin: 20px 0;
+            padding-left: 25px;
+        }
+
+        .section-card li {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        .section-card strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .emphasis-box {
+            background: var(--emphasis-bg);
+            border-left: 4px solid var(--emphasis-border);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .emphasis-box.public-meetups {
+            background: linear-gradient(135deg, rgba(106, 92, 255, 0.15), rgba(157, 108, 255, 0.15));
+            border: 2px solid var(--emphasis-border);
+            box-shadow: 0 0 30px rgba(106, 92, 255, 0.2);
+        }
+
+        .warning-box {
+            background: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .warning-icon {
+            font-size: 1.5rem;
+            color: var(--warning-border);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .warning-box p {
+            margin: 0;
+        }
+
+        .warning-box strong {
+            color: var(--warning-border);
+        }
+
+        .contact-section {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .contact-email {
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: 2px solid var(--accent-purple);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .contact-email:hover {
+            background: var(--accent-purple);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(106, 92, 255, 0.4);
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 50px 20px;
+            margin-top: 80px;
+            text-align: center;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .footer-links a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 5px 20px rgba(106, 92, 255, 0.4);
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(106, 92, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtext {
+                font-size: 1rem;
+            }
+
+            .section-card {
+                padding: 25px;
+            }
+
+            .section-card h2 {
+                font-size: 1.4rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
+        <a href="index.html" class="logo-link">
+            <span>Humrah</span>
+            <span class="logo-heart">💙</span>
+        </a>
         <h1>Community Guidelines</h1>
-        <p><strong>Last Updated:</strong> February 16, 2026</p>
-        <p><strong>Version:</strong> 1.0</p>
+        <p class="hero-subtext">Keeping Humrah safe, respectful, and real.</p>
+        <div class="meta-info">
+            <span>📅 <strong>Last Updated:</strong> February 16, 2026</span>
+            <span>📌 <strong>Version:</strong> 1.0</span>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <h2>1. Purpose of Humrah</h2>
+    <div class="container">
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">💙</div>
+                <h2>1. Purpose of Humrah</h2>
+            </div>
             <p>Humrah is a technology platform designed to facilitate in-person meetups between verified adults for public activities such as walks, food outings, events, and exploration. Humrah acts solely as an intermediary service connecting users and does not supervise, control, or guarantee the conduct of users during offline interactions.</p>
             <p>Humrah is not a dating application, escort service, or adult entertainment platform. All meetups arranged through Humrah must occur in public places and comply with these Community Guidelines.</p>
         </section>
 
-        <section>
-            <h2>2. Eligibility</h2>
-            <p>Use of Humrah is restricted to individuals who are 18 years of age or older. By registering on Humrah, you represent and warrant that you meet this age requirement.</p>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">🔞</div>
+                <h2>2. Eligibility</h2>
+            </div>
+            <div class="warning-box">
+                <span class="warning-icon">⚠️</span>
+                <div>
+                    <p><strong>AGE REQUIREMENT:</strong> Use of Humrah is restricted to individuals who are 18 years of age or older. By registering on Humrah, you represent and warrant that you meet this age requirement.</p>
+                </div>
+            </div>
             <p>Users under the age of 18 are strictly prohibited from accessing or using the platform. Humrah reserves the right to verify age through documentation and to immediately terminate accounts found to be in violation of this requirement.</p>
         </section>
 
-        <section>
-            <h2>3. Public Meetups Only Policy</h2>
-            <p>All meetups arranged through Humrah must take place in public locations such as cafes, parks, restaurants, shopping areas, or public events. Users are prohibited from arranging or suggesting private or residential meetups through the platform.</p>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">📍</div>
+                <h2>3. Public Meetups Only Policy</h2>
+            </div>
+            <div class="emphasis-box public-meetups">
+                <p><strong>CRITICAL SAFETY REQUIREMENT:</strong> All meetups arranged through Humrah must take place in public locations such as cafes, parks, restaurants, shopping areas, or public events. Users are prohibited from arranging or suggesting private or residential meetups through the platform.</p>
+            </div>
             <p>Humrah strongly recommends that users:</p>
             <ul>
                 <li>Meet only in well-lit, populated public spaces</li>
@@ -37,8 +488,11 @@
             </ul>
         </section>
 
-        <section>
-            <h2>4. Respect and Harassment Prohibition</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">🤝</div>
+                <h2>4. Respect and Harassment Prohibition</h2>
+            </div>
             <p>All users must treat others with respect and dignity. Harassment of any kind is strictly prohibited on Humrah, including but not limited to:</p>
             <ul>
                 <li>Unwanted sexual advances or solicitation</li>
@@ -50,9 +504,17 @@
             </ul>
         </section>
 
-        <section>
-            <h2>5. Zero Tolerance Misconduct</h2>
-            <p>Humrah maintains a zero-tolerance policy for the following behaviors, which will result in immediate account termination and potential reporting to law enforcement:</p>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">🛑</div>
+                <h2>5. Zero Tolerance Misconduct</h2>
+            </div>
+            <div class="warning-box">
+                <span class="warning-icon">🚨</span>
+                <div>
+                    <p>Humrah maintains a zero-tolerance policy for the following behaviors, which will result in <strong>immediate account termination</strong> and potential reporting to law enforcement:</p>
+                </div>
+            </div>
             <ul>
                 <li>Sexual assault, harassment, or misconduct of any nature</li>
                 <li>Physical violence or threats of violence</li>
@@ -64,8 +526,11 @@
             </ul>
         </section>
 
-        <section>
-            <h2>6. No Sexual Services or Escort Activity</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">❌</div>
+                <h2>6. No Sexual Services or Escort Activity</h2>
+            </div>
             <p>Humrah is not a platform for arranging paid companionship, escort services, or any form of sexual services. Users are strictly prohibited from:</p>
             <ul>
                 <li>Soliciting or offering sexual services in exchange for money, gifts, or other compensation</li>
@@ -73,11 +538,14 @@
                 <li>Advertising adult services of any nature</li>
                 <li>Engaging in prostitution or solicitation</li>
             </ul>
-            <p>Violation of this policy will result in immediate permanent ban and reporting to appropriate authorities as required under Indian law, including the Immoral Traffic (Prevention) Act, 1956.</p>
+            <p><strong>Violation of this policy will result in immediate permanent ban</strong> and reporting to appropriate authorities as required under Indian law, including the Immoral Traffic (Prevention) Act, 1956.</p>
         </section>
 
-        <section>
-            <h2>7. No Hate Speech or Discrimination</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">🚫</div>
+                <h2>7. No Hate Speech or Discrimination</h2>
+            </div>
             <p>Humrah prohibits hate speech, discrimination, or prejudicial treatment based on:</p>
             <ul>
                 <li>Race, ethnicity, or national origin</li>
@@ -91,8 +559,11 @@
             <p>Users found promoting hate speech, supremacist ideologies, or discriminatory content will be permanently banned from the platform.</p>
         </section>
 
-        <section>
-            <h2>8. No Violence or Threats</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">⚔️</div>
+                <h2>8. No Violence or Threats</h2>
+            </div>
             <p>Users must not engage in, promote, or threaten violence against any individual or group. This includes:</p>
             <ul>
                 <li>Direct threats of physical harm</li>
@@ -103,8 +574,11 @@
             </ul>
         </section>
 
-        <section>
-            <h2>9. No Illegal Activities</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">⚖️</div>
+                <h2>9. No Illegal Activities</h2>
+            </div>
             <p>Users are prohibited from using Humrah to facilitate, promote, or engage in any illegal activities under Indian law, including but not limited to:</p>
             <ul>
                 <li>Drug trafficking or sale of controlled substances</li>
@@ -117,8 +591,11 @@
             </ul>
         </section>
 
-        <section>
-            <h2>10. No Impersonation or Fake Profiles</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">🎭</div>
+                <h2>10. No Impersonation or Fake Profiles</h2>
+            </div>
             <p>All users must provide accurate information and use their real identity on Humrah. The following are strictly prohibited:</p>
             <ul>
                 <li>Creating fake or fraudulent profiles</li>
@@ -129,8 +606,11 @@
             </ul>
         </section>
 
-        <section>
-            <h2>11. No Misuse of Verification System</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">🔐</div>
+                <h2>11. No Misuse of Verification System</h2>
+            </div>
             <p>Humrah employs video verification and liveness detection to ensure user authenticity. Users must not:</p>
             <ul>
                 <li>Attempt to circumvent or manipulate the verification process</li>
@@ -139,11 +619,16 @@
                 <li>Share verification credentials or verification footage with others</li>
                 <li>Create accounts for third parties</li>
             </ul>
-            <p>Misuse of the verification system will result in immediate permanent ban and may be reported to law enforcement.</p>
+            <div class="emphasis-box">
+                <p><strong>Misuse of the verification system will result in immediate permanent ban</strong> and may be reported to law enforcement.</p>
+            </div>
         </section>
 
-        <section>
-            <h2>12. No Recording or Sharing Private Conversations</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">🔒</div>
+                <h2>12. No Recording or Sharing Private Conversations</h2>
+            </div>
             <p>Humrah provides encrypted chat functionality for coordination purposes. Users must respect the privacy of these communications and are prohibited from:</p>
             <ul>
                 <li>Recording, screenshotting, or sharing private conversations without explicit consent</li>
@@ -153,13 +638,19 @@
             </ul>
         </section>
 
-        <section>
-            <h2>13. No Off-Platform Coercion</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">🔗</div>
+                <h2>13. No Off-Platform Coercion</h2>
+            </div>
             <p>Users must not use Humrah to pressure, coerce, or manipulate others into moving conversations or interactions to external platforms or private channels for the purpose of evading platform monitoring or engaging in prohibited conduct.</p>
         </section>
 
-        <section>
-            <h2>14. Accurate Information Requirement</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">✅</div>
+                <h2>14. Accurate Information Requirement</h2>
+            </div>
             <p>Users must provide accurate and truthful information in their profiles, including:</p>
             <ul>
                 <li>Real name and accurate age</li>
@@ -170,8 +661,11 @@
             <p>Deliberate misrepresentation constitutes a violation of these Guidelines and may result in account suspension or termination.</p>
         </section>
 
-        <section>
-            <h2>15. Reporting Process</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">📢</div>
+                <h2>15. Reporting Process</h2>
+            </div>
             <p>Humrah provides a comprehensive reporting system for users to flag violations of these Community Guidelines. Users who experience or witness prohibited conduct should:</p>
             <ul>
                 <li>Use the in-app reporting feature to submit a detailed report</li>
@@ -182,29 +676,43 @@
             <p>All reports are reviewed by Humrah's moderation team. Users who submit reports in good faith will not face retaliation. However, false or malicious reporting intended to harass other users will result in enforcement action.</p>
         </section>
 
-        <section>
-            <h2>16. Enforcement Actions</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">⚡</div>
+                <h2>16. Enforcement Actions</h2>
+            </div>
             <p>Violations of these Community Guidelines may result in the following enforcement actions, at Humrah's sole discretion:</p>
+            
             <h3>Warning</h3>
             <p>A formal notice issued for minor or first-time violations. The user's account remains active but is flagged for monitoring.</p>
+            
             <h3>Strike System</h3>
             <p>Repeated or moderate violations result in strikes against the user's account. Accumulation of multiple strikes leads to escalated enforcement:</p>
             <ul>
-                <li>First Strike: Warning and temporary account restrictions</li>
-                <li>Second Strike: Temporary suspension (7-30 days)</li>
-                <li>Third Strike: Permanent account termination</li>
+                <li><strong>First Strike:</strong> Warning and temporary account restrictions</li>
+                <li><strong>Second Strike:</strong> Temporary suspension (7-30 days)</li>
+                <li><strong>Third Strike:</strong> Permanent account termination</li>
             </ul>
+            
             <h3>Temporary Suspension</h3>
             <p>Account access is temporarily revoked for a defined period. The user cannot log in, access chats, or arrange meetups during suspension.</p>
+            
             <h3>Permanent Ban</h3>
             <p>The user's account is permanently terminated. The user is prohibited from creating new accounts on Humrah.</p>
+            
             <h3>Device-Level Restriction</h3>
             <p>In cases of severe or repeated violations, Humrah may implement device-level restrictions to prevent the creation of new accounts from the same device.</p>
-            <p>Humrah reserves the right to take immediate action, including permanent ban without prior warning, for zero-tolerance violations as outlined in Section 5.</p>
+            
+            <div class="emphasis-box">
+                <p>Humrah reserves the right to take immediate action, including permanent ban without prior warning, for zero-tolerance violations as outlined in Section 5.</p>
+            </div>
         </section>
 
-        <section>
-            <h2>17. Appeals Process</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">⚖️</div>
+                <h2>17. Appeals Process</h2>
+            </div>
             <p>Users who believe their account has been suspended or terminated in error may submit an appeal by contacting <strong>appeals@humrah.in</strong> within 30 days of the enforcement action. Appeals must include:</p>
             <ul>
                 <li>Account email address and user ID</li>
@@ -214,8 +722,11 @@
             <p>Humrah will review appeals in good faith but retains sole discretion in determining final outcomes. Decisions made following the appeals process are final and binding.</p>
         </section>
 
-        <section>
-            <h2>18. Cooperation with Law Enforcement</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">👮</div>
+                <h2>18. Cooperation with Law Enforcement</h2>
+            </div>
             <p>Humrah complies with all applicable Indian laws and regulations. In cases involving suspected criminal activity, Humrah reserves the right to:</p>
             <ul>
                 <li>Report incidents to appropriate law enforcement authorities</li>
@@ -226,9 +737,18 @@
             <p>This cooperation is conducted in accordance with the Information Technology Act, 2000, and other applicable Indian legislation.</p>
         </section>
 
-        <section>
-            <h2>19. Platform Liability Disclaimer</h2>
-            <p>Humrah operates as an intermediary platform under Section 79 of the Information Technology Act, 2000, and the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021.</p>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">🛡️</div>
+                <h2>19. Platform Liability Disclaimer</h2>
+            </div>
+            <div class="warning-box">
+                <span class="warning-icon">⚠️</span>
+                <div>
+                    <p><strong>CRITICAL NOTICE:</strong> Humrah operates as an intermediary platform under Section 79 of the Information Technology Act, 2000, and the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021.</p>
+                </div>
+            </div>
+            
             <p><strong>Important Disclaimers:</strong></p>
             <ul>
                 <li>Humrah does not supervise, control, or guarantee the conduct of users during offline interactions</li>
@@ -239,11 +759,17 @@
                 <li>Humrah is not liable for damages, injuries, losses, or harm arising from user interactions, whether on or off the platform</li>
                 <li>Users engage with others at their own risk and discretion</li>
             </ul>
-            <p>By using Humrah, you acknowledge and accept these limitations and agree to hold Humrah harmless for user conduct and offline interactions.</p>
+            
+            <div class="emphasis-box">
+                <p>By using Humrah, you acknowledge and accept these limitations and agree to hold Humrah harmless for user conduct and offline interactions.</p>
+            </div>
         </section>
 
-        <section>
-            <h2>20. Updates to These Guidelines</h2>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-icon">🔄</div>
+                <h2>20. Updates to These Guidelines</h2>
+            </div>
             <p>Humrah reserves the right to modify, update, or revise these Community Guidelines at any time to reflect changes in legal requirements, platform features, or community standards. Users will be notified of material changes through:</p>
             <ul>
                 <li>In-app notification</li>
@@ -254,18 +780,89 @@
             <p>The current version of these Community Guidelines is always available at <strong>https://humrah.in/community.html</strong></p>
         </section>
 
-        <section>
-            <h2>Contact Information</h2>
-            <p>For questions, concerns, or reports regarding these Community Guidelines, please contact:</p>
-            <p><strong>Email:</strong> support@humrah.in</p>
-            <p><strong>Safety Reports:</strong> safety@humrah.in</p>
-            <p><strong>Appeals:</strong> appeals@humrah.in</p>
-            <p><strong>Legal Inquiries:</strong> legal@humrah.in</p>
+        <section class="contact-section">
+            <h2>📬 Contact Information</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">For questions, concerns, or reports regarding these Community Guidelines, please contact:</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-label">General Support</div>
+                    <a href="mailto:support@humrah.in" class="contact-email">support@humrah.in</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Safety Reports</div>
+                    <a href="mailto:safety@humrah.in" class="contact-email">safety@humrah.in</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Appeals</div>
+                    <a href="mailto:appeals@humrah.in" class="contact-email">appeals@humrah.in</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Legal Inquiries</div>
+                    <a href="mailto:legal@humrah.in" class="contact-email">legal@humrah.in</a>
+                </div>
+            </div>
         </section>
-    </main>
+    </div>
 
     <footer>
-        <p>&copy; 2026 Humrah. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="community.html">Community Guidelines</a>
+            <a href="https://instagram.com/humrah.app" target="_blank">Follow @Humrah</a>
+        </div>
+        <p class="footer-text">© 2026 Humrah. All rights reserved. | Made with ❤️ in India</p>
     </footer>
+
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
