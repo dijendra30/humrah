@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://humrah.in/sitemap.xml
