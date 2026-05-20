@@ -414,7 +414,7 @@
 
 <!-- Loading Screen -->
 <div id="loading-screen">
-  <img src="Logo.png" class="loader-logo" alt="Humrah" onerror="this.style.display='none'">
+  <img src="https://humrah.in/logo.png" class="loader-logo" alt="Humrah" onerror="this.style.display='none'">
   <div class="loader-spinner"></div>
   <div class="loader-text">CONNECTING TO SAFETY SESSION…</div>
 </div>
@@ -559,7 +559,7 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    Powered by <span>Humrah</span> Safety System &nbsp;
+    Powered by <span>Humrah</span> Safety System &nbsp;·&nbsp; api.humrah.in
   </footer>
 
 </div><!-- /page -->
@@ -568,24 +568,21 @@
 // =============================================================================
 // CONFIG & STATE
 // =============================================================================
-const SESSION_ID  = new URLSearchParams(location.search).get('session') || 'demo';
+const SESSION_ID  = new URLSearchParams(location.search).get('session') || '';
 const API_BASE    = 'https://api.humrah.in';
 
 const state = {
   lat:        28.6139,
   lng:        77.2090,
-  battery:    82,
-  accuracy:   4,
-  speed:      3.2,
-  sessionSec: 1122,   // seconds active
+  battery:    null,
+  accuracy:   null,
+  speed:      0,
+  sessionSec: 0,
   isExpired:  false,
   lastUpdate: Date.now(),
-  movement:   'Walking',
+  movement:   'Stationary',
+  startedAt:  null,
 };
-
-// Movement options for simulation
-const MOVEMENTS = ['Walking','Stationary','Moving','Running','Stationary'];
-const SPEEDS    = [0, 1.2, 3.2, 5.8, 0, 2.1, 4.4];
 
 // =============================================================================
 // MAP SETUP
@@ -658,60 +655,55 @@ function moveMarkerSmooth(lat, lng) {
 }
 
 // =============================================================================
-// BACKEND PLACEHOLDERS — connect to api.humrah.in later
+// REAL API
 // =============================================================================
 
 /**
- * fetchLiveLocation(sessionId)
- * Replace mock below with:
- *   GET https://api.humrah.in/safety/session/:sessionId/location
- *   Returns: { lat, lng, battery, accuracy, speed, movement, timestamp, isExpired }
+ * fetchLiveLocation — polls GET /api/live-location/:sessionId
+ * Returns normalised state object or throws.
  */
 async function fetchLiveLocation(sessionId) {
-  // MOCK: simulate small GPS drift
-  const dLat = (Math.random() - .5) * 0.0008;
-  const dLng = (Math.random() - .5) * 0.0008;
-  const movIdx = Math.floor(Math.random() * MOVEMENTS.length);
+  if (!sessionId) throw new Error('No session ID in URL');
+  const res  = await fetch(`${API_BASE}/api/live-location/${sessionId}`, {
+    method:  'GET',
+    headers: { 'Content-Type': 'application/json' },
+    cache:   'no-store',
+  });
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    throw new Error(body.message || `HTTP ${res.status}`);
+  }
+  const json = await res.json();
+  if (!json.success) throw new Error(json.message || 'API error');
+  const d = json.data;
   return {
-    lat:       state.lat + dLat,
-    lng:       state.lng + dLng,
-    battery:   Math.max(5, state.battery - Math.floor(Math.random() * 2)),
-    accuracy:  Math.floor(Math.random() * 8) + 2,
-    speed:     SPEEDS[Math.floor(Math.random() * SPEEDS.length)],
-    movement:  MOVEMENTS[movIdx],
-    timestamp: Date.now(),
-    isExpired: false,
+    name:      d.name,
+    lat:       d.lat,
+    lng:       d.lng,
+    battery:   d.batteryLevel,
+    accuracy:  d.accuracy,
+    speed:     d.speed  ?? 0,
+    movement:  d.movementType || 'Stationary',
+    startedAt: d.startedAt ? new Date(d.startedAt) : null,
+    updatedAt: d.updatedAt ? new Date(d.updatedAt) : null,
+    isExpired: d.isExpired,
   };
 }
 
-/**
- * updateTrackingSession(sessionId, data)
- * POST https://api.humrah.in/safety/session/:sessionId/ping
- */
-async function updateTrackingSession(sessionId, data) {
-  // placeholder
-  return { ok: true };
-}
-
-/**
- * refreshMapMarker(lat, lng)
- * Forces immediate marker redraw
- */
 function refreshMapMarker(lat, lng) {
   if (marker) moveMarkerSmooth(lat, lng);
 }
 
-/**
- * endTrackingSession(sessionId)
- * POST https://api.humrah.in/safety/session/:sessionId/end
- */
-async function endTrackingSession(sessionId) {
+function markSessionExpired() {
   state.isExpired = true;
   document.getElementById('expired-overlay').classList.add('show');
-  document.querySelector('.live-badge').style.background = 'rgba(255,59,92,.10)';
-  document.querySelector('.live-badge').style.borderColor = 'rgba(255,59,92,.25)';
-  document.querySelector('.live-badge').style.color = 'var(--red)';
-  document.querySelector('.live-dot').style.background = 'var(--red)';
+  document.querySelector('.live-badge').style.background    = 'rgba(255,59,92,.10)';
+  document.querySelector('.live-badge').style.borderColor   = 'rgba(255,59,92,.25)';
+  document.querySelector('.live-badge').style.color         = 'var(--red)';
+  document.querySelector('.live-dot').style.background      = 'var(--red)';
+  // Hide the "auto-refreshing" sub-text
+  const subEl = document.querySelector('#last-updated + .ai-sub');
+  if (subEl) subEl.textContent = 'Session ended';
 }
 
 // =============================================================================
@@ -719,6 +711,11 @@ async function endTrackingSession(sessionId) {
 // =============================================================================
 
 function updateUI(data) {
+  if (!data || data.lat == null) return;
+
+  // Name
+  if (data.name) document.getElementById('user-name').textContent = data.name;
+
   // Coords
   const coordStr = `${data.lat.toFixed(5)}, ${data.lng.toFixed(5)}`;
   document.getElementById('coords-display').textContent = coordStr;
@@ -726,21 +723,38 @@ function updateUI(data) {
     `https://maps.google.com/?q=${data.lat},${data.lng}`;
 
   // Stats
-  document.getElementById('stat-battery').textContent  = `${data.battery}%`;
-  document.getElementById('stat-accuracy').textContent = `±${data.accuracy}m`;
-  document.getElementById('stat-signal').textContent   = data.accuracy < 6 ? 'Good' : data.accuracy < 15 ? 'Fair' : 'Weak';
+  if (data.battery != null) {
+    document.getElementById('stat-battery').textContent  = `${data.battery}%`;
+  } else {
+    document.getElementById('stat-battery').textContent  = '--';
+  }
+  if (data.accuracy != null) {
+    document.getElementById('stat-accuracy').textContent = `\u00b1${Math.round(data.accuracy)}m`;
+    document.getElementById('stat-signal').textContent   = data.accuracy < 6 ? 'Good' : data.accuracy < 15 ? 'Fair' : 'Weak';
+  }
 
   // Activity
-  document.getElementById('last-updated').textContent  = 'Just now';
+  document.getElementById('last-updated').textContent    = 'Just now';
   document.getElementById('movement-status').textContent = data.movement;
-  document.getElementById('movement-sub').textContent  = data.movement === 'Stationary' ? 'No movement' : 'Detected';
-  document.getElementById('speed-val').textContent     = `${data.speed.toFixed(1)} km/h`;
+  document.getElementById('movement-sub').textContent    = data.movement === 'Stationary' ? 'No movement' : 'Detected';
+  document.getElementById('speed-val').textContent       = `${(data.speed ?? 0).toFixed(1)} km/h`;
+
+  // Session timer seed from real startedAt
+  if (data.startedAt && state.startedAt === null) {
+    state.startedAt = data.startedAt;
+    state.sessionSec = Math.floor((Date.now() - data.startedAt.getTime()) / 1000);
+  }
 
   // Battery color
-  const batEl = document.getElementById('stat-battery');
-  batEl.style.color = data.battery < 20 ? 'var(--red)' : data.battery < 40 ? 'var(--amber)' : 'var(--cyan)';
+  if (data.battery != null) {
+    const batEl = document.getElementById('stat-battery');
+    batEl.style.color = data.battery < 20 ? 'var(--red)' : data.battery < 40 ? 'var(--amber)' : 'var(--cyan)';
+  }
 
+  state.lat      = data.lat;
+  state.lng      = data.lng;
   state.battery  = data.battery;
+  state.movement = data.movement;
   state.lastUpdate = Date.now();
 }
 
@@ -768,18 +782,23 @@ setInterval(() => {
 }, 1000);
 
 // =============================================================================
-// MAIN TRACKING LOOP — every 10 seconds
+// MAIN TRACKING LOOP — every 20 seconds
 // =============================================================================
+const POLL_INTERVAL_MS = 20_000;
+
 async function trackingTick() {
   if (state.isExpired) return;
   try {
     const data = await fetchLiveLocation(SESSION_ID);
-    if (data.isExpired) { endTrackingSession(SESSION_ID); return; }
-    refreshMapMarker(data.lat, data.lng);
+    if (data.isExpired) { markSessionExpired(); return; }
+    if (data.lat != null) refreshMapMarker(data.lat, data.lng);
     updateUI(data);
     secondsSinceUpdate = 0;
+    // Hide error state if it was showing
+    document.getElementById('error-state').classList.remove('show');
   } catch(e) {
     console.warn('Location fetch error:', e);
+    // Show error only after 2 consecutive failures (handled by error-state div)
   }
 }
 
@@ -824,14 +843,32 @@ function showToast(msg) {
 // INIT
 // =============================================================================
 async function init() {
+  // Guard: no session in URL
+  if (!SESSION_ID) {
+    document.getElementById('error-state').classList.add('show');
+    document.querySelector('.error-title').textContent = 'Invalid tracking link';
+    document.querySelector('.error-sub').textContent   = 'No session ID was found in the URL.';
+    return;
+  }
   try {
     initMap();
     const data = await fetchLiveLocation(SESSION_ID);
-    refreshMapMarker(data.lat, data.lng);
+    if (data.isExpired) {
+      // Still show map at last known position, then mark expired
+      if (data.lat != null) {
+        initMap();
+        refreshMapMarker(data.lat, data.lng);
+        updateUI(data);
+      }
+      markSessionExpired();
+      return;
+    }
+    if (data.lat != null) refreshMapMarker(data.lat, data.lng);
     updateUI(data);
-    // Start polling
-    setInterval(trackingTick, 10_000);
+    // Start polling every 20 seconds
+    setInterval(trackingTick, POLL_INTERVAL_MS);
   } catch(e) {
+    console.error('Init error:', e);
     document.getElementById('error-state').classList.add('show');
   }
 }
@@ -848,9 +885,9 @@ window.addEventListener('load', () => {
   }, 1400);
 });
 
-// Dev demo: press 'E' to trigger expired state
+// Dev demo: press 'E' to trigger expired overlay
 document.addEventListener('keydown', e => {
-  if (e.key === 'e' || e.key === 'E') endTrackingSession(SESSION_ID);
+  if (e.key === 'e' || e.key === 'E') markSessionExpired();
 });
 </script>
 </body>
