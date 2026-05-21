@@ -688,7 +688,7 @@ function initMap() {
   marker = L.marker([state.lat, state.lng], { icon }).addTo(map);
 
   accuracyCircle = L.circle([state.lat, state.lng], {
-    radius:      state.accuracy * 5,
+    radius:      (state.accuracy ?? 20),   // metres; 20m default until first real GPS fix
     color:       'rgba(0,255,230,.6)',
     fillColor:   'rgba(0,255,230,.06)',
     fillOpacity: 1,
@@ -795,6 +795,7 @@ function updateUI(data) {
   if (data.accuracy != null) {
     document.getElementById('stat-accuracy').textContent = `\u00b1${Math.round(data.accuracy)}m`;
     document.getElementById('stat-signal').textContent   = data.accuracy < 6 ? 'Good' : data.accuracy < 15 ? 'Fair' : 'Weak';
+    if (accuracyCircle) accuracyCircle.setRadius(data.accuracy); // keep circle in sync with real GPS accuracy
   }
 
   // Activity
@@ -849,6 +850,14 @@ setInterval(() => {
 // MAIN TRACKING LOOP — every 20 seconds
 // =============================================================================
 const POLL_INTERVAL_MS = 20_000;
+let consecutiveErrors = 0;
+let pollingStarted    = false;
+
+function startPolling() {
+  if (pollingStarted) return;
+  pollingStarted = true;
+  setInterval(trackingTick, POLL_INTERVAL_MS);
+}
 
 async function trackingTick() {
   if (state.isExpired) return;
@@ -858,11 +867,14 @@ async function trackingTick() {
     if (data.lat != null) refreshMapMarker(data.lat, data.lng);
     updateUI(data);
     secondsSinceUpdate = 0;
-    // Hide error state if it was showing
+    consecutiveErrors  = 0;
     document.getElementById('error-state').classList.remove('show');
   } catch(e) {
     console.warn('Location fetch error:', e);
-    // Show error only after 2 consecutive failures (handled by error-state div)
+    consecutiveErrors++;
+    if (consecutiveErrors >= 2) {
+      document.getElementById('error-state').classList.add('show');
+    }
   }
 }
 
@@ -884,6 +896,7 @@ function refreshLocation() {
 
 function retryConnection() {
   document.getElementById('error-state').classList.remove('show');
+  consecutiveErrors = 0;
   init();
 }
 
@@ -915,12 +928,13 @@ async function init() {
     return;
   }
   try {
-    initMap();
+    if (!map) initMap(); // guard — never create a second Leaflet instance
     const data = await fetchLiveLocation(SESSION_ID);
     if (data.isExpired) {
-      // Still show map at last known position, then mark expired
+      // show last known position then overlay expired state
       if (data.lat != null) {
-        initMap();
+        state.lat = data.lat;
+        state.lng = data.lng;
         refreshMapMarker(data.lat, data.lng);
         updateUI(data);
       }
@@ -929,8 +943,7 @@ async function init() {
     }
     if (data.lat != null) refreshMapMarker(data.lat, data.lng);
     updateUI(data);
-    // Start polling every 20 seconds
-    setInterval(trackingTick, POLL_INTERVAL_MS);
+    startPolling(); // guarded — starts only once
   } catch(e) {
     console.error('Init error:', e);
     document.getElementById('error-state').classList.add('show');
