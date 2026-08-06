@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Opening Humrah...</title>
+    <!-- Premium Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0A0E27;
+            --primary-blue: #00F5FF;
+            --primary-pink: #FF6B9D;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Gradients */
+        .bg-glow {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, var(--primary-blue) 0%, transparent 60%);
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            top: -100px;
+            left: -100px;
+            animation: float 10s infinite alternate ease-in-out;
+        }
+        
+        .bg-glow-2 {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, var(--primary-pink) 0%, transparent 60%);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.15;
+            bottom: -150px;
+            right: -100px;
+            animation: float 12s infinite alternate-reverse ease-in-out;
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: rise infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(30px, 30px); }
+        }
+        
+        @keyframes rise {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 0.4; }
+            100% { transform: translateY(-100px) scale(1); opacity: 0; }
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 48px 32px;
+            width: 90%;
+            max-width: 420px;
+            text-align: center;
+            z-index: 10;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo and Loading Animation */
+        .logo-container {
+            width: 96px;
+            height: 96px;
+            margin: 0 auto 28px;
+            border-radius: 50%;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-pink));
+            position: relative;
+        }
+        
+        .logo-inner {
+            width: 100%;
+            height: 100%;
+            background: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-container img {
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+        }
+
+        .loader-ring {
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            border-top-color: var(--primary-blue);
+            border-right-color: var(--primary-pink);
+            animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.05); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            background: linear-gradient(to right, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        p.subtitle {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+
+        p.helper-text {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 16px;
+        }
+
+        /* Button */
+        .btn-install {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px -10px rgba(102, 126, 234, 0.6);
+            width: 100%;
+        }
+
+        .btn-install:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -10px rgba(102, 126, 234, 0.8);
+        }
+        
+        .btn-install:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-glow"></div>
+    <div class="bg-glow-2"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Main Content -->
+    <div class="glass-card">
+        <div class="logo-container">
+            <div class="loader-ring"></div>
+            <div class="logo-inner">
+                <img src="/Logo.png" alt="Humrah Logo">
+            </div>
+        </div>
+        
+        <h1>Opening Humrah...</h1>
+        <p class="subtitle">Preparing your shared post...</p>
+        
+        <p class="helper-text">If nothing happens automatically, install Humrah.</p>
+        <a href="https://play.google.com/store/apps/details?id=in.humrah.app" class="btn-install" id="fallbackBtn">Install Humrah</a>
+    </div>
+
+    <!-- Logic -->
+    <script>
+        // Generate lightweight floating particles dynamically to keep HTML small
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 20; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            // Random properties for organic feel
+            const size = Math.random() * 4 + 1;
+            const left = Math.random() * 100;
+            const duration = Math.random() * 12 + 8;
+            const delay = Math.random() * 5;
+            
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = left + '%';
+            particle.style.animationDuration = duration + 's';
+            particle.style.animationDelay = delay + 's';
+            
+            particlesContainer.appendChild(particle);
+        }
+
+        // Deep Link Routing Logic
+        window.onload = function() {
+            // Extract postId from the path: e.g., https://humrah.in/post/12345
+            var pathParts = window.location.pathname.split('/');
+            var postId = '';
+            
+            // Look for the part after 'post' or default to the last segment
+            var postIndex = pathParts.indexOf('post');
+            if (postIndex !== -1 && postIndex < pathParts.length - 1) {
+                postId = pathParts[postIndex + 1];
+            }
+            
+            // Sanitize: allow only alphanumeric characters, dashes, and underscores
+            postId = postId.replace(/[^a-zA-Z0-9_-]/g, '');
+            
+            var deepLink = "humrah://post/" + postId;
+            var fallbackUrl = "https://play.google.com/store/apps/details?id=in.humrah.app";
+            
+            // Attempt to open the app (using replace so we don't pollute browser history)
+            if (postId) {
+                window.location.replace(deepLink);
+            }
+            
+            // Fallback timeout to redirect to the Play Store
+            setTimeout(function() {
+                // If the page is still visible, the app didn't capture the deep link.
+                if (!document.hidden) {
+                    window.location.replace(fallbackUrl);
+                }
+            }, 2500);
+        };
+    </script>
+</body>
+</html>
