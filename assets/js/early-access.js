@@ -90,4 +90,33 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { passive: true });
   }
+
+  // 4. Location Modal Logic
+  const locationModal = document.getElementById('locationModal');
+  const modalClose = document.getElementById('modalClose');
+  const modalSecondaryBtn = document.getElementById('modalSecondaryBtn');
+  
+  if (locationModal && !localStorage.getItem('humrah_modal_seen')) {
+    // Show after 2.5 seconds
+    setTimeout(() => {
+      locationModal.classList.add('is-visible');
+    }, 2500);
+  }
+
+  const closeModal = () => {
+    if (locationModal) {
+      locationModal.classList.remove('is-visible');
+      localStorage.setItem('humrah_modal_seen', 'true');
+    }
+  };
+
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modalSecondaryBtn) modalSecondaryBtn.addEventListener('click', closeModal);
+  
+  // Close on outside click
+  if (locationModal) {
+    locationModal.addEventListener('click', (e) => {
+      if (e.target === locationModal) closeModal();
+    });
+  }
 });
