@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   
   // 1. Reveal Engine (Intersection Observer)
-  const revealElements = document.querySelectorAll('.reveal-up, .slow-reveal, .ann-line-1, .ann-line-2, .pencil-stroke');
+  const revealElements = document.querySelectorAll('.reveal-up, .slow-reveal, .pencil-stroke');
   if (prefersReducedMotion) {
     revealElements.forEach(el => el.classList.add('is-visible'));
   } else {
