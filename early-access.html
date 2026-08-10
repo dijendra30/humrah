@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Humrah — Early Access Testing</title>
   
-  <!-- SEO & Open Graph Meta -->
   <meta name="description" content="Humrah is a social companionship app for real people and real moments. Join early access testing in Delhi.">
   <meta property="og:title" content="Humrah is Live — Early Access Testing">
   <meta property="og:description" content="Meet people. Share moments. Feel less alone. Join Humrah early access testing in Delhi.">
@@ -15,18 +14,21 @@
   
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   
-  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/early-access.css">
 </head>
-<body>
+<body class="diorama-body">
+
+  <div id="graphite-particles" class="graphite-particles" aria-hidden="true">
+    <!-- Particles will be injected by JS -->
+  </div>
 
   <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-bg">
+  <section class="hero diorama-section" id="section-hero">
+    <div class="hero-bg diorama-layer" data-speed="0.1">
       <img src="assets/images/hero.png" alt="Pencil sketch of young friends hanging out on a Delhi terrace at evening">
     </div>
     
-    <div class="container hero-content">
+    <div class="container hero-content diorama-layer" data-speed="0.25">
       <div class="reveal-up">
         <h1 class="hero-title">HUMRAH<br>IS LIVE.</h1>
         <div class="hero-subtitle">EARLY ACCESS TESTING</div>
@@ -40,15 +42,20 @@
   </section>
 
   <!-- SECTION 2: THE PROBLEM -->
-  <section class="story-section">
+  <section class="story-section diorama-section" id="section-loneliness">
     <div class="story-sticky">
       <div class="story-sticky-inner container">
-        <div class="story-images fade-in">
+        <div class="story-images diorama-image-container">
+          <!-- Layer 2: Main Illustration (Alone) -->
           <img src="assets/images/lonely.png" alt="Sketch of a young person sitting alone on a park bench" class="story-img" id="img-alone">
+          <!-- Layer 2: Main Illustration (Group) -->
           <img src="assets/images/group.png" alt="Sketch of a group of friends sitting together on the same bench" class="story-img" id="img-group">
+          <!-- Layer 3: Foreground overlay for depth -->
+          <div class="story-fg-overlay"></div>
         </div>
         
-        <div class="story-text-container reveal-up">
+        <!-- Layer 4: Typography -->
+        <div class="story-text-container reveal-up diorama-text-layer">
           <h2 class="story-headline">A city full of people<br>can still feel lonely.</h2>
         </div>
       </div>
@@ -56,15 +63,15 @@
   </section>
 
   <!-- SECTION 3: WHAT IS HUMRAH? -->
-  <section class="editorial-section">
+  <section class="editorial-section diorama-section" id="section-what">
     <div class="container">
       <div class="editorial-block">
-        <div class="editorial-text reveal-up">
+        <div class="editorial-text reveal-up diorama-text-layer" data-depth="50">
           <h2 class="editorial-headline">What is Humrah?</h2>
           <p class="editorial-desc">Humrah is a social companionship app designed to help people discover genuine connections and share real experiences.</p>
           <div class="not-dating">Not a dating app</div>
         </div>
-        <div class="editorial-image reveal-up">
+        <div class="editorial-image reveal-up diorama-image-layer" data-depth="20">
           <img src="assets/images/ill-what.png" alt="Illustration of genuine friends laughing together in a coffee shop">
         </div>
       </div>
@@ -72,41 +79,41 @@
   </section>
 
   <!-- SECTION 4: WHAT CAN YOU DO ON HUMRAH? -->
-  <section class="editorial-section">
+  <section class="editorial-section diorama-section" id="section-features">
     <div class="container">
-      <div class="editorial-text reveal-up" style="margin-bottom: 80px;">
+      <div class="editorial-text reveal-up diorama-text-layer" style="margin-bottom: 80px;" data-depth="50">
         <h2 class="editorial-headline" style="font-size: 2rem;">What can you do on Humrah?</h2>
       </div>
 
       <!-- Block 1 -->
-      <div class="editorial-block">
-        <div class="editorial-text reveal-up">
+      <div class="editorial-block feature-block">
+        <div class="editorial-text reveal-up diorama-text-layer" data-depth="60">
           <div class="editorial-subhead">FIND PEOPLE</div>
           <p class="editorial-desc">Discover people around you who share your vibe.</p>
         </div>
-        <div class="editorial-image reveal-up">
+        <div class="editorial-image reveal-up diorama-image-layer" data-depth="30">
           <img src="assets/images/ill-find.png" alt="Illustration of people naturally meeting and talking together">
         </div>
       </div>
 
       <!-- Block 2 -->
-      <div class="editorial-block">
-        <div class="editorial-text reveal-up">
+      <div class="editorial-block feature-block">
+        <div class="editorial-text reveal-up diorama-text-layer" data-depth="60">
           <div class="editorial-subhead">DO SOMETHING TOGETHER</div>
           <p class="editorial-desc">Find activities and experiences to share.</p>
         </div>
-        <div class="editorial-image reveal-up">
+        <div class="editorial-image reveal-up diorama-image-layer" data-depth="30">
           <img src="assets/images/ill-do.png" alt="Illustration of friends walking and having coffee">
         </div>
       </div>
 
       <!-- Block 3 -->
-      <div class="editorial-block">
-        <div class="editorial-text reveal-up">
+      <div class="editorial-block feature-block">
+        <div class="editorial-text reveal-up diorama-text-layer" data-depth="60">
           <div class="editorial-subhead">CONNECT BY MOOD</div>
           <p class="editorial-desc">Find people based on how you're feeling and what you want to do.</p>
         </div>
-        <div class="editorial-image reveal-up">
+        <div class="editorial-image reveal-up diorama-image-layer" data-depth="30">
           <img src="assets/images/ill-mood.png" alt="Illustration of different people connecting naturally">
         </div>
       </div>
@@ -114,14 +121,14 @@
   </section>
 
   <!-- SECTION 5: SAFETY -->
-  <section class="editorial-section">
+  <section class="editorial-section diorama-section" id="section-safety">
     <div class="container">
       <div class="editorial-block">
-        <div class="editorial-text reveal-up">
+        <div class="editorial-text reveal-up diorama-text-layer" data-depth="50">
           <h2 class="editorial-headline" style="font-size: 2.2rem; text-transform: uppercase;">Connection should feel safe.</h2>
           <p class="editorial-desc">Safety is built into the Humrah experience.</p>
         </div>
-        <div class="editorial-image reveal-up">
+        <div class="editorial-image reveal-up diorama-image-layer safety-image-layer" data-depth="40">
           <img src="assets/images/ill-safety.png" alt="Illustration of a small group of people meeting safely in a public place">
         </div>
       </div>
@@ -129,30 +136,29 @@
   </section>
 
   <!-- SECTION 6: EARLY ACCESS -->
-  <section class="early-access-section">
+  <section class="early-access-section diorama-section" id="section-early">
     <div class="container">
-      <h2 class="handwritten-text">You're early.</h2>
-      <div class="reveal-up">
+      <h2 class="handwritten-text diorama-text-layer" data-depth="80">You're early.</h2>
+      <div class="reveal-up diorama-text-layer" data-depth="40">
         <p class="editorial-desc" style="margin-bottom: 48px;">Humrah is currently available for early access testing in Delhi.</p>
-        
-        <a href="https://play.google.com/store/apps/details?id=in.humrah.app" class="btn" id="early-access-mid">JOIN EARLY ACCESS</a>
+        <a href="https://play.google.com/store/apps/details?id=in.humrah.app" class="btn btn-embossed" id="early-access-mid">JOIN EARLY ACCESS</a>
       </div>
     </div>
   </section>
 
   <!-- FINAL CTA -->
-  <section class="final-cta">
-    <div class="final-bg">
+  <section class="final-cta diorama-section" id="section-final">
+    <div class="final-bg diorama-layer" data-speed="0.1">
       <img src="assets/images/final-cta.png" alt="Friends walking together through Delhi streets">
     </div>
     
-    <div class="container final-content reveal-up">
+    <div class="container final-content reveal-up diorama-layer" data-speed="0.3">
       <h2 class="hero-title">HUMRAH<br>IS LIVE.</h2>
       <div class="hero-subtitle">EARLY ACCESS TESTING</div>
       
       <p class="editorial-desc" style="margin: 0 auto 32px; color: var(--color-text);">Be one of the first to experience Humrah.</p>
       
-      <a href="https://play.google.com/store/apps/details?id=in.humrah.app" class="btn" id="early-access-final">JOIN EARLY ACCESS</a>
+      <a href="https://play.google.com/store/apps/details?id=in.humrah.app" class="btn btn-embossed" id="early-access-final">JOIN EARLY ACCESS</a>
     </div>
   </section>
 
@@ -192,7 +198,6 @@
     </div>
   </div>
 
-  <!-- Scripts -->
   <script src="assets/js/early-access.js"></script>
 </body>
 </html>

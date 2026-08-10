@@ -1,5 +1,5 @@
 /* 
- * HUMRAH EARLY ACCESS
+ * HUMRAH EARLY ACCESS - 2.5D DIORAMA
  * Premium, cinematic, mobile-first sketchbook style.
  */
 
@@ -14,6 +14,7 @@
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
   --transition-smooth: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  --diorama-perspective: 1200px;
 }
 
 *, *::before, *::after {
@@ -23,6 +24,8 @@
 }
 
 html {
+  /* Remove smooth scroll on html to prevent conflict with custom rAF logic if needed, 
+     but keeping it for anchor links is usually fine. */
   scroll-behavior: smooth;
 }
 
@@ -36,6 +39,39 @@ body {
   overflow-x: hidden;
   background-image: 
     url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.03%22/%3E%3C/svg%3E');
+}
+
+/* 2.5D Setup */
+.diorama-body {
+  perspective: var(--diorama-perspective);
+  perspective-origin: center center;
+  /* preserve-3d on sections allows child layers to stack in 3D space */
+}
+
+.diorama-section {
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* Particles */
+.graphite-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  background-color: var(--color-text);
+  border-radius: 50%;
+  opacity: 0.15;
+  transition: transform 0.1s linear;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -79,9 +115,20 @@ a {
   border: 1px solid var(--color-text);
   cursor: pointer;
   width: 100%;
+  position: relative;
 }
 
-.btn:hover {
+/* Subtle Embossed CTA */
+.btn-embossed {
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1), inset 0px 1px 0px rgba(255,255,255,0.2);
+  transform: translateZ(10px);
+}
+.btn-embossed:hover {
+  transform: translateZ(15px) scale(1.02);
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.15), inset 0px 1px 0px rgba(255,255,255,0.2);
+}
+
+.btn:hover:not(.btn-embossed) {
   background-color: transparent;
   color: var(--color-text);
 }
@@ -97,12 +144,13 @@ a {
 /* Animations */
 .reveal-up {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(30px) translateZ(0);
   transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .reveal-up.is-visible {
   opacity: 1;
+  /* Keep Z-transforms active if set via JS, so just reset Y */
   transform: translateY(0);
 }
 
@@ -110,7 +158,6 @@ a {
   opacity: 0;
   transition: opacity 1.2s ease;
 }
-
 .fade-in.is-visible {
   opacity: 1;
 }
@@ -133,6 +180,7 @@ a {
   width: 100%;
   height: 100%;
   z-index: -1;
+  transform-style: preserve-3d;
 }
 
 .hero-bg img {
@@ -156,6 +204,7 @@ a {
 .hero-content {
   position: relative;
   z-index: 1;
+  transform-style: preserve-3d;
 }
 
 .hero-title {
@@ -183,7 +232,6 @@ a {
 /* Section 2: Loneliness */
 .story-section {
   padding: 120px 0;
-  position: relative;
 }
 
 .story-sticky {
@@ -200,6 +248,7 @@ a {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  transform-style: preserve-3d;
 }
 
 .story-images {
@@ -208,6 +257,7 @@ a {
   max-width: 400px;
   aspect-ratio: 1/1;
   margin-bottom: 40px;
+  transform-style: preserve-3d;
 }
 
 .story-img {
@@ -218,16 +268,29 @@ a {
   height: 100%;
   object-fit: cover;
   mix-blend-mode: multiply;
-  transition: opacity 0.5s ease;
+  will-change: transform, opacity;
 }
 
 #img-group {
   opacity: 0;
 }
 
+.story-fg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 100 100%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M10,90 Q30,80 90,95%22 stroke=%22%231a1a1a%22 stroke-width=%220.2%22 fill=%22none%22 opacity=%220.1%22/%3E%3C/svg%3E');
+  background-size: cover;
+  z-index: 10;
+  pointer-events: none;
+}
+
 .story-text-container {
   text-align: center;
   padding: 0 24px;
+  transform-style: preserve-3d;
 }
 
 .story-headline {
@@ -235,21 +298,15 @@ a {
   margin-bottom: 16px;
 }
 
-.story-desc {
-  color: var(--color-secondary);
-  font-size: 1rem;
-  max-width: 360px;
-  margin: 0 auto;
-}
-
 /* Editorial Content Blocks */
 .editorial-section {
   padding: 100px 0;
-  background-color: var(--color-bg);
+  background-color: transparent;
 }
 
 .editorial-block {
   margin-bottom: 120px;
+  transform-style: preserve-3d;
 }
 
 .editorial-block:last-child {
@@ -259,6 +316,7 @@ a {
 .editorial-text {
   margin-bottom: 40px;
   text-align: center;
+  will-change: transform;
 }
 
 .editorial-headline {
@@ -300,13 +358,22 @@ a {
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+  /* Subtle graphite shadow to simulate physical sketchbook paper floating */
+  box-shadow: 0 15px 35px rgba(26, 26, 26, 0.08), 0 5px 15px rgba(26, 26, 26, 0.04);
+  background-color: var(--color-bg);
+  will-change: transform;
+  transform-origin: center center;
 }
 
 .editorial-image img {
   width: 100%;
   height: auto;
   mix-blend-mode: multiply;
+}
+
+.safety-image-layer {
+  /* Give the safety illustration a stronger "emerging" look */
+  box-shadow: 0 20px 40px rgba(26, 26, 26, 0.12), 0 5px 15px rgba(26, 26, 26, 0.06);
 }
 
 /* Section 6: Early Access (You're Early) */
@@ -323,11 +390,12 @@ a {
   opacity: 0;
   transform: scale(0.95);
   transition: opacity 1.5s ease, transform 1.5s ease;
+  will-change: transform, opacity;
 }
 
 .handwritten-text.is-visible {
   opacity: 1;
-  transform: scale(1);
+  /* If JS parallax is applied, JS will override transform scale, but CSS ensures fallback */
 }
 
 /* Final CTA */
@@ -344,6 +412,7 @@ a {
   width: 100%;
   height: 100%;
   z-index: -1;
+  transform-style: preserve-3d;
 }
 
 .final-bg img {
@@ -366,6 +435,7 @@ a {
 
 .final-content {
   text-align: center;
+  transform-style: preserve-3d;
 }
 
 /* Footer */
@@ -374,6 +444,8 @@ a {
   background-color: var(--color-text);
   color: var(--color-bg);
   text-align: center;
+  position: relative;
+  z-index: 100;
 }
 
 .footer-brand {
@@ -404,34 +476,6 @@ a {
   opacity: 1;
 }
 
-/* Desktop optimization */
-@media (min-width: 768px) {
-  .footer-links {
-    flex-direction: row;
-    justify-content: center;
-    gap: 32px;
-  }
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  
-  .reveal-up {
-    opacity: 1;
-    transform: none;
-  }
-  
-  .fade-in {
-    opacity: 1;
-  }
-}
-
 /* Location Modal */
 .location-modal-overlay {
   position: fixed;
@@ -439,7 +483,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(250, 249, 246, 0.85); /* Warm off-white transparent */
+  background-color: rgba(250, 249, 246, 0.85);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   z-index: 9999;
@@ -489,57 +533,17 @@ a {
   padding: 4px;
   transition: color 0.3s;
 }
+.modal-close:hover { color: var(--color-text); }
 
-.modal-close:hover {
-  color: var(--color-text);
-}
+.modal-header { text-align: center; margin-bottom: 24px; }
+.modal-icon { font-size: 2rem; display: block; margin-bottom: 12px; }
+.modal-title { font-family: var(--font-body); font-size: 1.1rem; letter-spacing: 0.05em; font-weight: 600; margin-bottom: 8px; }
+.modal-subtitle { font-size: 0.85rem; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+.modal-content { font-size: 0.95rem; color: var(--color-secondary); margin-bottom: 32px; }
+.modal-content p { margin-bottom: 16px; }
+.modal-content p:last-child { margin-bottom: 0; }
 
-.modal-header {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.modal-icon {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 12px;
-}
-
-.modal-title {
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.modal-subtitle {
-  font-size: 0.85rem;
-  color: var(--color-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-}
-
-.modal-content {
-  font-size: 0.95rem;
-  color: var(--color-secondary);
-  margin-bottom: 32px;
-}
-
-.modal-content p {
-  margin-bottom: 16px;
-}
-
-.modal-content p:last-child {
-  margin-bottom: 0;
-}
-
-.modal-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+.modal-actions { display: flex; flex-direction: column; gap: 16px; }
 
 .btn-secondary {
   display: inline-flex;
@@ -557,15 +561,56 @@ a {
   cursor: pointer;
   transition: var(--transition-smooth);
 }
+.btn-secondary:hover { color: var(--color-accent); }
 
-.btn-secondary:hover {
-  color: var(--color-accent);
+/* Desktop optimization */
+@media (min-width: 768px) {
+  .footer-links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+  }
 }
 
+/* Reduced Motion - Disables parallax and 3D completely */
 @media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .reveal-up {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }
+  
+  .diorama-body {
+    perspective: none;
+  }
+  
+  .graphite-particles {
+    display: none;
+  }
+  
+  .diorama-layer,
+  .diorama-text-layer,
+  .diorama-image-layer,
+  .story-img {
+    transform: none !important;
+  }
+  
+  .btn-embossed {
+    transform: none !important;
+    box-shadow: none;
+  }
   .location-modal {
     transform: none;
     transition: none;
   }
 }
-
