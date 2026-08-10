@@ -31,6 +31,19 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
         </image:image>
     </url>
 
+    <!-- About / Founder -->
+    <url>
+        <loc>https://humrah.in/about</loc>
+        <lastmod>2026-08-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        
+        <image:image>
+            <image:loc>https://humrah.in/founder.png</image:loc>
+            <image:title>Dijendra Nath Mondal - Humrah Founder</image:title>
+        </image:image>
+    </url>
+
     <!-- Privacy -->
     <url>
         <loc>https://humrah.in/privacy.html</loc>
