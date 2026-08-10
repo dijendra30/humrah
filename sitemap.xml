@@ -18,6 +18,19 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
         </image:image>
     </url>
 
+    <!-- Early Access -->
+    <url>
+        <loc>https://humrah.in/early-access</loc>
+        <lastmod>2026-08-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        
+        <image:image>
+            <image:loc>https://humrah.in/assets/images/humrah-early-access-delhi.png</image:loc>
+            <image:title>Humrah Early Access Testing in Delhi</image:title>
+        </image:image>
+    </url>
+
     <!-- Privacy -->
     <url>
         <loc>https://humrah.in/privacy.html</loc>
