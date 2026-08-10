@@ -13,7 +13,6 @@
   <meta property="og:description" content="Meet Dijendra Nath Mondal, the founder and developer behind Humrah.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://humrah.in/about">
-  <!-- Re-using the established SEO image for now as requested -->
   <meta property="og:image" content="https://humrah.in/assets/images/humrah-early-access-delhi.png">
   <meta property="og:image:alt" content="Humrah early access testing — social companionship app">
 
@@ -67,263 +66,328 @@
 </head>
 <body class="diorama-body">
 
+  <h1 class="sr-only">From Andaman to Delhi, From an Idea to Humrah</h1>
+
   <header class="simple-nav">
-    <a href="/" class="nav-link">← Humrah Home</a>
+    <a href="/" class="nav-link">← Humrah</a>
     <a href="/early-access" class="nav-link">Early Access</a>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero-founder diorama-section" id="section-hero">
-    <div class="hero-bg diorama-layer" data-speed="0.15">
-      <!-- Abstract CSS paper texture handled in CSS -->
-    </div>
-    
-    <div class="container hero-content">
-      <div class="hero-photo-wrapper diorama-layer" data-speed="0.3">
-        <!-- Masking layer for cinematic reveal -->
-        <div class="photo-mask"></div>
-        <img src="founder.png" alt="Dijendra Nath Mondal, founder and developer of Humrah" fetchpriority="high" class="founder-img" width="500" height="500">
-      </div>
-
-      <div class="hero-text-wrapper diorama-text-layer" data-depth="50">
-        <h1 class="hero-title">From Andaman<br>to Delhi.</h1>
-        <h2 class="hero-subtitle">From an idea<br>to Humrah.</h2>
-        <p class="hero-desc">The story behind the person building Humrah.</p>
+  <!-- SECTION 1: HERO -->
+  <section class="hero-raw diorama-section" id="section-hero">
+    <div class="hero-grid container">
+      <div class="hero-left diorama-text-layer" data-depth="40">
+        <div class="hero-text-huge reveal-up">FROM AN ISLAND.</div>
+        <div class="hero-text-huge reveal-up delay-1">TO A CITY OF<br>MILLIONS.</div>
         
-        <div class="founder-label">
-          <span class="founder-name">DIJENDRA NATH MONDAL</span>
-          <span class="founder-role">Founder & Developer, Humrah</span>
+        <div class="hero-text-bold reveal-up delay-2">
+          AND SOMEWHERE BETWEEN THEM,<br>HUMRAH BEGAN.
         </div>
-        <div class="handwritten-badge">FOUNDER'S JOURNEY</div>
+        
+        <div class="hero-small reveal-up delay-3">
+          Dijendra Nath Mondal<br>
+          <span class="subtext">Founder & Developer, Humrah</span>
+        </div>
+      </div>
+      
+      <div class="hero-right diorama-image-layer" data-depth="20">
+        <div class="photo-container">
+          <img src="founder.png" alt="Dijendra Nath Mondal, founder and developer of Humrah" fetchpriority="high" class="founder-img" width="500" height="500">
+          
+          <!-- Handwritten annotations -->
+          <div class="annotation ann-1">ANDAMAN</div>
+          <svg class="ann-line-1" viewBox="0 0 100 100"><path d="M10,10 Q50,90 90,90" fill="none" stroke="#cc292b" stroke-width="2" stroke-linecap="round"/></svg>
+          <div class="annotation ann-2">DELHI</div>
+          <svg class="ann-line-2" viewBox="0 0 100 100"><path d="M10,90 Q50,10 90,10" fill="none" stroke="#cc292b" stroke-width="2" stroke-linecap="round"/></svg>
+          <div class="annotation ann-3">HUMRAH</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CHAPTER 01: ANDAMAN -->
-  <section class="chapter-section diorama-section" id="chapter-01">
-    <div class="container text-center">
-      <div class="chapter-label reveal-up diorama-text-layer" data-depth="30">CHAPTER 01: WHERE IT STARTED</div>
-      <h2 class="chapter-title reveal-up diorama-text-layer" data-depth="60">It started in Andaman.</h2>
-      
-      <!-- Abstract typographic/CSS illustration for Andaman -->
-      <div class="abstract-illustration andaman-ill reveal-up diorama-image-layer" data-depth="20">
-        <div class="sea-lines"></div>
-        <span class="location-stamp">ANDAMAN</span>
-      </div>
-
-      <p class="chapter-desc reveal-up diorama-text-layer" data-depth="40">
-        Growing up in the quiet surroundings of Andaman, my journey into technology and building things began far away from the bustling tech hubs.
-      </p>
-    </div>
-  </section>
-
-  <!-- CHAPTER 02: THE MOVE -->
-  <section class="chapter-section diorama-section" id="chapter-02">
-    <!-- SVG Map Line linking the sections visually -->
-    <svg class="journey-line" viewBox="0 0 100 400" preserveAspectRatio="none">
-      <path id="journeyPath" d="M50,0 Q80,100 20,200 T50,400" stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-dasharray="10 10" opacity="0.3"/>
-    </svg>
-
-    <div class="container text-center">
-      <div class="chapter-label reveal-up diorama-text-layer" data-depth="30">CHAPTER 02: THE MOVE</div>
-      <h2 class="chapter-title reveal-up diorama-text-layer" data-depth="60">Then I came to Delhi.</h2>
-      
-      <p class="chapter-desc reveal-up diorama-text-layer" data-depth="40">
-        Moving from Andaman to a huge city like Delhi changed the way I saw human connection. A new city. Thousands of people. A completely different environment. Yet, it was still difficult to find genuine companionship.
-      </p>
-    </div>
-  </section>
-
-  <!-- CHAPTER 03: THE PROBLEM -->
-  <section class="story-sticky diorama-section" id="chapter-03">
-    <div class="story-sticky-inner container text-center">
-      <h2 class="huge-title reveal-up diorama-text-layer" data-depth="80">A CITY FULL OF PEOPLE<br>CAN STILL FEEL LONELY.</h2>
-      
-      <div class="diorama-image-container problem-ill-container">
-        <img src="assets/images/lonely.png" alt="Person sitting alone in a busy city representing loneliness and social connection" class="story-img reveal-scale" loading="lazy" width="500" height="500">
-      </div>
-
-      <p class="chapter-desc reveal-up diorama-text-layer" data-depth="50" style="margin-top: 40px;">
-        You can be surrounded by people and still have nobody to call when you want to talk, walk, explore the city, grab coffee, or simply spend some time together.
-      </p>
-    </div>
-  </section>
-
-  <!-- CHAPTER 04: THE IDEA -->
-  <section class="chapter-section blank-paper diorama-section" id="chapter-04">
-    <div class="container text-center">
-      <div class="handwritten-idea reveal-up diorama-text-layer" data-depth="70">
-        WHAT IF TECHNOLOGY<br>COULD HELP PEOPLE<br>FIND REAL CONNECTION?
-      </div>
-      
-      <h2 class="chapter-title reveal-up diorama-text-layer" style="margin-top: 60px;" data-depth="50">That's where Humrah began.</h2>
-      <p class="chapter-desc reveal-up diorama-text-layer" data-depth="40">
-        I wanted to create something focused on companionship and real-world experiences rather than endless social feeds.
-      </p>
-      
-      <div class="not-dating-block reveal-up diorama-text-layer" data-depth="60">
-        <strong>HUMRAH IS NOT A DATING APP.</strong>
-      </div>
-      <div class="handwritten-badge reveal-up" style="margin-top: 24px;">Real people. Real moments.</div>
-    </div>
-  </section>
-
-  <!-- CHAPTER 05: BUILDING IT (TIMELINE) -->
-  <section class="chapter-section diorama-section" id="chapter-05">
-    <div class="container text-center">
-      <div class="chapter-label reveal-up">CHAPTER 05: BUILDING IT</div>
-      <h2 class="huge-title reveal-up diorama-text-layer" data-depth="60" style="font-size: 2.5rem;">One idea.<br>One developer.<br>A lot of work.</h2>
-      
-      <p class="chapter-desc reveal-up diorama-text-layer" data-depth="40">
-        Humrah has been built independently across Android, Kotlin, backend systems, APIs, databases, infrastructure, security, product design, testing, and deployment.
-      </p>
-
-      <!-- Interactive Timeline -->
-      <div class="technical-timeline reveal-up diorama-layer" data-speed="0.1">
-        <div class="timeline-line"></div>
-        <div class="timeline-item"><span class="t-dot"></span><span class="t-label">IDEA</span></div>
-        <div class="timeline-item"><span class="t-dot"></span><span class="t-label">DESIGN</span></div>
-        <div class="timeline-item"><span class="t-dot"></span><span class="t-label">CODE</span></div>
-        <div class="timeline-item"><span class="t-dot"></span><span class="t-label">BACKEND</span></div>
-        <div class="timeline-item"><span class="t-dot"></span><span class="t-label">TESTING</span></div>
-        <div class="timeline-item"><span class="t-dot"></span><span class="t-label">EARLY ACCESS</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHAPTER 06: WHY HUMRAH EXISTS -->
-  <section class="chapter-section diorama-section" id="chapter-06">
-    <div class="container text-center">
-      <h2 class="huge-title reveal-up diorama-text-layer" data-depth="70">I DIDN'T WANT TO BUILD<br>ANOTHER APP.</h2>
-      <p class="chapter-desc reveal-up diorama-text-layer" data-depth="40">
-        I wanted to build something that could help people find someone to talk to, walk with, explore with, or simply spend a little time with.
-      </p>
-      
-      <div class="pillars-container reveal-up diorama-text-layer" data-depth="50">
-        <div class="pillar">COMPANIONSHIP</div>
-        <div class="pillar">COMMUNITY</div>
-        <div class="pillar">REAL-WORLD EXPERIENCES</div>
-        <div class="pillar">SAFETY</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHAPTER 07: WHY DELHI -->
-  <section class="chapter-section diorama-section" id="chapter-07">
-    <div class="container text-center">
-      <h2 class="chapter-title reveal-up diorama-text-layer" data-depth="50">Why Delhi?</h2>
-      <p class="chapter-desc reveal-up diorama-text-layer" data-depth="40">
-        Delhi is the first focused environment for Humrah's early-access testing.<br><br>
-        <em>Humrah is available for people across India, but current early access testing is focused on Delhi.</em>
-      </p>
-      
-      <!-- Abstract Delhi Illustration -->
-      <div class="abstract-illustration delhi-ill reveal-up diorama-image-layer" data-depth="20">
-        <div class="city-lines"></div>
-        <span class="location-stamp">DELHI</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHAPTER 08: TODAY -->
-  <section class="chapter-section diorama-section" id="chapter-08">
-    <div class="container text-center">
-      <h2 class="huge-title reveal-up diorama-text-layer" data-depth="80" style="font-size: 3rem;">FROM AN IDEA<br>TO A WORKING APP.</h2>
-      
-      <div class="diorama-image-container payoff-ill-container">
-        <img src="assets/images/group.png" alt="Graphite illustration of Delhi representing the beginning of Humrah's early access journey" class="story-img reveal-scale" loading="lazy" width="500" height="500">
-      </div>
-
-      <h2 class="chapter-title reveal-up diorama-text-layer" data-depth="60" style="margin-top: 40px;">HUMRAH IS LIVE.</h2>
-      <div class="chapter-label reveal-up" style="margin-bottom: 8px;">EARLY ACCESS TESTING</div>
-      <p class="chapter-desc reveal-up" style="font-size: 0.9rem;">Currently testing in Delhi.</p>
-    </div>
-  </section>
-
-  <!-- FOUNDER IMAGE REVEAL (Final Profile) -->
-  <section class="founder-profile-section diorama-section" id="section-profile">
+  <!-- SECTION 2: LET'S BE REAL -->
+  <section class="raw-section diorama-section" id="section-real">
     <div class="container">
-      <div class="profile-layout">
-        <div class="profile-image-col reveal-up diorama-image-layer" data-depth="40">
-          <img src="founder.png" alt="Dijendra Nath Mondal, founder and developer of Humrah" class="profile-img" loading="lazy" width="400" height="400">
-        </div>
-        
-        <div class="profile-text-col reveal-up diorama-text-layer" data-depth="60">
-          <h2 class="profile-name">Dijendra Nath Mondal</h2>
-          <div class="profile-role">Founder & Developer, Humrah</div>
+      <h2 class="bold-headline reveal-up diorama-text-layer" data-depth="60">LET'S BE REAL.</h2>
+      
+      <div class="raw-grid">
+        <div class="raw-text-col diorama-text-layer" data-depth="40">
+          <p class="paragraph-bold reveal-up">Moving from Andaman to Delhi wasn't just a change of location. It changed how I saw people.</p>
           
-          <blockquote class="founder-quote">
-            "I started Humrah because I believe technology should help us find people, not just give us more people to scroll past."
-          </blockquote>
-          
-          <div class="social-links">
-            <a href="https://www.instagram.com/dijendra2003/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit Dijendra Nath Mondal on Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              Instagram
-            </a>
-            <a href="https://www.linkedin.com/in/dijendra-nath-m-9228a622a/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="View Dijendra Nath Mondal on LinkedIn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              LinkedIn
-            </a>
+          <div class="fragment-list">
+            <div class="fragment reveal-up">NEW CITY.</div>
+            <div class="fragment reveal-up">NEW ROUTINE.</div>
+            <div class="fragment reveal-up">THOUSANDS OF PEOPLE.</div>
+            <div class="fragment reveal-up">AND STILL...</div>
           </div>
           
-          <div class="profile-signature">Building Humrah, one connection at a time.</div>
+          <div class="fragment-massive reveal-up diorama-text-layer" data-depth="80">WHO DO YOU CALL?</div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FUTURE VISION -->
-  <section class="chapter-section diorama-section" id="section-future">
-    <div class="container text-center">
-      <h2 class="chapter-title reveal-up diorama-text-layer" data-depth="50">This Is Just the Beginning.</h2>
-      <p class="chapter-desc reveal-up diorama-text-layer" data-depth="40">
-        Humrah is starting with early access testing in Delhi, with the goal of building a safer and more meaningful way for people to connect and share real experiences.
-      </p>
-    </div>
-  </section>
-
-  <!-- FINAL EMOTIONAL STATEMENT & CTA -->
-  <section class="final-emotional-section diorama-section" id="section-final">
-    <div class="container text-center">
-      <div class="slow-reveal diorama-text-layer" data-depth="30">
-        <p class="hero-desc">FROM ANDAMAN<br>TO DELHI.</p>
-        <p class="hero-desc" style="margin-top: 24px;">FROM AN IDEA<br>TO HUMRAH.</p>
-      </div>
-      
-      <div class="slow-reveal delay-1 diorama-text-layer" data-depth="50" style="margin-top: 60px;">
-        <h2 class="huge-title" style="font-size: 2rem;">Maybe you don't need more followers.<br>Maybe you just need someone to share a moment with.</h2>
-      </div>
-      
-      <div class="slow-reveal delay-2 diorama-text-layer" data-depth="70" style="margin-top: 80px;">
-        <h2 class="hero-title">HUMRAH</h2>
-        <div class="handwritten-badge" style="margin-top: 16px;">Real people. Real moments.</div>
-      </div>
-      
-      <div class="final-cta-block reveal-up" style="margin-top: 100px;">
-        <h2 class="chapter-title">HUMRAH IS LIVE.</h2>
-        <div class="chapter-label" style="margin-bottom: 24px;">EARLY ACCESS TESTING<br><span style="text-transform:none; font-weight:normal;">Currently testing in Delhi.</span></div>
         
-        <div class="final-actions">
-          <a href="https://play.google.com/store/apps/details?id=in.humrah.app" class="btn btn-embossed" aria-label="Join Humrah early access on Google Play">JOIN HUMRAH</a>
-          <a href="/" class="btn-secondary">EXPLORE HUMRAH</a>
+        <div class="raw-img-col diorama-image-layer" data-depth="20">
+          <!-- Re-using lonely.png for the massive isolated feeling -->
+          <img src="assets/images/lonely.png" alt="Graphite sketch of a person feeling isolated in a massive city" loading="lazy" width="600" height="600" class="sketch-img">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- SECTION 3: THE MOMENT (Crossfade) -->
+  <section class="moment-section diorama-section" id="section-moment">
+    <div class="sticky-container">
+      <div class="moment-content container">
+        <h2 class="handwritten-huge diorama-text-layer" data-depth="60">
+          A CITY FULL OF PEOPLE<br>CAN STILL FEEL LONELY.
+        </h2>
+        
+        <div class="moment-images diorama-image-layer" data-depth="30">
+          <img src="assets/images/lonely.png" alt="Person sitting alone" class="moment-img" id="moment-alone" loading="lazy">
+          <img src="assets/images/group.png" alt="People appearing around the person" class="moment-img" id="moment-group" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: THEN I STARTED THINKING -->
+  <section class="minimal-section diorama-section" id="section-thinking">
+    <div class="container text-center">
+      <!-- SVG Pencil Stroke -->
+      <svg class="pencil-stroke diorama-layer" data-speed="0.05" viewBox="0 0 400 50">
+        <path class="stroke-path" d="M10,25 Q100,5 200,30 T390,25" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      
+      <div class="thought-sequence diorama-text-layer" data-depth="50">
+        <div class="thought-line reveal-up">WHAT IF<br>FINDING SOMEONE<br>DIDN'T HAVE TO BE<br>SO HARD?</div>
+        <div class="thought-line reveal-up delay-2" style="margin-top: 60px;">WHAT IF TECHNOLOGY<br>COULD HELP?</div>
+        <div class="thought-line-bold reveal-up delay-3" style="margin-top: 80px;">THAT'S WHERE HUMRAH BEGAN.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: MEET THE FOUNDER -->
+  <section class="founder-intro-section diorama-section" id="section-founder">
+    <div class="container founder-intro-grid">
+      <div class="founder-intro-img diorama-image-layer" data-depth="30">
+        <img src="founder.png" alt="Dijendra Nath Mondal, founder of Humrah" loading="lazy" width="600" height="600">
+      </div>
+      
+      <div class="founder-intro-text diorama-text-layer" data-depth="50">
+        <h2 class="editorial-headline reveal-up">MEET THE PERSON<br>BEHIND HUMRAH.</h2>
+        
+        <div class="founder-name-block reveal-up">
+          <div class="name">DIJENDRA NATH MONDAL</div>
+          <div class="role">Founder & Developer</div>
+        </div>
+        
+        <p class="founder-quote-first-person reveal-up">
+          "I came to Delhi from Andaman and started building Humrah around a simple idea: technology should help us find people, not just give us more people to scroll past."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: NO BIG TEAM -->
+  <section class="raw-section diorama-section" id="section-team">
+    <div class="container text-center">
+      <h2 class="fragment-massive reveal-up diorama-text-layer" data-depth="70">
+        NO BIG TEAM.
+      </h2>
+      <h2 class="fragment-massive reveal-up diorama-text-layer" data-depth="60" style="margin-top: 16px;">
+        NO MILLION-DOLLAR OFFICE.
+      </h2>
+      <h2 class="fragment-massive reveal-up diorama-text-layer" data-depth="80" style="margin-top: 40px; color: var(--color-accent);">
+        JUST AN IDEA<br>AND A LOT OF CODE.
+      </h2>
+      
+      <!-- Scribbled technical elements -->
+      <div class="scribble-container diorama-layer" data-speed="0.2">
+        <div class="scribble s1">KOTLIN</div>
+        <div class="scribble s2">ANDROID</div>
+        <div class="scribble s3">NODE.JS</div>
+        <div class="scribble s4">MONGODB</div>
+        <div class="scribble s5">API</div>
+        <div class="scribble s6">SECURITY</div>
+        <div class="scribble s7">TESTING</div>
+      </div>
+      
+      <div class="raw-timeline reveal-up diorama-text-layer" data-depth="50">
+        IDEA <span>&rarr;</span> DESIGN <span>&rarr;</span> CODE <span>&rarr;</span> BREAK <span>&rarr;</span> FIX <span>&rarr;</span> TEST <span>&rarr;</span> REPEAT
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: WHY HUMRAH -->
+  <section class="raw-section diorama-section" id="section-why">
+    <div class="container">
+      <h2 class="bold-headline reveal-up diorama-text-layer" data-depth="40">WHY HUMRAH?</h2>
+      
+      <div class="why-statements diorama-text-layer" data-depth="60">
+        <div class="why-statement reveal-up">NOT ANOTHER FEED.</div>
+        <div class="why-statement reveal-up">NOT ANOTHER DATING APP.</div>
+        <div class="why-statement-bold reveal-up">JUST REAL PEOPLE<br>FINDING A REASON<br>TO STEP OUT TOGETHER.</div>
+      </div>
+      
+      <!-- Re-use ill-do.png -->
+      <div class="why-image-wrapper reveal-up diorama-image-layer" data-depth="20">
+        <img src="assets/images/ill-do.png" alt="Friends walking and talking together" loading="lazy" width="800" height="800" class="sketch-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: THE PHILOSOPHY -->
+  <section class="philosophy-section diorama-section" id="section-philosophy">
+    <div class="container text-center">
+      <h2 class="philosophy-huge reveal-up diorama-text-layer" data-depth="70">
+        I DON'T WANT HUMRAH<br>TO REPLACE HUMAN CONNECTION.
+      </h2>
+      
+      <svg class="pencil-stroke diorama-layer" data-speed="0.1" viewBox="0 0 400 50" style="margin: 40px auto;">
+        <path class="stroke-path" d="M390,25 Q200,45 10,25" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      
+      <h2 class="philosophy-huge-bold reveal-up diorama-text-layer" data-depth="90">
+        I WANT IT TO HELP PEOPLE<br>FIND IT.
+      </h2>
+    </div>
+  </section>
+
+  <!-- SECTION 9: WHY DELHI FIRST -->
+  <section class="delhi-section diorama-section" id="section-delhi">
+    <div class="container text-center">
+      <h2 class="handwritten-huge reveal-up diorama-text-layer" data-depth="50" style="color: var(--color-accent);">WHY DELHI?</h2>
+      
+      <div class="delhi-desc reveal-up diorama-text-layer" data-depth="40">
+        Because this is where the problem became real for me.
+      </div>
+      
+      <p class="delhi-subtext reveal-up diorama-text-layer" data-depth="30">
+        Humrah is available for people across India, while current early access testing is focused on Delhi.
+      </p>
+      
+      <div class="delhi-map-wrapper diorama-layer" data-speed="0.15">
+        <svg class="map-svg" viewBox="0 0 200 200">
+          <path class="map-path" d="M100,10 C150,50 180,100 100,180 C20,100 50,50 100,10 Z" fill="none" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
+          <circle cx="100" cy="90" r="4" fill="#cc292b"/>
+          <text x="100" y="115" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#1a1a1a" letter-spacing="0.1em">DELHI</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: FROM IDEA TO REAL APP -->
+  <section class="transformation-section diorama-section" id="section-transformation">
+    <div class="container text-center">
+      <div class="transform-list diorama-text-layer" data-depth="50">
+        <div class="t-step reveal-up">AN IDEA.</div>
+        <div class="t-arrow reveal-up">&darr;</div>
+        <div class="t-step reveal-up">SKETCH.</div>
+        <div class="t-arrow reveal-up">&darr;</div>
+        <div class="t-step reveal-up">CODE.</div>
+        <div class="t-arrow reveal-up">&darr;</div>
+        <div class="t-step reveal-up">ANDROID.</div>
+        <div class="t-arrow reveal-up">&darr;</div>
+        <div class="t-step reveal-up">BACKEND.</div>
+        <div class="t-arrow reveal-up">&darr;</div>
+        <div class="t-step reveal-up">TESTING.</div>
+        <div class="t-arrow reveal-up">&darr;</div>
+        <div class="t-step reveal-up">REAL PEOPLE.</div>
+        <div class="t-arrow reveal-up">&darr;</div>
+        <div class="t-step reveal-up">EARLY ACCESS.</div>
+      </div>
+      
+      <h2 class="fragment-massive reveal-up diorama-text-layer" data-depth="80" style="margin-top: 80px;">
+        HUMRAH IS LIVE.
+      </h2>
+    </div>
+  </section>
+
+  <!-- SECTION 11: TODAY -->
+  <section class="today-section diorama-section" id="section-today">
+    <div class="container text-center">
+      <h2 class="today-huge reveal-up diorama-text-layer" data-depth="60">TODAY,<br>HUMRAH IS REAL.</h2>
+      
+      <div class="today-sub reveal-up diorama-text-layer" data-depth="40">
+        EARLY ACCESS TESTING<br>IS LIVE IN DELHI.
+      </div>
+      
+      <div class="today-tiny reveal-up diorama-text-layer" data-depth="30">
+        And this is only the beginning.
+      </div>
+      
+      <div class="today-cta reveal-up diorama-text-layer" data-depth="70">
+        <a href="https://play.google.com/store/apps/details?id=in.humrah.app" class="btn btn-embossed" aria-label="Join Humrah early access on Google Play">JOIN HUMRAH</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12: FOUNDER SOCIALS -->
+  <section class="socials-section diorama-section" id="section-socials">
+    <div class="container text-center">
+      <div class="social-profile-wrapper diorama-layer" data-speed="0.1">
+        <img src="founder.png" alt="Dijendra Nath Mondal" class="social-img reveal-up" loading="lazy" width="200" height="200">
+        
+        <h2 class="social-name reveal-up">DIJENDRA NATH MONDAL</h2>
+        <div class="social-role reveal-up">Founder & Developer, Humrah</div>
+        
+        <div class="social-links reveal-up">
+          <a href="https://www.instagram.com/dijendra2003/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit Dijendra Nath Mondal on Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            Instagram
+          </a>
+          <a href="https://www.linkedin.com/in/dijendra-nath-m-9228a622a/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="View Dijendra Nath Mondal on LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 13: FINAL MESSAGE -->
+  <section class="final-message-section diorama-section" id="section-final">
+    <div class="container text-center">
+      <div class="slow-reveal diorama-text-layer" data-depth="40">
+        <h2 class="final-fragment">FROM ANDAMAN.</h2>
+      </div>
+      <div class="slow-reveal delay-2 diorama-text-layer" data-depth="40" style="margin-top: 16px;">
+        <h2 class="final-fragment">TO DELHI.</h2>
+      </div>
+      <div class="slow-reveal delay-3 diorama-text-layer" data-depth="40" style="margin-top: 16px;">
+        <h2 class="final-fragment">TO HUMRAH.</h2>
+      </div>
+      
+      <div class="slow-reveal delay-4 diorama-text-layer" data-depth="60" style="margin-top: 80px;">
+        <h2 class="final-philosophy">
+          Maybe you don't need more followers.<br>
+          Maybe you just need someone<br>to share a moment with.
+        </h2>
+      </div>
+      
+      <div class="slow-reveal delay-5 diorama-text-layer" data-depth="80" style="margin-top: 80px;">
+        <h2 class="final-logo">HUMRAH</h2>
+        <div class="final-tagline">Real people. Real moments.</div>
+      </div>
+      
+      <div class="final-cta-block reveal-up" style="margin-top: 80px;">
+        <a href="https://play.google.com/store/apps/details?id=in.humrah.app" class="btn btn-embossed" aria-label="Join Humrah early access on Google Play">JOIN EARLY ACCESS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 14: FOOTER -->
   <footer class="footer">
     <div class="container text-center">
-      <div class="contact-section">
-        <p>Have a question?</p>
-        <a href="mailto:support@humrah.in" class="contact-email">support@humrah.in</a>
-      </div>
-      <div class="footer-brand" style="margin-top: 60px;">HUMRAH</div>
-      <div class="footer-links" style="margin-top: 24px; justify-content: center; display: flex; gap: 24px;">
+      <div class="footer-brand">HUMRAH</div>
+      <div class="footer-tagline">Real people. Real moments.</div>
+      
+      <div class="footer-links">
         <a href="https://humrah.in/privacy.html">Privacy Policy</a>
-        <a href="https://humrah.in/terms.html">Terms of Service</a>
+        <a href="https://humrah.in/terms.html">Terms</a>
+        <a href="https://humrah.in/community.html">Community Guidelines</a>
+        <a href="mailto:support@humrah.in">Contact</a>
       </div>
+      
+      <a href="mailto:support@humrah.in" class="footer-email">support@humrah.in</a>
     </div>
   </footer>
 
