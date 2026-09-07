@@ -1,5 +1,17 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/download",
+      "destination": "https://play.google.com/store/apps/details?id=in.humrah.app",
+      "statusCode": 302
+    },
+    {
+      "source": "/download/",
+      "destination": "https://play.google.com/store/apps/details?id=in.humrah.app",
+      "statusCode": 302
+    }
+  ],
   "rewrites": [
     {
       "source": "/post/:postId",
