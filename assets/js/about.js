@@ -1,122 +1,90 @@
-/**
- * HUMRAH ABOUT PAGE - RAW & CINEMATIC INTERACTION ENGINE
- */
+/* Humrah — About page
+   Progressive enhancement only: every section is readable without this file.
+   - Section menu on small screens
+   - Gentle reveal on scroll
+   - "Alone → together" bench sketch, changed once the reader reaches it
+   Motion is skipped for people who prefer reduced motion. */
+(function () {
+  'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  
-  // 1. Reveal Engine (Intersection Observer)
-  const revealElements = document.querySelectorAll('.reveal-up, .slow-reveal, .pencil-stroke');
-  if (prefersReducedMotion) {
-    revealElements.forEach(el => el.classList.add('is-visible'));
-  } else {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          // For slow reveals, don't unobserve immediately if we want scroll-linked effects, 
-          // but for basic classes, unobserve is fine.
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
-    
-    revealElements.forEach(el => revealObserver.observe(el));
-  }
+  var root = document.documentElement;
+  root.classList.add('js');
 
-  // 2. Diorama & Parallax Engine (requestAnimationFrame)
-  if (!prefersReducedMotion) {
-    let scrollY = window.scrollY;
-    let ticking = false;
-    let windowHeight = window.innerHeight;
-    let isMobile = window.innerWidth < 768;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO = 'IntersectionObserver' in window;
 
-    const textLayers = document.querySelectorAll('.diorama-text-layer');
-    const imageLayers = document.querySelectorAll('.diorama-image-layer');
-    const basicParallax = document.querySelectorAll('.diorama-layer');
-    
-    // Crossfade Elements
-    const momentSection = document.querySelector('.moment-section');
-    const momentAlone = document.getElementById('moment-alone');
-    const momentGroup = document.getElementById('moment-group');
+  /* ── Section menu ─────────────────────────────────────────────────── */
+  var toggle = document.querySelector('.menu-toggle');
+  var list = document.getElementById('page-nav-list');
 
-    const updateDiorama = () => {
-      const intensity = isMobile ? 0.3 : 1;
-
-      // Text Layers
-      textLayers.forEach(layer => {
-        const rect = layer.getBoundingClientRect();
-        if (rect.top < windowHeight && rect.bottom > 0 && layer.classList.contains('is-visible')) {
-          const translateZ = layer.getAttribute('data-depth') || 30;
-          layer.style.transform = `translate3d(0, 0, ${translateZ * intensity}px)`;
-        }
-      });
-
-      // Image Layers
-      imageLayers.forEach(layer => {
-        const rect = layer.getBoundingClientRect();
-        if (rect.top < windowHeight && rect.bottom > 0) {
-          const viewportCenter = windowHeight / 2;
-          const elementCenter = rect.top + (rect.height / 2);
-          const dist = (elementCenter - viewportCenter) / viewportCenter;
-          const rotateX = dist * 2 * intensity; 
-          const translateZ = layer.getAttribute('data-depth') || 20;
-          layer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) translate3d(0, 0, ${translateZ * intensity}px)`;
-        }
-      });
-
-      // Basic Parallax
-      basicParallax.forEach(layer => {
-        const parent = layer.closest('.diorama-section');
-        if (!parent) return;
-        const rect = parent.getBoundingClientRect();
-        if (rect.top < windowHeight && rect.bottom > 0) {
-          const speed = layer.getAttribute('data-speed') || 0.1;
-          const yPos = -(rect.top * speed * intensity);
-          layer.style.transform = `translate3d(0, ${yPos}px, 0)`;
-        }
-      });
-
-      // Moment Crossfade (The Sticky Section)
-      if (momentSection && momentAlone && momentGroup) {
-        const stickyInner = momentSection.querySelector('.sticky-container');
-        if (stickyInner) {
-          const rect = stickyInner.getBoundingClientRect();
-          if (rect.top <= windowHeight && rect.bottom >= 0) {
-            const totalScrollable = rect.height - windowHeight;
-            const currentScrolled = -rect.top;
-            let progress = currentScrolled / totalScrollable;
-            progress = Math.max(0, Math.min(1, progress));
-            
-            const opacity = progress > 0.3 ? (progress - 0.3) * 1.5 : 0;
-            momentGroup.style.opacity = Math.min(1, opacity);
-            momentAlone.style.opacity = Math.max(0, 1 - (progress * 1.2));
-            
-            const aloneZ = -(progress * 100 * intensity);
-            momentAlone.style.transform = `translate3d(0, 0, ${aloneZ}px)`;
-            
-            const groupZ = (progress * 20 * intensity);
-            momentGroup.style.transform = `translate3d(0, 0, ${groupZ}px)`;
-          }
-        }
-      }
-
-      ticking = false;
+  if (toggle && list) {
+    var setOpen = function (open, returnFocus) {
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      list.classList.toggle('is-open', open);
+      if (!open && returnFocus) toggle.focus();
     };
 
-    window.addEventListener('scroll', () => {
-      scrollY = window.scrollY;
-      if (!ticking) {
-        window.requestAnimationFrame(updateDiorama);
-        ticking = true;
-      }
-    }, { passive: true });
+    toggle.addEventListener('click', function () {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true', false);
+    });
 
-    window.addEventListener('resize', () => {
-      windowHeight = window.innerHeight;
-      isMobile = window.innerWidth < 768;
-    }, { passive: true });
+    list.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false, false);
+    });
 
-    updateDiorama();
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setOpen(false, true);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (toggle.getAttribute('aria-expanded') === 'true' && !e.target.closest('.page-nav')) setOpen(false, false);
+    });
+
+    var desktop = window.matchMedia('(min-width: 900px)');
+    var onChange = function () { if (desktop.matches) setOpen(false, false); };
+    if (desktop.addEventListener) desktop.addEventListener('change', onChange);
+    else if (desktop.addListener) desktop.addListener(onChange);
   }
-});
+
+  /* ── Reveal on scroll ─────────────────────────────────────────────── */
+  var reveals = document.querySelectorAll('.reveal');
+
+  if (reduceMotion || !hasIO) {
+    for (var i = 0; i < reveals.length; i++) reveals[i].classList.add('is-in');
+  } else {
+    var revealer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          revealer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    for (var j = 0; j < reveals.length; j++) revealer.observe(reveals[j]);
+  }
+
+  /* ── Alone → together ─────────────────────────────────────────────── */
+  var scene = document.querySelector('[data-crossfade]');
+
+  if (scene) {
+    if (reduceMotion || !hasIO) {
+      scene.classList.add('is-together');
+    } else {
+      var timer = null;
+      var sceneObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            timer = window.setTimeout(function () {
+              scene.classList.add('is-together');
+              sceneObserver.disconnect();
+            }, 900);
+          } else if (timer) {
+            window.clearTimeout(timer);
+            timer = null;
+          }
+        });
+      }, { threshold: 0.55 });
+      sceneObserver.observe(scene);
+    }
+  }
+})();

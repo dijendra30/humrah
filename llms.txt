@@ -27,4 +27,4 @@ Humrah is an Android app (Google Play package: in.humrah.app). This file lists H
 
 ## App
 - [Humrah on Google Play](https://play.google.com/store/apps/details?id=in.humrah.app)
-- [About Humrah](https://humrah.in/about)
+- [About Humrah](https://humrah.in/about): the story behind Humrah, what it is (a social companionship app, not a dating app), how it works, its approach to safety, where it is today, and its founder, Dijendra Nath Mondal (Founder & Developer).
