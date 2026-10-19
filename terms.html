@@ -13,7 +13,7 @@
           content="Terms of Service | Humrah™ User Agreement & Platform Rules">
 
     <meta name="description"
-          content="Read the official Humrah™ Terms of Service covering user responsibilities, platform rules, safety policies, companion interactions, bookings, account usage, and legal agreements.">
+          content="Read the official Humrah™ Terms of Service covering user responsibilities, platform rules, safety policies, companion interactions, bookings, account usage, and legal agreements, including account verification and Quick Connect voice calls.">
 
     <meta name="keywords"
           content="Humrah terms, Humrah terms of service, user agreement, companion app rules, booking policy, Humrah legal terms, platform rules, community guidelines">
@@ -29,7 +29,7 @@
 
     <!-- CANONICAL -->
     <link rel="canonical"
-          href="https://humrah.in/term.html">
+          href="https://humrah.in/terms.html">
 
     <!-- FAVICON -->
     <link rel="icon"
@@ -41,7 +41,7 @@
           content="website">
 
     <meta property="og:url"
-          content="https://humrah.in/term.html">
+          content="https://humrah.in/terms.html">
 
     <meta property="og:title"
           content="Humrah™ Terms of Service">
@@ -54,13 +54,14 @@
 
     <meta property="og:site_name"
           content="Humrah">
+<meta property="og:updated_time" content="2026-10-19">
 
     <!-- TWITTER/X -->
     <meta name="twitter:card"
           content="summary_large_image">
 
     <meta name="twitter:url"
-          content="https://humrah.in/term.html">
+          content="https://humrah.in/terms.html">
 
     <meta name="twitter:title"
           content="Humrah™ Terms of Service">
@@ -85,22 +86,139 @@
 
     <!-- STRUCTURED DATA -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@type": "TermsOfService",
-      "name": "Humrah Terms of Service",
-      "url": "https://humrah.in/term.html",
-      "description": "Official terms of service page for Humrah.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Humrah",
-        "url": "https://humrah.in",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://humrah.in/Logo.png"
-        }
+      "@type": "Organization",
+      "@id": "https://humrah.in/#organization",
+      "name": "Humrah",
+      "url": "https://humrah.in",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://humrah.in/Logo.png"
       }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://humrah.in/#website",
+      "url": "https://humrah.in",
+      "name": "Humrah",
+      "publisher": {
+        "@id": "https://humrah.in/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://humrah.in/terms.html#webpage",
+      "url": "https://humrah.in/terms.html",
+      "name": "Humrah Terms of Service",
+      "description": "Read the official Humrah™ Terms of Service covering user responsibilities, platform rules, safety policies, companion interactions, bookings, account usage, and legal agreements, including account verification and Quick Connect voice calls.",
+      "inLanguage": "en",
+      "dateModified": "2026-10-19",
+      "isPartOf": {
+        "@id": "https://humrah.in/#website"
+      },
+      "publisher": {
+        "@id": "https://humrah.in/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://humrah.in/terms.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://humrah.in/terms.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://humrah.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Terms of Service",
+          "item": "https://humrah.in/terms.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://humrah.in/terms.html#faq",
+      "isPartOf": {
+        "@id": "https://humrah.in/terms.html#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What happens to my photo verification if I change my profile photo on Humrah?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A photo verification applies to the profile photo that was reviewed. If you change your displayed profile photo, the previous verification no longer applies and your verification status returns to \"not submitted\". A verification request still under review for the previous photo is cancelled and is not used to verify the new photo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to verify my new profile photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Submit your new photo through Humrah's existing in-app verification process, which may involve a short video or other material. Authorized Humrah reviewers may review the material you submit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Quick Connect after changing my profile photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quick Connect and other features that require photo verification may remain unavailable until your new photo is approved."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Humrah verification guarantee a person's identity or safety?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Verification is not a guarantee of any person's identity, intentions, conduct, or safety."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who can use Quick Connect on Humrah?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quick Connect is for Humrah members aged 18 or over (based on the date of birth and adult confirmation they provided) who have an approved photo verification, have accepted the current Quick Connect terms and whose account is in good standing. Availability may be limited at busy times."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the other person see before a Quick Connect call?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Before any call starts, the other person sees your first name, your profile photo and up to five interests you share. A call starts only if both of you accept. Quick Connect does not show your email address, phone number or location to the other person."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Humrah record Quick Connect calls?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Humrah does not record Quick Connect calls or store call audio. Humrah keeps only basic call records, such as who was matched, when, and how the call ended, and deletes them automatically 30 days after they are created."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I report or block someone on Quick Connect?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can report the other person during a call or for up to 24 hours after it ends, and you can choose to block them. Reports go to Humrah's safety team, and a blocked person is not matched with you again."
+          }
+        }
+      ]
     }
+  ]
+}
     </script>
     <style>
         * {
@@ -424,7 +542,7 @@
             <span class="logo-heart">💙</span>
         </div>
         <h1>Terms of Service</h1>
-        <p class="last-updated">Last Updated: February 15, 2026</p>
+        <p class="last-updated">Last Updated: October 19, 2026</p>
     </div>
 
     <div class="container">
@@ -455,6 +573,7 @@
                 <li><a href="#dispute-resolution">Dispute Resolution &amp; Arbitration</a></li>
                 <li><a href="#governing-law">Governing Law &amp; Jurisdiction</a></li>
                 <li><a href="#changes">Changes to These Terms</a></li>
+                <li><a href="#quick-connect">Quick Connect</a></li>
                 <li><a href="#contact">Contact Information</a></li>
             </ol>
         </div>
@@ -562,6 +681,16 @@
                 <li>Face verification reduces the risk of duplicate or re-registered banned accounts but does not eliminate it entirely.</li>
                 <li>Humrah does not represent that face verification guarantees the accuracy of any user's profile or their suitability for interaction.</li>
                 <li>The original verification video is deleted within 48 hours of processing. Face embeddings (mathematical representations of facial geometry) are retained as described in the Privacy Policy and cannot be used to reconstruct a photograph.</li>
+            </ul>
+
+            <h3 id="profile-photos-and-verification">Profile Photos and Photo Verification</h3>
+            <ul>
+                <li><strong>Appropriate profile photo:</strong> You must provide an appropriate profile picture that complies with these Terms and the Community Guidelines, including the Account Accuracy requirements below.</li>
+                <li><strong>Verification applies to the reviewed photo:</strong> A photo verification approval applies only to the profile picture that was reviewed.</li>
+                <li><strong>Changing your photo:</strong> If you change your profile picture, the previous approval no longer applies and your verification status returns to "not submitted".</li>
+                <li><strong>Verifying again:</strong> You must complete Humrah's existing verification process again for your new picture.</li>
+                <li><strong>Verification-required features:</strong> Features that require verification, such as Quick Connect, remain subject to their existing eligibility rules and may be unavailable until your new picture is approved.</li>
+                <li><strong>What verification does not mean:</strong> Verification is not a guarantee of any person's identity, intentions, conduct, or safety.</li>
             </ul>
 
             <h3>Verification Appeal</h3>
@@ -994,6 +1123,21 @@
 
             <h3>Continued Use</h3>
             <p>Continued use of the Service after the effective date of an amendment constitutes acceptance of the amended Terms. If you do not accept an amendment, you must stop using the Service and delete your account before the amendment takes effect.</p>
+        </section>
+
+        <!-- SECTION 20 -->
+        <section id="quick-connect" class="section">
+            <h2>20. Quick Connect</h2>
+            <p>Quick Connect is an optional feature for one-to-one voice calls with another eligible Humrah member, usually someone you do not already know, matched by shared interests.</p>
+            <ul>
+                <li><strong>Eligibility:</strong> To use Quick Connect you must be 18 or over, have an approved photo verification (see <a href="#profile-photos-and-verification">Profile Photos and Photo Verification</a>), have accepted the current Quick Connect terms in the app and keep your account in good standing.</li>
+                <li><strong>Availability:</strong> Quick Connect may be busy, limited or temporarily unavailable, and Humrah may change or stop it.</li>
+                <li><strong>Calls:</strong> Quick Connect calls are voice only and last up to 30 minutes. Before a call you see the other person's first name, profile photo and shared interests, and a call starts only if both of you accept.</li>
+                <li><strong>Conduct:</strong> These Terms and the Community Guidelines apply to every Quick Connect call. For your safety, Humrah recommends not sharing personal details such as your phone number, address or social media accounts.</li>
+                <li><strong>Reports, blocks and enforcement:</strong> You can report or block the other person. Humrah may end calls and restrict or remove access to Quick Connect or to your account for violations, as described in these Terms.</li>
+                <li><strong>No recording by Humrah:</strong> Humrah does not record Quick Connect calls. How Humrah handles Quick Connect data is described in the Privacy Policy.</li>
+                <li><strong>No guarantee:</strong> Eligibility checks and verification are not a guarantee of any person's identity, intentions, conduct or safety.</li>
+            </ul>
         </section>
 
         <!-- CONTACT -->

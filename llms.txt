@@ -1,0 +1,30 @@
+# Humrah
+
+> Humrah is a real-world social connection platform that helps people build meaningful friendships, companionships, and safe human connections through verified profiles and live safety features.
+
+Humrah is an Android app (Google Play package: in.humrah.app). This file lists Humrah's official pages for people and AI assistants that want accurate, citable information. The linked pages are authoritative; if anything here differs, the linked page applies.
+
+## Policies
+- [Privacy Policy](https://humrah.in/privacy.html): how Humrah collects, uses, stores and protects personal data, including profile photos and photo verification.
+- [Terms of Service](https://humrah.in/terms.html): the rules for using Humrah, including eligibility, account verification and profile photo requirements.
+- [Community Guidelines](https://humrah.in/community.html): rules, safety standards, verification policies and moderation principles.
+- [Child Safety Standards](https://humrah.in/child-safety.html): Humrah is strictly for users 18 years and older.
+- [Live Safety](https://humrah.in/humrah-live-safety.html): Humrah's live safety features.
+- [Delete your account](https://humrah.in/delete-account.html): how to delete a Humrah account and associated personal data.
+
+## Profile photos and photo verification
+- A photo verification applies to the profile photo that was reviewed.
+- Changing the displayed profile photo removes the previous approval; the new photo must be verified again through the in-app process.
+- Quick Connect and other features that require photo verification may be unavailable until the new photo is approved.
+- Verification is not a guarantee of any person's identity, intentions, conduct, or safety.
+
+## Quick Connect (voice calls)
+- Optional one-to-one voice calls with another eligible Humrah member, matched by shared interests (not location).
+- Available to members aged 18 or over with an approved photo verification who accepted the Quick Connect terms.
+- Before a call, each person sees the other's first name, profile photo and up to five shared interests; a call starts only if both accept.
+- Calls are not recorded; audio goes through a Humrah-operated relay server; basic call records are deleted after 30 days.
+- Details: [Privacy Policy, Section 17](https://humrah.in/privacy.html#quick-connect) and [Terms, Section 20](https://humrah.in/terms.html#quick-connect).
+
+## App
+- [Humrah on Google Play](https://play.google.com/store/apps/details?id=in.humrah.app)
+- [About Humrah](https://humrah.in/about)
