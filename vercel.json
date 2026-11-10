@@ -16,6 +16,14 @@
     {
       "source": "/post/:postId",
       "destination": "https://api.humrah.in/post/:postId"
+    },
+    {
+      "source": "/join/:token",
+      "destination": "https://api.humrah.in/join/:token"
+    },
+    {
+      "source": "/join/:token/image.jpg",
+      "destination": "https://api.humrah.in/join/:token/image.jpg"
     }
   ]
 }
